@@ -1,0 +1,13 @@
+@use "../Foundation/variable" as *;
+@use "../Foundation/mixin";
+
+.l-grid-wrapper_center {
+  display: grid;
+  place-items: center;
+}
+
+.l-wrapper-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

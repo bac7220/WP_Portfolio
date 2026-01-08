@@ -1,0 +1,18 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-white {
+  color: $white;
+}

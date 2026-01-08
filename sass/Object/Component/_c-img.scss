@@ -1,0 +1,28 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.c-img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.c-img__top {
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.c-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.p-about__img {
+  max-width: 100%;
+  overflow: hidden; /* 必要に応じてコンテナが画像を切り取る */
+}

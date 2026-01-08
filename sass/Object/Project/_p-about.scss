@@ -1,0 +1,205 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.p-about__background {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+  }
+}
+
+.p-about__contents {
+  background-color: $white;
+  padding: 1rem;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 1rem 1rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "p-about-skill  p-about-img"
+    "p-about-web  p-about-web"
+    "p-about-writing  p-about-writing"
+    "p-about-time  p-about-time"
+    "p-about-text p-about-text ";
+
+  @include mixin.mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "p-about-img p-about-skill p-about-skill"
+      "p-about-img p-about-web p-about-writing"
+      "p-about-time p-about-text p-about-text";
+    box-shadow: none;
+  }
+}
+
+.p-about-img {
+  grid-area: p-about-img;
+  max-width: 120px;
+  @include mixin.mq("md") {
+    max-width: 500px;
+  }
+}
+
+.p-about-skill {
+  grid-area: p-about-skill;
+  display: grid;
+  align-items: center;
+}
+.p-about-text {
+  grid-area: p-about-text;
+}
+.p-about-time {
+  grid-area: p-about-time;
+}
+.p-about-web {
+  grid-area: p-about-web;
+}
+
+.p-about-writing {
+  grid-area: p-about-writing;
+}
+
+.p-about-title {
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.p-about-img,
+.p-about-skill,
+.p-about-text {
+  @include mixin.mq("md") {
+    background-color: $white;
+    padding: 1rem;
+    // box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
+.p-about__top {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  @include mixin.mq("md") {
+    margin-top: 30vh;
+  }
+}
+
+.p-about__top-text {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.p-about__card {
+  width: 100%;
+  // max-width: 600px;
+  padding: 16px;
+  background-color: $bg-light;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s linear;
+  @include mixin.mq("md") {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.p-about__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 240px;
+  gap: 1rem;
+  @include mixin.mq("md") {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+  }
+}
+.p-about__container-title {
+  font-size: clamp(19px, 0.469vw + 17.239px, 24px);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.p-about__container-sp {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "p-about__text-kick"
+    "p-about__img-kick1"
+    "p-about__img-kick2"
+    "p-about__img-kick3";
+  gap: 1rem;
+  @include mixin.mq("md") {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 240px;
+    grid-template-areas:
+      "p-about__text-kick p-about__text-kick p-about__text-kick"
+      "p-about__img-kick1 p-about__img-kick2 p-about__img-kick3";
+  }
+}
+.p-about__text-kick {
+  grid-area: p-about__text-kick;
+  margin-bottom: 1rem;
+}
+
+.p-about__img-kick1 {
+  grid-area: p-about__img-kick1;
+}
+.p-about__img-kick2 {
+  grid-area: p-about__img-kick2;
+}
+.p-about__img-kick3 {
+  grid-area: p-about__img-kick3;
+}
+
+.p-about-text__category {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 3vh;
+  @include mixin.mq("md") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 1vw;
+  }
+}
+
+.p-about__img {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  max-width: 240px;
+  max-height: 240px;
+  overflow: hidden;
+  border-radius: 4px;
+  @include mixin.mq("md") {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+.c-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* コンテナを満たし、縦横比を維持 */
+  border-radius: 6px;
+}
+
+.p-about__reverse {
+  @include mixin.mq("md") {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+[class*="img-kick"] {
+  justify-self: center;
+}

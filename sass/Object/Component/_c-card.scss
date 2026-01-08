@@ -1,0 +1,117 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.c-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.c-card {
+  width: 100%;
+  // max-width: 600px;
+  padding: 16px;
+  background-color: $bg-light;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s linear;
+  border-radius: 6px;
+}
+
+.c-card__img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+  img {
+    object-fit: cover;
+    transition: all 0.3s;
+  }
+}
+
+.c-card__link {
+  &:hover {
+    .c-card__img {
+      img {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.c-card__title {
+  letter-spacing: 1.2px;
+  font-size: clamp(16px, 0.751vw + 13.183px, 24px);
+  font-weight: bold;
+}
+
+.c-card__text {
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+  text-align: justify;
+}
+
+.c-card-swiper {
+  // width: 100%;
+  padding: 16px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: $bg-light;
+}
+
+.c-card-swiper__img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+  img {
+    object-fit: cover;
+    transition: all 0.3s;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.c-card__footer {
+  margin-left: auto;
+  margin-right: auto;
+  @include mixin.mq("md") {
+    margin-right: 0;
+  }
+}
+.c-card__user-name,
+.c-card__pass {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.c-card__footer-text {
+  font-weight: bold;
+  margin-block: auto;
+}
+.c-card__footer-btn {
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: $icon-color;
+  padding: 10px;
+  border-right: #000 solid 3px;
+  border-bottom: #000 solid 3px;
+  position: relative; // 相対位置に変更
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-right: 3px solid $icon-color;
+    border-bottom: 3px solid $icon-color;
+    transform: translate(3px, 3px); // レイアウトに影響を与えない相対移動
+  }
+}
+
+.c-card__text {
+  font-size: 12px;
+  line-height: 1.6;
+  // letter-spacing: 1.2px;
+  text-align: justify;
+}

@@ -1,0 +1,173 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.p-single {
+  padding: 60px 0;
+
+  @include mixin.mq("md") {
+    padding: 100px 0;
+  }
+}
+
+.p-single__container {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+
+  @include mixin.mq("md") {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+
+.p-single__left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.p-single__info-thumbnail {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em calc(1.5em + 9px);
+  border-top: 1px solid $main-color;
+  border-bottom: 1px solid $main-color;
+  color: #333;
+}
+
+.p-single__info-thumbnail::before,
+.p-single__info-thumbnail::after {
+  position: absolute;
+  width: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(100% + 20px);
+  background-color: $main-color;
+  content: "";
+}
+
+.p-single__info-thumbnail::before {
+  left: 9px;
+}
+
+.p-single__info-thumbnail::after {
+  right: 9px;
+}
+
+.p-single__info-section {
+  border: 1px solid #808080;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.p-single__info-heading {
+  h2 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    color: #688166;
+  }
+}
+
+.p-single__info-text {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+
+  p {
+    margin: 0;
+  }
+}
+
+.p-single__info-list {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+
+  p {
+    margin: 0 0 8px 0;
+  }
+}
+
+.p-single__button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.p-single__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #464f43;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.p-single__button-text {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: normal;
+  color: #fff;
+}
+
+.p-single__right {
+  flex: 1;
+}
+
+.p-single__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.p-single__info-section {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  border-right: 27px solid #25d08e;
+  background-color: #f5f5f5;
+  color: #333333;
+  &::before {
+    position: absolute;
+    bottom: 2px;
+    right: -20px;
+    z-index: -1;
+    transform: rotate(5deg);
+    width: 100%;
+    height: 50%;
+    background-color: #d0d0d0;
+    content: "";
+    filter: blur(4px);
+  }
+}

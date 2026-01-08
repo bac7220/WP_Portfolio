@@ -1,0 +1,18 @@
+@use "sass:map"; //頭に持ってくる
+
+$breakpoints: (
+  ms: "screen and (min-width: 600px)",
+  //スクリーン幅600px以上で変化
+  md: "screen and (min-width: 768px)",
+  // //スクリーン幅768px以上で変化
+  lg: "screen and (min-width: 900px)",
+  //スクリーン幅900px以上で変化
+  xl: "screen and (min-width: 1200px)",
+  //スクリーン幅1200px以上で変化
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

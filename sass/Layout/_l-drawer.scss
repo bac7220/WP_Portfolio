@@ -1,0 +1,14 @@
+@use "../Foundation/mixin";
+@use "../Foundation/variable" as *;
+
+.p-drawer__contents {
+  background-color: $bg-dark;
+  transform: translateY(-150%);
+  transition: transform 0.3s linear;
+  padding-top: 200px;
+  padding-bottom: 100px;
+
+  &.is-checked {
+    transform: translateY(-25%);
+  }
+}

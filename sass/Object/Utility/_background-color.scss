@@ -1,0 +1,38 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.u-bg-light_green {
+  background-color: $light-green;
+}
+
+.u-bg-white-opacity-80 {
+  background-color: $white-opacity-8;
+}
+
+.u-bg-white {
+  background-color: $white;
+}
+
+.u-green_gradation {
+  background: $green-gradation;
+}
+
+.u-bg-header {
+  background-color: $header-bg;
+}
+
+.u-bg-dark-green {
+  background-color: $bg-dark;
+}
+
+.u-bg-gray {
+  background-color: $bg-gray-l;
+}
+
+.u-bg-black{
+  background-color: $black;
+}
+
+.u-bg-main{
+  background-color: $main-color;
+}

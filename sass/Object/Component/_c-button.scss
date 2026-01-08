@@ -1,0 +1,78 @@
+@use "../../Foundation/variable" as *;
+@use "../../Foundation/mixin";
+
+.c-button {
+  display: inline-flex;
+  position: relative;
+  background-color: $bg-dark;
+  color: $white;
+  text-align: center;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  padding: 1rem 5rem 1rem 4rem;
+
+  @include mixin.mq("md") {
+    padding: 1rem 3rem 1rem 2rem;
+  }
+  &:hover {
+    opacity: 0.8;
+    .c-button__icon {
+      right: 0.5rem;
+    }
+  }
+}
+
+.button--bg {
+  background-color: $white;
+}
+
+.button--bg .button__text {
+  color: $bg-dark;
+}
+
+.button--border {
+  border: solid $white 1px;
+}
+
+.button--border .button__text {
+  color: $white;
+}
+
+.button__icon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.button__icon-path {
+  fill: $white;
+}
+
+.button__icon-path--contact {
+  fill: $bg-dark;
+}
+
+.button__text {
+  margin-left: 10px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: $white;
+}
+
+.c-button__icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  transition: right 0.3s;
+}
+
+.c-button__arrow {
+  &::after {
+    display: block;
+    content: "";
+    background: url(./img/arrow-right.svg) center / cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+}
