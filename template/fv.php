@@ -2,12 +2,12 @@
     <div class="l-fv">
         <div class="l-fv__contents">
             <?php if (is_front_page()) : ?>
-                <h2 id="reverse" class="l-fv__heading animate__animated animate__fadeInSlideLeft">
-                    <span class="p-fv__heading-main u-mb-1">Web Corder -</span>
-                    <span class="p-fv__heading-sub">
-                        ご覧いただきありがとうございます。
-                        <br />フリーランスでWEBコーダーをしている奥田将輝と申します。
-                    </span>
+                <h2 id="reverse" class="l-fv__heading ">
+                    <p class="p-fv__heading-main u-mb-1 js-text-span">Web Corder -</p>
+                    <p class="p-fv__heading-sub animate__animated animate__fadeInSlideLeft">
+                        ご覧いただきありがとうございます。<br />
+                        フリーランスでWEBコーダーをしている奥田将輝と申します。
+                    </p>
 
                 <?php elseif (is_404()) : ?>
                     <div class="l-inner">
