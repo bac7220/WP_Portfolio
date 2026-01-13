@@ -17,8 +17,8 @@ function my_script_init()
     // テーマのスタイルシートの読み込み
     wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path("/css/style.css")), "all");
 
-// アニメーション専用のJavaScriptファイルの読み込み
-wp_enqueue_script("my-animation", get_template_directory_uri() . "/js/animation.js", array("gsap"), filemtime(get_theme_file_path('js/animation.js')), true);
+    // アニメーション専用のJavaScriptファイルの読み込み
+    wp_enqueue_script("my-animation", get_template_directory_uri() . "/js/animation.js", array("gsap"), filemtime(get_theme_file_path('js/animation.js')), true);
 
     // GSAPの読み込み
     wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);
