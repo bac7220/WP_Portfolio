@@ -60,6 +60,11 @@ p {
   animation: fadeInSlideLeft 1s ease-in-out;
 }
 
+.l-main{
+  position: relative;
+  z-index: 1;
+}
+
 .l-section {
   padding: 60px 0;
   position: relative;
@@ -167,11 +172,14 @@ p {
 
 .l-fv {
   position: relative;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
+z-index: 1;
+background-color: #21759b;
 }
 
-.l-fv::before {
+/* .l-fv::before {
   content: "";
   position: fixed;
   top: 0;
@@ -179,7 +187,7 @@ p {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
+} */
 
 .l-fv__contents {
   position: relative;
@@ -260,8 +268,10 @@ p {
 }
 
 .l-footer {
+  position: relative;
   padding-block: 20px;
   text-align: center;
+  z-index: 3;
 }
 
 .c-button {
@@ -1013,6 +1023,33 @@ p {
 .p-fv__heading-sub {
   font-size: clamp(1rem, 0.657vw + 0.596rem, 1.1875rem);
   line-height: 2;
+}
+
+.p-service__cards{
+  gap: 48px;
+}
+
+.c-service__card-inner{
+  display: flex;
+  gap: 16px;
+}
+
+.c-service__card-img{
+  width: 48px;
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.c-service__card-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c-service__card-title{
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .p-work-flow {
@@ -2545,6 +2582,8 @@ p {
 }
 
 .u-bg-white-opacity-80 {
+  position: relative;
+  z-index: 2;
   background-color: rgba(255, 255, 255, 0.8);
 }
 

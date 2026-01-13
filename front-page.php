@@ -210,7 +210,7 @@
 
 
  <?php get_template_part('template/footer-item'); ?>
- </div>
+
  <?php get_template_part('template/svg'); ?>
 
  <?php get_footer(); ?>

@@ -29,3 +29,13 @@ window.addEventListener('DOMContentLoaded', () => {
     ease: "back.out(1.7)",
   });
 });
+// GSAPとScrollTriggerが読み込まれている前提です
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".l-main", // fv.phpの一番外側のタグをターゲットにする
+  start: "top top",
+  pin: true,           // その場に固定
+  pinSpacing: false,   // 隙間を作らず、次の要素を上に重ねる
+  // end: "bottom top" // 基本は不要ですが、挙動を見て調整
+});
