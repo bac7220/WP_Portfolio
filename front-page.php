@@ -1,7 +1,7 @@
  <?php get_header() ?>
 
  <?php get_template_part('template/fv') ?>
- <div class="u-bg-white-opacity-80">
+ <div class="u-bg-green">
 
      <?php get_template_part('template/service'); ?>
 

@@ -1,4 +1,4 @@
-<section id="service" class="l-section service">
+<section id="service" class="l-section p-service">
   <div class="l-inner">
     <h2 class="section__head">
       <span class="section__head-main u-mb-1 c-title">Service -</span>
