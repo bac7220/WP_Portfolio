@@ -21,8 +21,11 @@
         } ?>">
         <div class=" p-header__container p-header__fz">
             <a href="<?php echo home_url(); ?>">
-                
-                <h1 class="p-header__logo">Masaki's<br />Portfolio</h1>
+
+                <h1 class="p-header__logo">
+                    <div class="p-header__logo-img"><img src="<?php echo get_theme_file_uri(); ?>/img/BacIcon.webp" alt="Web制作 おくだ屋"></div>
+                    <p class="p-header__logo-text">WEB制作 おくだ屋</p>
+                </h1>
             </a>
             <ul class="p-header__menu ">
 

@@ -2,8 +2,8 @@
 function my_script_init()
 
 {
-    // Google Fonts
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap', array(), null);
+    // Google Fonts (Noto Sans JP, Nunito Sans に Zen Old Mincho を追加)
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Old+Mincho:wght@700&display=swap', array(), null);
 
     // Font Awesome
     wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", array(), "5.8.2", "all");
@@ -117,3 +117,28 @@ function disable_recaptcha_on_multistep($classes)
     }
 }
 add_action('wpcf7_validate', 'disable_recaptcha_on_multistep', 10, 2);
+
+
+// Contact Form 7のCSS/JSを必要なページだけ読み込む
+add_filter('wpcf7_load_js', '__return_false');
+add_filter('wpcf7_load_css', '__return_false');
+
+// 必要なページでだけ読み込む
+add_action('wp_enqueue_scripts', function () {
+    if (is_page('contact')) { 
+        if (function_exists('wpcf7_enqueue_scripts')) {
+            wpcf7_enqueue_scripts();
+        }
+        if (function_exists('wpcf7_enqueue_styles')) {
+            wpcf7_enqueue_styles();
+        }
+    }
+});
+
+// Google Fontsのpreconnectを追加
+function my_google_fonts_preconnect()
+{
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}
+add_action('wp_head', 'my_google_fonts_preconnect', 0);
