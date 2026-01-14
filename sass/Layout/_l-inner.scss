@@ -1,8 +1,0 @@
-@use "../Foundation/variable" as *;
-@use "../Foundation/mixin";
-
-.l-inner {
-  max-width: calc(1000px + 10vw);
-  margin-inline: auto;
-  padding-inline: 5vw;
-}

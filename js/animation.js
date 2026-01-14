@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-const sections = gsap.utils.toArray(".l-sectin");
+const sections = gsap.utils.toArray(".l-section");
 
 sections.forEach((section) => {
   ScrollTrigger.create({
