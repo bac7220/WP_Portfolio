@@ -223,8 +223,8 @@ z-index: 1;
 
 @media screen and (min-width: 768px) {
   .l-fv__heading {
+      background-color: rgba(0, 0, 0, 0.252);
     margin-bottom: 0;
-    background-color: #fff;
   }
 }
 
@@ -759,9 +759,10 @@ z-index: 1;
   width: 100%;
   z-index: 50;
   height: 80px;
-  -webkit-transition: background-color 0.3s linear;
-  transition: background-color 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   background-color: #688166;
+  z-index: 50;
 }
 
 @media screen and (min-width: 768px) {
@@ -771,8 +772,21 @@ z-index: 1;
 }
 
 .p-header.is-fixed {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #333;
+}
 
+.p-header.is-fixed .p-header__logo-text{
+  color: #333;
+}
+
+.p-header.is-fixed .p-header__menu-link {
+  font-weight: 700;
+  color: #333;
+}
+
+.p-header.is-fixed .c-drawer-icon__bar {
+  background-color: #333; 
 }
 
 .p-header__container {
@@ -1007,7 +1021,7 @@ z-index: 1;
 .p-fv__heading-main {
   font-size: clamp(2rem, 4.507vw + 0.944rem, 5rem);
   font-weight: 700;
-  color: #333;
+  color: #fff;
   letter-spacing: 2px;
   /* overflow: hidden; */
 }
@@ -1023,6 +1037,7 @@ z-index: 1;
 .p-fv__heading-sub {
   font-size: clamp(1rem, 0.657vw + 0.596rem, 1.1875rem);
   line-height: 2;
+  color: #fff;
 }
 
 .p-service{
@@ -1030,6 +1045,7 @@ z-index: 1;
 }
 
 .p-service__cards{
+  margin-top: 100px;
   gap: 48px;
 }
 
@@ -1116,16 +1132,11 @@ z-index: 1;
 }
 
 .p-works {
-  top: 60px;
   z-index: 20;
-  background-color: #ded0cf;
+  background-color: #fffff2;
 }
 
-@media screen and (min-width: 768px) {
-  .p-works {
-    top: 100px;
-  }
-}
+
 
 /* Works container layout */
 .p-works-container {
