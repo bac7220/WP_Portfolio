@@ -11,25 +11,20 @@ function my_script_init()
     // destyle.cssの読み込み
     wp_enqueue_style("destyle", "https://unpkg.com/destyle.css@3.0.2/destyle.min.css", array(), "3.0.2", "all");
 
-    // Swiperのスタイルシートの読み込み
-    wp_enqueue_style("swiper", get_template_directory_uri() . "/swiper/swiper-bundle.min.css", array(), filemtime(get_theme_file_path("swiper/swiper-bundle.min.css")), "all");
-
     // テーマのスタイルシートの読み込み
     wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path("/css/style.css")), "all");
-    
-    // 1. GSAP本体を先に登録（名前を gsap-core にしておくと分かりやすいです）
+
+    // gsapを追加
     wp_enqueue_script("gsap-core", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);
 
-    // 2. ScrollTriggerを追加（gsap-core に依存させる）
+    // ScrollTriggerを追加
     wp_enqueue_script("gsap-scroll", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js", array("gsap-core"), "3.12.2", true);
 
     // 3. アニメーションJS（gsap-core と gsap-scroll の両方が読み込まれた後に実行）
     wp_enqueue_script("my-animation", get_template_directory_uri() . "/js/animation.js", array("gsap-core", "gsap-scroll"), filemtime(get_theme_file_path('js/animation.js')), true);
-    // SwiperのJavaScriptファイルの読み込み
-    wp_enqueue_script("swiper", get_template_directory_uri() . "/swiper/swiper-bundle.min.js", array(), filemtime(get_theme_file_path("swiper/swiper-bundle.min.js")), true);
-
-    // テーマのJavaScriptファイルの読み込み
-    wp_enqueue_script("my-script", get_template_directory_uri() . "/js/script.js", array("gsap"), filemtime(get_theme_file_path('js/script.js')), true);
+  
+    // array("gsap") を array("jquery", "gsap-core") に変更します
+    wp_enqueue_script("my-script", get_template_directory_uri() . "/js/script.js", array("jquery", "gsap-core"), filemtime(get_theme_file_path('js/script.js')), true);
 }
 
 

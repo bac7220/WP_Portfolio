@@ -25,17 +25,20 @@ window.addEventListener('DOMContentLoaded', () => {
   gsap.from(".js-text-span span", {
     y: "-100vh",
     duration: 1,
-    stagger: 0.1, // 0.2だと少し遅いかもしれないので調整してみてください
+    stagger: 0.1, 
     ease: "back.out(1.7)",
   });
 });
-// GSAPとScrollTriggerが読み込まれている前提です
-gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.create({
-  trigger: ".l-main", // fv.phpの一番外側のタグをターゲットにする
-  start: "top top",
-  pin: true,           // その場に固定
-  pinSpacing: false,   // 隙間を作らず、次の要素を上に重ねる
-  // end: "bottom top" // 基本は不要ですが、挙動を見て調整
-});
+
+
+const sections = gsap.utils.toArray(".l-section");
+
+sections.forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: true,
+    pinSpacing:false
+  })
+})

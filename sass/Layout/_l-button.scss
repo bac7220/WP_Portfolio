@@ -1,9 +1,0 @@
-@use "../Foundation/mixin";
-@use "../Foundation/variable" as *;
-
-.l-button {
-  text-align: center;
-  @include mixin.mq("md") {
-    text-align: end;
-  }
-}
