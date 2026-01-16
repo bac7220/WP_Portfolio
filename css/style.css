@@ -1942,7 +1942,8 @@ z-index: 1;
 /* 送信成功メッセージ */
 /* 送信エラーメッセージ */
 .p-contact {
-  height: 1200px;
+  padding-block: 100px;
+  /* height: 1200px; */
 }
 
 .p-contact__wrapper {
@@ -1963,6 +1964,7 @@ z-index: 1;
   display: flex;
   gap: 20px;
   margin-bottom: 1rem;
+  
 }
 
 .p-contact__item {
@@ -1970,12 +1972,7 @@ z-index: 1;
 }
 
 .p-contact__head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+ margin-bottom: 5rem;
 }
 
 .p-contact__item-name {

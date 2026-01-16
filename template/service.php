@@ -13,7 +13,7 @@
           <div class="c-service__card-inner">
             <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img1.webp" alt="" /></div>
             <div class="c-service-card__right">
-              <h3 class="c-service__card-title">Webサイト制作</h3>
+              <h3 class="c-service__card-title">ホームページ制作（新規・刷新）</h3>
               <p class="c-service__card-text">
                 ビジネスの名刺に、24時間働くネットの営業マンに。唯一無二のWebサイトを制作します。
               </p>
@@ -25,7 +25,7 @@
             <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img2.webp" alt="" /></div>
             <div class="c-service-card__right">
 
-              <h3 class="c-service__card-title">Webサイトリニューアル</h3>
+              <h3 class="c-service__card-title">安心の運用・保守サポート</h3>
               <p class="c-service__card-text">
                 古くなった情報を整理し、時代に合わせた使いやすさとデザインを両立させます。
               </p>
@@ -47,9 +47,10 @@
           <div class="c-service__card-inner">
             <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img4.webp" alt="" /></div>
             <div class="c-service-card__right">
-              <h3 class="c-service__card-title">コーディング業務</h3>
+              <h3 class="c-service__card-title">コーディング・WP構築</h3>
               <p class="c-service__card-text">
                 GSAPを用いた動きのある実装や、WordPress化のみのご依頼も承ります </p>
+              <!-- <div class="c-service__card-link"><a href="">ポートフォリオはこちら</a></div> -->
             </div>
         </li>
     </div>
