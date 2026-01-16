@@ -44,8 +44,7 @@ sections.forEach((section) => {
 })
 
 // ふわっと現れるフェードインアニメーション
-const serviceCard = document.querySelectorAll('.c-service__card');
-
+const targets = document.querySelectorAll('.c-card, .c-service__card');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -55,6 +54,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 
-serviceCard.forEach(card => {
+targets.forEach(card => {
   observer.observe(card);
 });

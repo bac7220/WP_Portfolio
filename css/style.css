@@ -1050,13 +1050,15 @@ p {
   gap: 48px;
 }
 
-.c-service__card {
+.c-service__card,
+.c-card {
   opacity: 0;
   transform: translateY(20px);
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-.c-service__card.js-fade-in {
+.c-service__card.js-fade-in,
+.c-card.js-fade-in {
   opacity: 1;
   transform: translateY(0);
 }
