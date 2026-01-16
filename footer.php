@@ -1,4 +1,4 @@
-<footer class="l-footer u-bg-white-opacity-80">
+<footer class="l-footer">
     <small class="u-text-center u-m-center"> &copy; Bac's Portfolio All rights reserved. </small>
 </footer>
 </main>

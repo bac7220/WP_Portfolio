@@ -25,7 +25,20 @@ window.addEventListener('DOMContentLoaded', () => {
   gsap.from(".js-text-span span", {
     y: "-100vh",
     duration: 1,
-    stagger: 0.1, // 0.2だと少し遅いかもしれないので調整してみてください
+    stagger: 0.1, 
     ease: "back.out(1.7)",
   });
 });
+
+
+
+const sections = gsap.utils.toArray(".l-section");
+
+sections.forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: true,
+    pinSpacing:false
+  })
+})
