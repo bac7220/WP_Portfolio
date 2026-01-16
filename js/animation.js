@@ -42,3 +42,18 @@ sections.forEach((section) => {
     pinSpacing:false
   })
 })
+
+// ふわっと現れるフェードインアニメーション
+const targets = document.querySelectorAll('.c-card, .c-service__card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('js-fade-in');
+    }
+  });
+}, { threshold: 0.5 });
+
+targets.forEach(card => {
+  observer.observe(card);
+});

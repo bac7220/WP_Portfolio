@@ -60,7 +60,7 @@ p {
   animation: fadeInSlideLeft 1s ease-in-out;
 }
 
-.l-main{
+.l-main {
   position: relative;
   z-index: 1;
 }
@@ -175,10 +175,11 @@ p {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-z-index: 1;
-/* background-color: #21759b; */
+  z-index: 1;
+  /* background-color: #21759b; */
 }
-.p-fv__video{
+
+.p-fv__video {
   position: absolute;
   top: 0;
   left: 0;
@@ -223,7 +224,7 @@ z-index: 1;
 
 @media screen and (min-width: 768px) {
   .l-fv__heading {
-      background-color: rgba(0, 0, 0, 0.252);
+    background-color: rgba(0, 0, 0, 0.252);
     margin-bottom: 0;
   }
 }
@@ -776,7 +777,7 @@ z-index: 1;
   color: #333;
 }
 
-.p-header.is-fixed .p-header__logo-text{
+.p-header.is-fixed .p-header__logo-text {
   color: #333;
 }
 
@@ -786,7 +787,7 @@ z-index: 1;
 }
 
 .p-header.is-fixed .c-drawer-icon__bar {
-  background-color: #333; 
+  background-color: #333;
 }
 
 .p-header__container {
@@ -1040,34 +1041,49 @@ z-index: 1;
   color: #fff;
 }
 
-.p-service{
-  padding-block: 100px;
+.p-service {
+  padding-block: 120px;
 }
 
-.p-service__cards{
+.p-service__cards {
   margin-top: 100px;
   gap: 48px;
 }
 
-.c-service__card-inner{
+.c-service__card,
+.c-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.c-service__card.js-fade-in,
+.c-card.js-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.c-service__card-inner {
   display: flex;
   gap: 16px;
 }
 
-.c-service__card-img{
+.c-service__card-img {
   width: 48px;
   height: auto;
   overflow: hidden;
   aspect-ratio: 1 / 1;
 }
 
-.c-service__card-img img{
+.c-service__card-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.c-service__card-title{
+.c-service__card-title {
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -1964,7 +1980,7 @@ z-index: 1;
   display: flex;
   gap: 20px;
   margin-bottom: 1rem;
-  
+
 }
 
 .p-contact__item {
@@ -1972,7 +1988,7 @@ z-index: 1;
 }
 
 .p-contact__head {
- margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
 .p-contact__item-name {
