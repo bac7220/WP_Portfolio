@@ -14,6 +14,11 @@ function my_script_init()
     // テーマのスタイルシートの読み込み
     wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path("/css/style.css")), "all");
 
+    //　問い合わせページのスタイル
+    if (is_page('contact')) {
+        wp_enqueue_style("contact-style", get_template_directory_uri() . "/css/contact.css", array(), filemtime(get_theme_file_path("/css/contact.css")), "all");
+    }
+
     // gsapを追加
     wp_enqueue_script("gsap-core", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);
 
@@ -22,7 +27,7 @@ function my_script_init()
 
     // 3. アニメーションJS（gsap-core と gsap-scroll の両方が読み込まれた後に実行）
     wp_enqueue_script("my-animation", get_template_directory_uri() . "/js/animation.js", array("gsap-core", "gsap-scroll"), filemtime(get_theme_file_path('js/animation.js')), true);
-  
+
     // array("gsap") を array("jquery", "gsap-core") に変更します
     wp_enqueue_script("my-script", get_template_directory_uri() . "/js/script.js", array("jquery", "gsap-core"), filemtime(get_theme_file_path('js/script.js')), true);
 }
