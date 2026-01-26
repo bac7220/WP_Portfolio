@@ -71,6 +71,36 @@
   justify-content: center;
 }
 
+.smf-checkbox-control{
+  padding: 16px 24px;
+  transition: background-color 0.3s ease,border-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.smf-checkbox-control:hover {
+  background-color: #e2f0da;
+  border-color: #bbb;
+}
+
 .smf-checkbox-control__control {
   margin-top: 0 !important;
+}
+
+.smf-checkbox-control__label a{
+  color: blue;
+border-bottom: blue 1px solid;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.smf-checkbox-control__label a:hover{
+  color: red;
+  border-bottom-color: transparent;
+}
+
+.smf-button-control__control{
+  transition: opacity 0.3s ease!important ;
+}
+
+.smf-button-control__control:hover{
+opacity: 0.8;
 }
