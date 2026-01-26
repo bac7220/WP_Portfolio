@@ -1,5 +1,6 @@
-console.log('ここまでご覧に頂きましてありがとうございます！フロントのデザインはもちろん、コードもしっかり保守、運用を考えて制作してまいります。どうぞよろしくお願いいたします。')
-
+console.log(
+  "ここまでご覧に頂きましてありがとうございます！フロントのデザインはもちろん、コードもしっかり保守、運用を考えて制作してまいります。どうぞよろしくお願いいたします。",
+);
 
 // ドロワーメニューの動きの実装
 
@@ -29,21 +30,29 @@ jQuery(".header__nav").on("click", ".header__link", function (e) {
   jQuery("html, body").animate({ scrollTop: targetOffset }, 500); // ページをアニメーションでスクロール
 });
 
-
 // ヘッダーのスクロールイベント
-document.addEventListener('DOMContentLoaded', function() {
-  const header = document.getElementById('js-header');
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.getElementById("js-header");
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > 100) { // 100から0に変更
-      header.classList.add('is-fixed');
+    if (scrollTop > 100) {
+      // 100から0に変更
+      header.classList.add("is-fixed");
     } else {
-      header.classList.remove('is-fixed');
+      header.classList.remove("is-fixed");
     }
   });
 });
 
+// snow monkey forms、プライバシーポリシーのリンク有効化
+const labels = document.querySelectorAll(".smf-checkbox-control__label");
 
-
+window.addEventListener("DOMContentLoaded", () => {
+  labels.forEach((label) => {
+    if (label.textContent.includes("プライバシーポリシー")) {
+      label.innerHTML = '<a href="/privacy">プライバシーポリシー</a>に同意する';
+    }
+  });
+});

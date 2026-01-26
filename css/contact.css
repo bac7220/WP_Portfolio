@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+.smf-form .smf-text-control__control {
+  width: 100% !important;
+}
+
+.smf-progress-tracker {
+  margin-bottom: 8rem !important;
+}
+
+.smf-progress-tracker__item[aria-current="true"] .smf-progress-tracker__item__number {
+  background-color: #5d914c;
+}
+
+.smf-form--business .smf-item__col--label {
+  background-color: #eef6f5;
+}
+
+.smf-button-control__control {
+  background-image: none !important;
+  padding: 20px 100px !important;
+  background-color: #5d914c !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* 各選択肢の枠を広げてボタン風にする */
+.smf-radio-button-control {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  /* 内側の余白を広げて押しやすく */
+  margin-bottom: 8px;
+  /* 選択肢ごとの隙間 */
+  /* border: 1px solid #ddd; */
+  /* 枠線 */
+  border-radius: 6px;
+  /* 角を少し丸く */
+  cursor: pointer;
+  /* カーソルを指の形に */
+  transition: all 0.2s ease;
+  /* 変化を滑らかに */
+}
+
+/* ホバーした時に色を変える */
+.smf-radio-button-control:hover {
+  background-color: #e2f0da;
+  border-color: #bbb;
+}
+
+/* ラジオボタン本体と文字の間に少し隙間を作る */
+.smf-radio-button-control__control {
+  margin-right: 10px;
+  width: 18px;
+  /* 少し大きく */
+  height: 18px;
+}
+
+/* 文字のスタイル */
+.smf-radio-button-control__label {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.smf-form .smf-radio-button-control__control {
+  margin-top: 2px;
+}
+
+.smf-checkboxes-control__control {
+  display: flex;
+  justify-content: center;
+}
+
+.smf-checkbox-control__control {
+  margin-top: 0 !important;
+}
