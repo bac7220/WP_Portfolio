@@ -1,9 +1,9 @@
 <section id="service" class="l-section p-service">
   <div class="l-inner">
-    <h2 class="section__head">
-      <span class="section__head-main u-mb-1 c-title">Service -</span>
-      <span class="c-title_sub">サービス一覧</span>
-    </h2>
+     <h2 class="l-section__head">
+       <p class="c-title">Service</p>
+       <p class="c-title__sub">サービス一覧</p>
+     </h2>
     <p class="section__lead-text">
       ご依頼いただけるサービス一覧です。この一覧になくても、お気軽にご相談ください。
     </p>

@@ -1,5 +1,5 @@
 <footer class="l-footer">
-    <small class="u-text-center u-m-center"> &copy; Bac's Portfolio All rights reserved. </small>
+    <small class="u-text-center u-m-center"> &copy;  2026 WEB制作 おくだ屋 All rights reserved. </small>
 </footer>
 </main>
 </div>

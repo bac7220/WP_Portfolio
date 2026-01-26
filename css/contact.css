@@ -4,15 +4,13 @@
   width: 100% !important;
 }
 
-
 .smf-progress-tracker {
   margin-bottom: 8rem !important;
 }
 
-.smf-progress-tracker__item[aria-current=true] .smf-progress-tracker__item__number {
+.smf-progress-tracker__item[aria-current="true"] .smf-progress-tracker__item__number {
   background-color: #5d914c;
 }
-
 
 .smf-form--business .smf-item__col--label {
   background-color: #eef6f5;
@@ -66,4 +64,13 @@
 
 .smf-form .smf-radio-button-control__control {
   margin-top: 2px;
+}
+
+.smf-checkboxes-control__control {
+  display: flex;
+  justify-content: center;
+}
+
+.smf-checkbox-control__control {
+  margin-top: 0 !important;
 }
