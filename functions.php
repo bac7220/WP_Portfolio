@@ -18,6 +18,10 @@ function my_script_init()
     if (is_page('contact')) {
         wp_enqueue_style("contact-style", get_template_directory_uri() . "/css/contact.css", array(), filemtime(get_theme_file_path("/css/contact.css")), "all");
     }
+    //　プライバシーポリシーのスタイル
+    if (is_page('privacy')) {
+        wp_enqueue_style("privacy-style", get_template_directory_uri() . "/css/privacy.css", array(), filemtime(get_theme_file_path("/css/privacy.css")), "all");
+    }
 
     // gsapを追加
     wp_enqueue_script("gsap-core", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);
