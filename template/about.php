@@ -8,7 +8,7 @@
           </h2>
           <div class="p-about__contents u-mb-1">
             <div class="p-about-img">
-              <img src="https://bac-portfolio.site/wp-content/uploads/2025/12/okuda-coder.png" alt="アイコン画像" class="c-img__top">
+              <img src="http://web-okuda.com/wp-content/uploads/2025/12/okuda-coder.png" alt="アイコン画像" class="c-img__top">
             </div>
 
 
