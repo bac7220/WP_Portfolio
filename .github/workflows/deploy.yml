@@ -1,0 +1,27 @@
+name: Deploy to Lightsail
+
+on:
+  push:
+    branches:
+      - main
+      - master # あなたのブランチ名がmasterの場合も動くようにしています
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync files to Server
+        env:
+          PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          HOST: ${{ secrets.SERVER_IP }}
+          USER: ${{ secrets.SERVER_USER }}
+          # ↓ここにさっき確認したフォルダパスが入ります
+          TARGET: /opt/bitnami/wordpress/wp-content/themes/bac-portfolio
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          # rsyncを使ってサーバーにファイルを同期します（node_modulesなどは除外）
+          rsync -avz --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" ./ $USER@$HOST:$TARGET --exclude '.git/' --exclude '.github/' --exclude 'node_modules/' --exclude 'private_key'
+          rm -f private_key
