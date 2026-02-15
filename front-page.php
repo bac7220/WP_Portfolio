@@ -7,6 +7,9 @@
 
      <?php get_template_part('template/works'); ?>
 
+     <?php get_template_part('template/voice'); ?>
+
+
      <?php get_template_part('template/about'); ?>
 
  </div>

@@ -1,4 +1,4 @@
-  <section id="about" class="l-section">
+  <section id="about" class="l-section p-about">
     <div class="l-inner">
       <div class="about__container">
         <div class="about__text-contents">

@@ -385,6 +385,10 @@ p {
   border-radius: 6px;
 }
 
+.p-about{
+  background-color:#fffff2;
+}
+
 .p-about__img {
   max-width: 100%;
   overflow: hidden;
@@ -1643,8 +1647,8 @@ p {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-template-areas: "p-about-img p-about-skill p-about-skill" "p-about-img p-about-web p-about-writing" "p-about-time p-about-text p-about-text";
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    /* -webkit-box-shadow: none; */
+    /* box-shadow: none; */
   }
 }
 
