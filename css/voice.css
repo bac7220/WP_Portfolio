@@ -10,19 +10,23 @@
   padding: 16px;
   background-color: #fff;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  align-items: center;
 }
 
 .p-voice__img{
       width: 20%;
+      max-width: 100px;
     /* height: auto; */
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: #fff;
     overflow: hidden;
-    box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .p-voice__img img{
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
