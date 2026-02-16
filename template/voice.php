@@ -5,6 +5,7 @@
           <h2 class="l-section__head">
             <span class="c-title">Voice</span>
             <span class="c-title__sub">お客様の声</span>
+            <span>これまでご対応させて頂いたお客様の声を掲載しています。</span>
           </h2>
 
           <div class="p-voice__container">
@@ -31,13 +32,6 @@
                 <?php endif; ?>
               </div>
             </div>
-          </div>
-          <div class="l-button ">
-            <a href="<?php echo esc_url(home_url('/about')); ?>" class="c-button ">
-              もっと見る <svg class="c-button__icon" width="24" height="24" role="img" aria-label="right-arrow">
-                <use href="#right-svg"></use>
-              </svg>
-            </a>
           </div>
         </div>
       </div>
