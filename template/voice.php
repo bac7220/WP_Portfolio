@@ -3,7 +3,7 @@
       <div class="about__container">
         <div class="about__text-contents">
           <h2 class="l-section__head">
-            <span class="c-title">voice</span>
+            <span class="c-title">Voice</span>
             <span class="c-title__sub">お客様の声</span>
             <span>これまでご対応させて頂いたお客様の声を掲載しています。</span>
           </h2>
