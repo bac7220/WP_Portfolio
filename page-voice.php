@@ -14,14 +14,7 @@
           <div class="p-voice__container-inner">
             <div class="p-voice__items u-mb-1">
               <?php
-              $post_slug = 'voice';
-              $post_type = 'page';
-              $post_object = get_page_by_path($post_slug, OBJECT, $post_type);
-              $voice_group = [];
-              if ($post_object) {
-                $post_id = $post_object->ID;
-                $voice_group = SCF::get('voice_group', $post_id);
-              }
+                $voice_group = SCF::get('voice_group', get_the_ID());
               if ($voice_group):
                 foreach ($voice_group as $voice_item):
                   // Check if fields exist to avoid errors if empty rows
