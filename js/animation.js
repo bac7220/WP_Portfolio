@@ -44,7 +44,7 @@ sections.forEach((section) => {
 })
 
 // ふわっと現れるフェードインアニメーション
-const targets = document.querySelectorAll('.c-card, .c-service__card');
+const targets = document.querySelectorAll('.c-card, .c-service__card, .p-voice__item');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

@@ -30,7 +30,7 @@
                     $img_url = wp_get_attachment_image_url($img, 'full');
                     $text = $voice_item['voice_text'];
                     $voice_name = $voice_item['voice_name']; ?>
-                    <div class="p-voice__item js-fade-in">
+                    <div class="p-voice__item">
                       <div class="p-voice__meta">
                         <div class="p-voice__img">
                           <img src="<?php echo esc_url($img_url); ?>" alt="">
