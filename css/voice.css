@@ -1,0 +1,83 @@
+.p-voice__items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.p-voice__item {
+  display: flex;
+  flex-direction: column;
+  /* Mobile: Stack vertically */
+  gap: 24px;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .p-voice__item {
+    flex-direction: row;
+    /* Desktop: Horizontal layout */
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+  }
+}
+
+.p-voice__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.p-voice__img {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  /* Center on mobile */
+}
+
+@media screen and (min-width: 768px) {
+  .p-voice__img {
+    margin: 0;
+    /* Reset margin on desktop */
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.p-voice__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Use contain to show full image */
+}
+
+.p-voice__name {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.p-voice__text-box {
+  flex-grow: 1;
+  /* Take remaining space */
+  width: 100%;
+}
+
+.p-voice__text {
+  line-height: 1.8;
+  font-size: 16px;
+  text-align: justify;
+}
