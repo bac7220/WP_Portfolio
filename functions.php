@@ -23,8 +23,8 @@ function my_script_init()
         wp_enqueue_style("privacy-style", get_template_directory_uri() . "/css/privacy.css", array(), filemtime(get_theme_file_path("/css/privacy.css")), "all");
     }
     //　お客様の声のスタイル
-    if (is_front_page()) {
-        wp_enqueue_style("voice-style", get_template_directory_uri() . "/css/voice.css", array(), filemtime(get_theme_file_path("/css/privacy.css")), "all");
+    if (is_front_page() || is_page('voice')) {
+        wp_enqueue_style("voice-style", get_template_directory_uri() . "/css/voice.css", array(), filemtime(get_theme_file_path("/css/voice.css")), "all");
     }
 
     // gsapを追加
