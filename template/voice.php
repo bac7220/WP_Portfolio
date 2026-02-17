@@ -12,7 +12,16 @@
             <div class="p-voice__container-inner">
               <div class="p-voice__items u-mb-1">
                 <?php
-                $voice_group = SCF::get('voice_group', 272);
+                $post_slug = 'voice';
+                $post_type = 'page';
+                $post_object = get_page_by_path($post_slug, OBJECT, $post_type);
+                $voice_group = [];
+                if ($post_object) {
+                  $post_id = $post_object->ID;
+
+                  $voice_group = SCF::get('voice_group', $post_id);
+                }
+
                 if ($voice_group):
                   $count = 0;
                   foreach ($voice_group as $voice_item):
