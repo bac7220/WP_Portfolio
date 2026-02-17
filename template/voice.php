@@ -25,7 +25,6 @@
                 if ($voice_group):
                   $count = 0;
                   foreach ($voice_group as $voice_item):
-                    var_dump($voice_item);
                     if ($count >= 3) break; // Limit to 3 items
                     $img = $voice_item['voice_img'];
                     $img_url = wp_get_attachment_image_url($img, 'full');
