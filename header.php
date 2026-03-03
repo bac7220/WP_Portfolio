@@ -31,7 +31,7 @@
 
                 <li class="p-header__menu-item u-white-color">
                     <a class="p-header__menu-link<?php echo is_home() ? ' current' : ''; ?>"
-                        href="<?php echo esc_url(home_url('/works')); ?>">
+                        href="<?php echo esc_url(get_post_type_archive_link('work')); ?>">
                         Works
                     </a>
                 </li>

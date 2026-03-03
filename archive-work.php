@@ -11,7 +11,7 @@
                 <?php
                 $card_query = new WP_Query(
                     array(
-                        'post_type' => 'post',
+                        'post_type' => 'work',
                         'posts_per_page' => -1,
                     )
                 );
