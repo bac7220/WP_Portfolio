@@ -31,7 +31,7 @@
 
                 <li class="p-header__menu-item u-white-color">
                     <a class="p-header__menu-link<?php echo is_home() ? ' current' : ''; ?>"
-                        href="<?php echo esc_url(get_post_type_archive_link('/work')); ?>">
+                        href="<?php echo esc_url(get_post_type_archive_link('/works')); ?>">
                         Works
                     </a>
                 </li>
@@ -74,7 +74,7 @@
                         <svg width="24" height="24" role="img" aria-label="laptop-icon">
                             <use href="#laptop-svg"></use>
                         </svg>
-                        <a href="<?php echo esc_url(get_post_type_archive_link('/work')); ?>">Works
+                        <a href="<?php echo esc_url(get_post_type_archive_link('/works')); ?>">Works
                         </a>
                     </li>
                     <li class="p-header__nav-item">
