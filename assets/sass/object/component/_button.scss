@@ -1,0 +1,80 @@
+// ============================================================
+// Object / Component - Button
+// ============================================================
+@use "../../foundation/variables" as *;
+
+.c-button {
+  display: inline-flex;
+  position: relative;
+  background-color: $color-main-dark;
+  color: $color-white;
+  text-align: center;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  padding: 1rem 5rem 1rem 4rem;
+
+  @media screen and (min-width: $bp-md) {
+    padding: 1rem 3rem 1rem 2rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:hover .c-button__icon {
+    right: 0.5rem;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    transition: right 0.3s;
+  }
+
+  &__arrow::after {
+    display: block;
+    content: "";
+    background: url(../../../css/img/arrow-right.svg) center/cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.button--bg {
+  background-color: $color-white;
+
+  .button__text {
+    color: $color-main-dark;
+  }
+}
+
+.button--border {
+  border: solid $color-white 1px;
+
+  .button__text {
+    color: $color-white;
+  }
+}
+
+.button__icon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.button__icon-path {
+  fill: $color-white;
+
+  &--contact {
+    fill: $color-main-dark;
+  }
+}
+
+.button__text {
+  margin-left: 10px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: $color-white;
+}
