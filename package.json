@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "sass": "sass assets/sass/style.scss assets/css/style.css --style=expanded --no-source-map",
+    "sass:watch": "sass --watch assets/sass/style.scss:assets/css/style.css --style=expanded --no-source-map"
+  },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.1"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
   }
 }

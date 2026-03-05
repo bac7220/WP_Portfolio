@@ -1,0 +1,15 @@
+// ============================================================
+// Object / Component - Title
+// ============================================================
+
+.c-title {
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+
+  &__sub {
+    font-size: 1rem;
+    align-items: end;
+    margin-block: auto;
+    font-weight: 700;
+  }
+}

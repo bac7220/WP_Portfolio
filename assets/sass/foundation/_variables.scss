@@ -1,0 +1,43 @@
+// ============================================================
+// Foundation - Variables
+// ============================================================
+
+// ----------------------------
+// Colors
+// ----------------------------
+$color-main:        #688166;
+$color-main-dark:   #464f43;
+$color-main-light:  #b5deb2;
+$color-accent:      #58b467;
+$color-bg-light:    #fffff2;
+$color-bg-green:    #eef6f5;
+$color-bg-light-green: rgba(194, 200, 181, 0.8);
+$color-green-gradation-start: #c2c8b5;
+$color-text:        #555;
+$color-text-dark:   #333;
+$color-white:       #fff;
+$color-black:       #000;
+$color-gray:        #6f6f6f;
+$color-border:      #ddd;
+$color-error:       #e60000;
+$color-card-bg:     #fafafa;
+
+// ----------------------------
+// Typography
+// ----------------------------
+$font-base:   "Nunito Sans", "Noto Sans JP", sans-serif;
+$font-zen:    "Zen Old Mincho", serif;
+$font-inter:  "Inter", "Noto Sans JP", sans-serif;
+
+// ----------------------------
+// Breakpoints
+// ----------------------------
+$bp-md: 768px;
+$bp-lg: 1000px;
+$bp-xl: 1200px;
+
+// ----------------------------
+// Spacing / Layout
+// ----------------------------
+$inner-max-width: calc(1000px + 10vw);
+$inner-padding:   5vw;

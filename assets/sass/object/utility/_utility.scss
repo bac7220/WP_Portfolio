@@ -1,0 +1,76 @@
+// ============================================================
+// Object / Utility
+// ============================================================
+
+// Background
+.u-bg-light_green  { background-color: rgba(194, 200, 181, 0.8); }
+.u-bg-green        { position: relative; z-index: 2; background-color: #eef6f5; }
+.u-bg-white        { background-color: #fff; }
+.u-green_gradation { background: linear-gradient(135deg, #a8d5ba, #b5ead7, #c1e1c5, #d4edda, #e2f0d9); }
+.u-bg-header       { background-color: #688166; }
+.u-bg-dark-green   { background-color: #464f43; }
+.u-bg-gray         { background-color: #6f6f6f; }
+.u-bg-black        { background-color: #000; }
+.u-bg-main         { background-color: #b5deb2; }
+
+.u-bg-image_custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+// Position
+.u-pos-absolute { position: absolute; }
+
+// Display
+.u-display-block { display: block; }
+.u-display-flex  { display: flex; }
+.u-display-grid  { display: grid; }
+
+// Text
+.u-text-center { text-align: center; }
+.u-text-right  { text-align: right; }
+.u-text-left   { text-align: left; }
+.u-text-white  { color: #fff; }
+.u-white-color { color: #fff; }
+
+.svg-color { color: #fff; }
+
+.right {
+  width: 40px;
+  height: 40px;
+  color: red;
+}
+
+// Font
+.u-fz-1_5 { font-size: 1.5rem; }
+.u-fw-700  { font-weight: 700; }
+.u-fw-600  { font-weight: 600; }
+
+// Visibility
+.u-hidden-sp {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.u-hidden-pc {
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+// Spacing
+.u-mb-1   { margin-bottom: 1rem; }
+.u-mb-0_5 { margin-bottom: 0.5rem; }
+.u-ml-1   { margin-left: 1rem; }
+.u-mt-7vh  { margin-top: 7vh; }
+.u-mt-30vh { margin-top: 30vh; }
+.u-m-center { margin: auto; }
+.u-mt-4   { margin-top: 4px; }
