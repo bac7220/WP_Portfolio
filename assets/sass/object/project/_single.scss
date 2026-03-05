@@ -1,0 +1,114 @@
+// ============================================================
+// Object / Project - Single (Works)
+// ============================================================
+@use "../../foundation/variables" as *;
+
+.p-single {
+  padding: 60px 0;
+
+  @media screen and (min-width: $bp-md) {
+    padding: 100px 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+
+    @media screen and (min-width: $bp-md) {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+  }
+
+  &__info-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__info-heading h2 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    color: $color-main;
+  }
+
+  &__info-text {
+    font-family: $font-inter;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-black;
+
+    p { margin: 0; }
+  }
+
+  &__info-list {
+    font-family: $font-inter;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-black;
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    ul li { margin-bottom: 8px; }
+
+    p { margin: 0 0 8px 0; }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: $color-main-dark;
+    color: $color-white;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+
+    &:hover { opacity: 0.8; }
+
+    &-text {
+      font-family: $font-inter;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: normal;
+      color: $color-white;
+    }
+  }
+
+  &__right {
+    flex: 1;
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

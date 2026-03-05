@@ -1,0 +1,45 @@
+// ============================================================
+// Object / Component - Table
+// ============================================================
+@use "../../foundation/variables" as *;
+
+.price-table__container {
+  margin-block: 3em;
+}
+
+.c-price-table {
+  width: fit-content;
+  border-collapse: collapse;
+  margin: 2em auto;
+
+  th,
+  td {
+    background: #f7f7f7;
+    border: 1px solid $color-border;
+    padding: 0.7em 1em;
+    text-align: left;
+  }
+
+  th:first-child,
+  td:first-child {
+    width: 30%;
+    min-width: 140px;
+  }
+
+  th:last-child,
+  td:last-child {
+    vertical-align: middle;
+  }
+
+  th {
+    background: $color-main-dark;
+    color: $color-white;
+    font-weight: 700;
+  }
+
+  &__note {
+    margin-top: 1em;
+    font-size: 0.95em;
+    color: $color-text;
+  }
+}

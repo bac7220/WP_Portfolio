@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// ============================================================
+// style.scss - FLOCSS エントリーポイント
+// ============================================================
+
+// ------------------------------------------------------------
+// Foundation
+// ------------------------------------------------------------
+@use "foundation/variables";
+@use "foundation/base";
+@use "foundation/animation";
+
+// ------------------------------------------------------------
+// Layout
+// ------------------------------------------------------------
+@use "layout/main";
+@use "layout/section";
+@use "layout/grid";
+@use "layout/fv" as layout-fv;
+@use "layout/subpage";
+@use "layout/footer" as layout-footer;
+
+// ------------------------------------------------------------
+// Object / Component
+// ------------------------------------------------------------
+@use "object/component/button";
+@use "object/component/card";
+@use "object/component/img";
+@use "object/component/text";
+@use "object/component/title";
+@use "object/component/table";
+@use "object/component/drawer";
+
+// ------------------------------------------------------------
+// Object / Project
+// ------------------------------------------------------------
+@use "object/project/header";
+@use "object/project/fv";
+@use "object/project/service";
+@use "object/project/works";
+@use "object/project/about";
+@use "object/project/contact";
+@use "object/project/voice";
+@use "object/project/privacy";
+@use "object/project/single";
+@use "object/project/footer";
+@use "object/project/error";
+
+// ------------------------------------------------------------
+// Object / Utility
+// ------------------------------------------------------------
+@use "object/utility/utility";

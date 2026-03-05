@@ -1,0 +1,38 @@
+// ============================================================
+// Layout - Subpage
+// ============================================================
+
+.l-subpage {
+  display: grid;
+  background-color: #d3d3d3;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  grid-template-areas: "main sidebar" "footer footer";
+
+  &__main {
+    height: 1000px;
+    background-color: #a3c1da;
+    grid-area: main;
+  }
+
+  &__sidebar {
+    height: 1000px;
+    background-color: #b2e0b2;
+    grid-area: sidebar;
+  }
+
+  &__footer {
+    max-width: 100%;
+    height: 100px;
+    background-color: #d3d3d3;
+    grid-area: footer;
+  }
+
+  &__section {
+    padding-top: 200px;
+    background-color: rgba(194, 200, 181, 0.8);
+  }
+}

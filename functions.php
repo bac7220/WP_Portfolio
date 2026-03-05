@@ -11,21 +11,9 @@ function my_script_init()
     // destyle.cssの読み込み
     wp_enqueue_style("destyle", "https://unpkg.com/destyle.css@3.0.2/destyle.min.css", array(), "3.0.2", "all");
 
-    // テーマのスタイルシートの読み込み
-    wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path("/css/style.css")), "all");
-
-    //　問い合わせページのスタイル
-    if (is_page('contact')) {
-        wp_enqueue_style("contact-style", get_template_directory_uri() . "/css/contact.css", array(), filemtime(get_theme_file_path("/css/contact.css")), "all");
-    }
-    //　プライバシーポリシーのスタイル
-    if (is_page('privacy')) {
-        wp_enqueue_style("privacy-style", get_template_directory_uri() . "/css/privacy.css", array(), filemtime(get_theme_file_path("/css/privacy.css")), "all");
-    }
-    //　お客様の声のスタイル
-    if (is_front_page() || is_page('voice')) {
-        wp_enqueue_style("voice-style", get_template_directory_uri() . "/css/voice.css", array(), filemtime(get_theme_file_path("/css/voice.css")), "all");
-    }
+    // テーマのスタイルシートの読み込み（Sass コンパイル済み: assets/css/style.css）
+    // contact / privacy / voice のスタイルは style.scss に統合済み
+    wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.css", array(), filemtime(get_theme_file_path("/assets/css/style.css")), "all");
 
     // gsapを追加
     wp_enqueue_script("gsap-core", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);

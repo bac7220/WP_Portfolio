@@ -1,0 +1,83 @@
+// ============================================================
+// Object / Project - Privacy（privacy.cssから統合）
+// ============================================================
+@use "../../foundation/variables" as *;
+
+.p-privacy {
+  padding-block: 120px;
+
+  p,
+  li {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  li {
+    list-style: circle;
+    margin-left: 28px;
+  }
+
+  p + p {
+    margin-top: 12px;
+  }
+
+  p + ul {
+    margin-top: 24px;
+  }
+
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  &-inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 20px;
+  }
+
+  &__contents {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: #688165;
+    }
+  }
+
+  &__footer-data {
+    margin-top: 48px;
+    font-size: 20px;
+  }
+
+  &__footer-name {
+    font-size: 20px;
+  }
+}
+
+.wp-block-heading {
+  display: inline-block;
+  font-size: 24px;
+  margin-bottom: 32px;
+  margin-top: 24px;
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #b5deb3;
+  }
+}
