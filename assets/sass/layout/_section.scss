@@ -2,26 +2,27 @@
 // Layout - Section
 // ============================================================
 @use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
 
 .l-section {
   padding: 60px 0;
   position: relative;
+}
 
-  &__head {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 32px;
+.l-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 32px;
+}
 
-    &--center {
-      text-align: center;
-    }
-  }
+.l-section__head--center {
+  text-align: center;
+}
 
-  &__footer {
-    display: grid;
-    background: #aaa;
-  }
+.l-section__footer {
+  display: grid;
+  background: #aaa;
 }
 
 .section__lead-text {
@@ -42,7 +43,7 @@
 .l-button {
   text-align: center;
 
-  @media screen and (min-width: $bp-md) {
+  @include mq(pc) {
     text-align: end;
   }
 }

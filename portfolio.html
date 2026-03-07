@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WEB制作 おくだ屋</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --green:     #4a6741;
+    --green-mid: #6d8f62;
+    --green-lt:  #b8ceaf;
+    --green-bg:  #eef4eb;
+    --cream:     #faf8f4;
+    --sand:      #f2ede6;
+    --charcoal:  #2c2c2c;
+    --mid:       #5a5a5a;
+    --muted:     #9a9a9a;
+    --line:      #e4ddd5;
+    --photo-bg:  #d5d0c8;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 28px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250,248,244,.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--green);
+    letter-spacing: .04em;
+  }
+  nav { display: flex; align-items: center; gap: 36px; }
+  nav a {
+    font-size: .78rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color .25s;
+  }
+  nav a:hover { color: var(--green); }
+  .btn-contact {
+    padding: 10px 24px;
+    background: var(--green);
+    color: #fff !important;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: background .25s, transform .2s !important;
+  }
+  .btn-contact:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    padding: 140px 48px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-bg);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(1.4)}
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+  .hero-text {
+    font-size: .9rem;
+    color: var(--mid);
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+  .hero-cta {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    transition: background .25s, transform .2s, box-shadow .25s;
+    box-shadow: 0 4px 20px rgba(74,103,65,.25);
+  }
+  .btn-primary:hover {
+    background: var(--green-mid);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(74,103,65,.3);
+  }
+  .btn-secondary {
+    padding: 14px 28px;
+    color: var(--green);
+    border: 1.5px solid var(--green-lt);
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: .85rem;
+    letter-spacing: .06em;
+    transition: border-color .25s, background .25s;
+  }
+  .btn-secondary:hover { background: var(--green-bg); border-color: var(--green); }
+
+  /* Hero Photo */
+  .hero-visual {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 160px;
+    gap: 12px;
+  }
+  .photo-block {
+    background: var(--photo-bg);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-block::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 12px; left: 12px;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    background: rgba(0,0,0,.18);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .photo-block svg { opacity: .35; }
+  .photo-main { grid-column: 1 / 3; }
+  .photo-sub1 { grid-column: 1; }
+  .photo-sub2 { grid-column: 2; }
+  .hero-deco {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: var(--green-bg);
+    z-index: -1;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 112px 48px; }
+  .inner { max-width: 1160px; margin: 0 auto; }
+  .section-label {
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.3;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: .9rem;
+    color: var(--mid);
+    max-width: 560px;
+    line-height: 2;
+  }
+  .divider {
+    width: 48px; height: 2px;
+    background: var(--green-lt);
+    margin: 24px 0 56px;
+    border-radius: 2px;
+  }
+
+  /* ── ABOUT / INTRO ── */
+  .intro { background: var(--sand); }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .intro-photo {
+    background: var(--photo-bg);
+    border-radius: var(--radius-lg);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-photo svg { opacity: .3; }
+  .intro-photo-label {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.8);
+    background: rgba(0,0,0,.2);
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+  .intro-stats {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .stat-card {
+    padding: 24px;
+    background: var(--cream);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label { font-size: .75rem; color: var(--mid); }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .skill-card {
+    padding: 36px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    transition: box-shadow .3s, transform .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--green-lt));
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .skill-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.07); transform: translateY(-4px); }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-icon {
+    width: 52px; height: 52px;
+    background: var(--green-bg);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+  }
+  .skill-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--charcoal);
+  }
+  .skill-desc { font-size: .82rem; color: var(--mid); line-height: 1.9; margin-bottom: 20px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: .68rem;
+    letter-spacing: .06em;
+    padding: 5px 12px;
+    background: var(--green-bg);
+    color: var(--green);
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .tools-card {
+    padding: 36px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+  .tools-label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .tools-list { display: flex; gap: 20px; flex-wrap: wrap; }
+  .tool-item {
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--mid);
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    transition: border-color .2s, color .2s;
+  }
+  .tool-item:hover { border-color: var(--green-lt); color: var(--green); }
+
+  /* ── WORK STYLE ── */
+  .workstyle { background: var(--sand); }
+  .ws-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .ws-card {
+    padding: 32px 24px;
+    background: var(--cream);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    transition: box-shadow .25s;
+  }
+  .ws-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+  .ws-icon {
+    width: 44px; height: 44px;
+    background: var(--green-bg);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--green);
+  }
+  .ws-title { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--charcoal); }
+  .ws-text { font-size: .78rem; color: var(--mid); line-height: 1.9; }
+
+  /* ── PRICING ── */
+  .pricing-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 24px rgba(0,0,0,.04);
+  }
+  .pricing-table thead { background: var(--green-bg); }
+  .pricing-table th {
+    padding: 20px 28px;
+    text-align: left;
+    font-size: .75rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+  .pricing-table td {
+    padding: 22px 28px;
+    border-top: 1px solid var(--line);
+    font-size: .88rem;
+  }
+  .pricing-table tr:hover td { background: var(--cream); }
+  .price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .pricing-note {
+    margin-top: 24px;
+    padding: 24px 32px;
+    background: var(--green-bg);
+    border-radius: var(--radius-md);
+    font-size: .82rem;
+    color: var(--mid);
+    line-height: 1.9;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .pricing-note::before { content: '✦'; color: var(--green); margin-top: 2px; flex-shrink: 0; }
+
+  /* ── VALUES ── */
+  .values { background: var(--green); }
+  .values .section-label { color: var(--green-lt); }
+  .values .section-title { color: #fff; }
+  .values .divider { background: var(--green-lt); }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .value-card {
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,.06);
+    backdrop-filter: blur(8px);
+    transition: background .3s;
+  }
+  .value-card:hover { background: rgba(255,255,255,.1); }
+  .value-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .value-icon { font-size: 1.2rem; }
+  .value-card p { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 2; }
+
+  /* ── FLOW ── */
+  .flow { background: var(--sand); }
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 14%; right: 14%;
+    height: 1px;
+    background: var(--green-lt);
+    z-index: 0;
+  }
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .flow-dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--green-lt);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem;
+    margin-bottom: 20px;
+    transition: background .25s, border-color .25s;
+    color: var(--green);
+  }
+  .flow-step:hover .flow-dot { background: var(--green); border-color: var(--green); color: #fff; }
+  .flow-step-title { font-size: .8rem; font-weight: 700; margin-bottom: 8px; color: var(--charcoal); }
+  .flow-step-desc { font-size: .7rem; color: var(--mid); line-height: 1.8; }
+
+  /* ── CONTACT ── */
+  .contact {
+    text-align: center;
+    padding: 140px 48px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--green-bg) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact .inner { position: relative; z-index: 1; }
+  .contact .section-title { font-size: clamp(2rem, 4vw, 3.2rem); margin: 0 auto 20px; max-width: 700px; }
+  .contact-desc { font-size: .92rem; color: var(--mid); margin-bottom: 48px; line-height: 2; }
+  .btn-contact-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 48px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    box-shadow: 0 8px 32px rgba(74,103,65,.3);
+    transition: background .25s, transform .2s, box-shadow .25s;
+  }
+  .btn-contact-lg:hover {
+    background: var(--green-mid);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(74,103,65,.35);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: .75rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy { font-size: .72rem; color: var(--muted); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+  .fade-up:nth-child(2) { transition-delay: .1s; }
+  .fade-up:nth-child(3) { transition-delay: .2s; }
+  .fade-up:nth-child(4) { transition-delay: .3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { padding: 0 24px; }
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 120px 24px 80px; gap: 48px; }
+    section { padding: 80px 24px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .ws-grid { grid-template-columns: repeat(2, 1fr); }
+    .flow-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .flow-steps::before { display: none; }
+    .values-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .tools-card { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">おくだ屋</div>
+  <nav>
+    <a href="#skills">Skills</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#flow">Flow</a>
+    <a href="#contact" class="btn-contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="padding:0;">
+  <div class="hero">
+    <div>
+      <div class="hero-badge">Available for new projects</div>
+      <h1>コーディングから<br/>WordPress構築まで<br/><em>丁寧に完遂します。</em></h1>
+      <p class="hero-text">AIには出来ない細やかな汲み取り力で、デザインを忠実にコードへ。<br/>フロントエンド実装からWordPress構築・本番公開まで一貫してお任せください。</p>
+      <p class="hero-text">ディレクター様の手戻りやストレスを最小化することを意識し、コードをしっかり理解した状態でのお渡しを前提に動いています。</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">プロジェクトを相談する</a>
+        <a href="#skills" class="btn-secondary">スキルを見る</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="photo-block photo-main" data-label="Works">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="photo-block photo-sub1" data-label="Profile">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="photo-block photo-sub2" data-label="Setup">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+      </div>
+      <div class="hero-deco"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="inner">
+    <div class="intro-grid">
+      <div class="intro-photo">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><circle cx="12" cy="8" r="5"/><path d="M3 22c0-5 4-9 9-9s9 4 9 9"/></svg>
+        <div class="intro-photo-label">Profile Photo</div>
+      </div>
+      <div>
+        <p class="section-label fade-up">About</p>
+        <h2 class="section-title fade-up">フリーランスの<br/>Webデベロッパーです。</h2>
+        <div class="divider fade-up"></div>
+        <p class="section-desc fade-up" style="margin-bottom:16px;">
+          製造業からWebの世界へキャリアチェンジ。コードの一行一行に責任を持ち、「なぜこう書くか」を説明できる状態で納品することをポリシーにしています。
+        </p>
+        <p class="section-desc fade-up">
+          名古屋を拠点にフリーランスとして活動中。複数の制作会社様と継続的にお取引いただいています。
+        </p>
+        <div class="intro-stats fade-up">
+          <div class="stat-card">
+            <div class="stat-num">50h+</div>
+            <div class="stat-label">週の稼働時間</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3h</div>
+            <div class="stat-label">平均レスポンス</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5:00〜</div>
+            <div class="stat-label">朝から稼働開始</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">土日</div>
+            <div class="stat-label">柔軟に対応</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <p class="section-label fade-up">Skills</p>
+    <h2 class="section-title fade-up">できること</h2>
+    <div class="divider fade-up"></div>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-icon">🖥️</div>
+        <div class="skill-name">HTML / CSS</div>
+        <p class="skill-desc">BEM・FLOCSSを用いた設計。納品後に社内エンジニアが触りやすい、保守性の高いコーディングを行います。</p>
+        <div class="skill-tags">
+          <span class="tag">BEM</span>
+          <span class="tag">FLOCSS</span>
+          <span class="tag">SCSS</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">JavaScript</div>
+        <p class="skill-desc">jQuery・GSAP・Swiperを用いたアニメーション実装。リッチな演出から軽量なライブラリ選定まで幅広く対応。</p>
+        <div class="skill-tags">
+          <span class="tag">jQuery</span>
+          <span class="tag">GSAP</span>
+          <span class="tag">Swiper</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">WordPress</div>
+        <p class="skill-desc">オリジナルテーマ構築・カスタム投稿タイプ・カスタムフィールドの設定。管理者が使いやすい管理画面を提案します。</p>
+        <div class="skill-tags">
+          <span class="tag">Theme Dev</span>
+          <span class="tag">ACF</span>
+          <span class="tag">Local</span>
+        </div>
+      </div>
+    </div>
+    <div class="tools-card fade-up">
+      <div>
+        <div class="tools-label">対応デザインツール</div>
+        <div class="tools-list">
+          <span class="tool-item">Figma</span>
+          <span class="tool-item">Adobe XD</span>
+          <span class="tool-item">Photoshop</span>
+          <span class="tool-item">Canva</span>
+        </div>
+      </div>
+      <div style="border-left:1px solid var(--line);padding-left:48px;flex:1;">
+        <p style="font-size:.82rem;color:var(--mid);line-height:2;">デザインデータ・既存サイトのトレース・PDFデータからのコーディングなど、<br/>素材の形式を問わず対応させていただきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK STYLE -->
+<section class="workstyle">
+  <div class="inner">
+    <p class="section-label fade-up">Work Style</p>
+    <h2 class="section-title fade-up">稼働体制</h2>
+    <div class="divider fade-up"></div>
+    <div class="ws-grid">
+      <div class="ws-card fade-up">
+        <div class="ws-icon">🕔</div>
+        <div class="ws-title">メイン稼働時間</div>
+        <p class="ws-text">5:00〜11:00 / 13:00〜17:00<br/>土日祝も柔軟に対応します。</p>
+      </div>
+      <div class="ws-card fade-up">
+        <div class="ws-icon">⚡</div>
+        <div class="ws-title">レスポンス速度</div>
+        <p class="ws-text">基本3時間以内<br/>（遅くとも12時間以内）</p>
+      </div>
+      <div class="ws-card fade-up">
+        <div class="ws-icon">📅</div>
+        <div class="ws-title">週の稼働時間</div>
+        <p class="ws-text">50時間〜（フルコミット可）<br/>急ぎの案件もご相談ください。</p>
+      </div>
+      <div class="ws-card fade-up">
+        <div class="ws-icon">💬</div>
+        <div class="ws-title">使用ツール</div>
+        <p class="ws-text">Slack / Chatwork / Zoom<br/>Google Meet / LINE など</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="inner">
+    <p class="section-label fade-up">Pricing</p>
+    <h2 class="section-title fade-up">項目参考価格</h2>
+    <div class="divider fade-up"></div>
+    <table class="pricing-table fade-up">
+      <thead>
+        <tr>
+          <th>項目名</th>
+          <th>参考価格（税込）</th>
+          <th>備考・詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>トップページコーディング</td><td><span class="price">50,000円〜</span></td><td style="font-size:.8rem;color:var(--mid);">レスポンシブ対応込 / 標準的なJS込</td></tr>
+        <tr><td>下層ページコーディング</td><td><span class="price">20,000円〜 / 1P</span></td><td style="font-size:.8rem;color:var(--mid);">ボリュームにより変動</td></tr>
+        <tr><td>LPコーディング</td><td><span class="price">100,000円〜</span></td><td style="font-size:.8rem;color:var(--mid);">長さ・アニメーション量により変動</td></tr>
+        <tr><td>WordPress組み込み</td><td><span class="price">50,000円〜</span></td><td style="font-size:.8rem;color:var(--mid);">カスタム投稿1つ・カスタムフィールド3つまで</td></tr>
+        <tr><td>サーバーアップロード</td><td><span class="price">30,000円〜</span></td><td style="font-size:.8rem;color:var(--mid);">本番環境への移行・初期設定・Basic認証など</td></tr>
+        <tr><td>各種タグ・ツール設置</td><td><span class="price">5,000円〜</span></td><td style="font-size:.8rem;color:var(--mid);">GA4 / GTM / Clarity など計測タグ設置</td></tr>
+      </tbody>
+    </table>
+    <div class="pricing-note fade-up">
+      <div>
+        <strong style="color:var(--green);display:block;margin-bottom:6px;">アフターフォロー（保証期間）について</strong>
+        納品後1ヶ月間は表示崩れなどの不具合を無償で修正対応いたします。また、当方の瑕疵によるバグは期間を問わず無償で対応させていただきます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="inner">
+    <p class="section-label fade-up">Values</p>
+    <h2 class="section-title fade-up">大切にしていること</h2>
+    <div class="divider fade-up"></div>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <h3><span class="value-icon">🏗️</span>保守性を意識した設計</h3>
+        <p>「誰が触っても分かる」コードを書くことを意識しています。命名規則・ファイル構成を統一し、コメントを丁寧に残すことで、納品後の運用コストを下げます。</p>
+      </div>
+      <div class="value-card fade-up">
+        <h3><span class="value-icon">📱</span>レスポンシブへのこだわり</h3>
+        <p>スマートフォンでの体験を後付けではなく、最初から設計に組み込みます。様々なデバイスで崩れのない実装を前提に、デザインの意図を正確に反映します。</p>
+      </div>
+      <div class="value-card fade-up">
+        <h3><span class="value-icon">💬</span>コミュニケーションコスト最小化</h3>
+        <p>曖昧なまま進めることはしません。不明点はすぐに確認し、進捗は定期的に共有。ディレクターの方が「次に何をすべきか」を常に把握できる状態を維持します。</p>
+      </div>
+      <div class="value-card fade-up">
+        <h3><span class="value-icon">🎯</span>ユーザビリティへの配慮</h3>
+        <p>見た目の再現だけでなく、使いやすさの観点からも実装を検討します。フォームの動作・読み込み速度・アクセシビリティなど、ユーザー体験に関わる部分を意識します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow" id="flow">
+  <div class="inner">
+    <p class="section-label fade-up">Flow</p>
+    <h2 class="section-title fade-up">制作の流れ</h2>
+    <div class="divider fade-up"></div>
+    <div class="flow-steps fade-up">
+      <div class="flow-step">
+        <div class="flow-dot">📩</div>
+        <div class="flow-step-title">お問い合わせ</div>
+        <p class="flow-step-desc">フォームより<br/>お気軽にどうぞ</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-dot">🤝</div>
+        <div class="flow-step-title">ヒアリング</div>
+        <p class="flow-step-desc">Zoom / Meet で<br/>詳細をすり合わせ</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-dot">📋</div>
+        <div class="flow-step-title">お見積り</div>
+        <p class="flow-step-desc">1〜2営業日以内に<br/>提示します</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-dot">⌨️</div>
+        <div class="flow-step-title">実装・構築</div>
+        <p class="flow-step-desc">テストサイトで<br/>進捗を随時共有</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-dot">✏️</div>
+        <div class="flow-step-title">修正・確認</div>
+        <p class="flow-step-desc">納得いくまで<br/>繰り返します</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-dot">🚀</div>
+        <div class="flow-step-title">納品・公開</div>
+        <p class="flow-step-desc">本番公開または<br/>データ引き渡し</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="inner">
+    <p class="section-label fade-up">Contact</p>
+    <h2 class="section-title fade-up">プロジェクトのご相談はこちら</h2>
+    <div class="divider fade-up" style="margin:20px auto 40px;"></div>
+    <p class="contact-desc fade-up">
+      コーディングのみ・WordPress構築・既存サイトの修正など、<br/>
+      規模の大小を問わずまずはお気軽にご相談ください。
+    </p>
+    <a href="mailto:info@web-okuda.com" class="btn-contact-lg fade-up">
+      お問い合わせ
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">おくだ屋</div>
+  <div class="footer-links">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">利用規約</a>
+  </div>
+  <p class="footer-copy">© 2024 WEB制作 おくだ屋 All rights reserved.</p>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

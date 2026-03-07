@@ -2,9 +2,13 @@
 // Object / Project - FV (First View)
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
-.p-fv {
-  &__video {
+
+
+
+.p-fv__video {
+
     position: absolute;
     top: 0;
     left: 0;
@@ -13,24 +17,24 @@
     object-fit: cover;
   }
 
-  &__heading-main {
-    font-size: clamp(2rem, 4.507vw + 0.944rem, 5rem);
-    font-weight: 700;
-    color: $color-white;
-    letter-spacing: 2px;
+.p-fv__heading-main {
+  font-size: clamp(2rem, 4.507vw + 0.944rem, 5rem);
+  font-weight: 700;
+  color: $color-white;
+  letter-spacing: 2px;
 
-    span {
-      display: inline-block;
-    }
-
-    &.reverse {
-      color: $color-white;
-    }
+  span {
+    display: inline-block;
   }
 
-  &__heading-sub {
-    font-size: clamp(1rem, 0.657vw + 0.596rem, 1.1875rem);
-    line-height: 2;
+  &.reverse {
     color: $color-white;
   }
 }
+
+.p-fv__heading-sub {
+  font-size: clamp(1rem, 0.657vw + 0.596rem, 1.1875rem);
+  line-height: 2;
+  color: $color-white;
+}
+

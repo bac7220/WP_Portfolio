@@ -2,24 +2,31 @@
 // Object / Project - Footer
 // ============================================================
 
-.p-footer {
-  &__contact::before {
+@use "../../foundation/mixin" as *;
+
+
+
+
+
+.p-footer__contact {
+  &::before {
     display: block;
     content: "";
     background: url(../../../img/ico_mail.svg) center/cover no-repeat;
     width: 20px;
     height: 20px;
   }
-
-  &__item-top {
-    display: grid;
-    padding: 30px 0 12px;
-    place-items: center;
-  }
-
-  &__item-bottom {
-    display: grid;
-    padding: 12px 0 30px;
-    place-items: center;
-  }
 }
+
+.p-footer__item-top {
+  display: grid;
+  padding: 30px 0 12px;
+  place-items: center;
+}
+
+.p-footer__item-bottom {
+  display: grid;
+  padding: 12px 0 30px;
+  place-items: center;
+}
+

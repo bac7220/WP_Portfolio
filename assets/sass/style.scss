@@ -10,6 +10,7 @@
 @use "foundation/variables";
 @use "foundation/base";
 @use "foundation/animation";
+@use "foundation/mixin" as *;
 
 // ------------------------------------------------------------
 // Layout
@@ -46,6 +47,12 @@
 @use "object/project/single";
 @use "object/project/footer";
 @use "object/project/error";
+@use "object/project/partner-hero";
+@use "object/project/skills";
+@use "object/project/operation";
+@use "object/project/pricing";
+@use "object/project/flow";
+@use "object/project/thought";
 
 // ------------------------------------------------------------
 // Object / Utility

@@ -1,15 +1,17 @@
 // ============================================================
 // Object / Component - Title
 // ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .c-title {
   font-size: 3.5rem;
   letter-spacing: 0.1em;
+}
 
-  &__sub {
-    font-size: 1rem;
-    align-items: end;
-    margin-block: auto;
-    font-weight: 700;
-  }
+.c-title__sub {
+  font-size: 1rem;
+  align-items: end;
+  margin-block: auto;
+  font-weight: 700;
 }

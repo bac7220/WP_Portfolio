@@ -1,23 +1,25 @@
 // ============================================================
 // Object / Project - Error 404
 // ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .p-error-404 {
   display: grid;
   background-color: #fff;
   padding: 20px;
   margin-bottom: 170px;
+}
 
-  &__title {
-    font-size: clamp(2rem, 2.381vw + 0.857rem, 3rem);
-    margin-bottom: 16px;
-  }
+.p-error-404__title {
+  font-size: clamp(2rem, 2.381vw + 0.857rem, 3rem);
+  margin-bottom: 16px;
+}
 
-  &__text {
-    line-height: 1.6;
-  }
+.p-error-404__text {
+  line-height: 1.6;
+}
 
-  &__button {
-    text-align: right;
-  }
+.p-error-404__button {
+  text-align: right;
 }

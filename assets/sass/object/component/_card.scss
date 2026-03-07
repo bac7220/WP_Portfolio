@@ -2,6 +2,7 @@
 // Object / Component - Card
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .c-card-wrapper {
   display: flex;
@@ -19,84 +20,88 @@
   border-radius: 6px;
   opacity: 0;
   transform: translateY(50px);
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
 
   &.js-fade-in {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  &__img {
-    display: block;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
+.c-card__img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
 
-    img {
-      object-fit: cover;
-      transition: all 0.3s;
-    }
+.c-card__img img {
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.c-card__link:hover .c-card__img img {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.c-card__title {
+  letter-spacing: 1.2px;
+  font-size: clamp(16px, 0.751vw + 13.183px, 24px);
+  font-weight: bold;
+}
+
+.c-card__text {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+  text-align: justify;
+
+  @include mq(pc) {
+    font-size: 16px;
   }
+}
 
-  &__link:hover &__img img {
-    transform: scale(1.2);
-    opacity: 0.8;
+.c-card__footer {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(pc) {
+    margin-right: 0;
   }
+}
 
-  &__title {
-    letter-spacing: 1.2px;
-    font-size: clamp(16px, 0.751vw + 13.183px, 24px);
-    font-weight: bold;
-  }
+.c-card__user-name,
+.c-card__pass {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
 
-  &__text {
-    font-size: 12px;
-    line-height: 1.6;
-    letter-spacing: 1.2px;
-    text-align: justify;
+.c-card__footer-text {
+  font-weight: bold;
+  margin-block: auto;
+}
 
-    @media screen and (min-width: $bp-md) {
-      font-size: 16px;
-    }
-  }
+.c-card__footer-btn {
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: #b5dfb3;
+  padding: 10px;
+  border-right: #000 solid 3px;
+  border-bottom: #000 solid 3px;
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 
-  &__footer {
-    margin-left: auto;
-    margin-right: auto;
-
-    @media screen and (min-width: $bp-md) {
-      margin-right: 0;
-    }
-  }
-
-  &__user-name,
-  &__pass {
-    display: flex;
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
-
-  &__footer-text {
-    font-weight: bold;
-    margin-block: auto;
-  }
-
-  &__footer-btn {
-    overflow: hidden;
-    border-radius: 3px;
-    background-color: #b5dfb3;
-    padding: 10px;
-    border-right: #000 solid 3px;
-    border-bottom: #000 solid 3px;
-    position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-
-    &:hover {
-      border-right: 3px solid #b5dfb3;
-      border-bottom: 3px solid #b5dfb3;
-      transform: translate(3px, 3px);
-    }
+  &:hover {
+    border-right: 3px solid #b5dfb3;
+    border-bottom: 3px solid #b5dfb3;
+    transform: translate(3px, 3px);
   }
 }
 
@@ -105,54 +110,56 @@
   padding: 16px;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   background-color: $color-card-bg;
+}
 
-  &__img {
-    display: block;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
+.c-card-swiper__img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
 
-    img {
-      object-fit: cover;
-      transition: all 0.3s;
-      width: 100%;
-      height: 100%;
-    }
-  }
+.c-card-swiper__img img {
+  object-fit: cover;
+  transition: all 0.3s;
+  width: 100%;
+  height: 100%;
 }
 
 // Service card
 .c-service__card {
   opacity: 0;
   transform: translateY(50px);
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
 
   &.js-fade-in {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  &-inner {
-    display: flex;
-    gap: 16px;
-  }
+.c-service__card-inner {
+  display: flex;
+  gap: 16px;
+}
 
-  &-img {
-    width: 48px;
-    height: auto;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
+.c-service__card-img {
+  width: 48px;
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
+.c-service__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-  &-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
+.c-service__card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
 }

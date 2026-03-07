@@ -1,6 +1,8 @@
 // ============================================================
 // Object / Component - Image
 // ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .c-img {
   display: block;
@@ -16,10 +18,10 @@
     object-fit: cover;
     border-radius: 6px;
   }
+}
 
-  &__top {
-    object-fit: contain;
-    aspect-ratio: 1 / 1;
-    border-radius: 6px;
-  }
+.c-img__top {
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
 }
