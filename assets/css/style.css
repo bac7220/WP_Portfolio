@@ -2302,6 +2302,75 @@ p {
   color: #475569;
 }
 
+.p-flow {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.p-flow__container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.p-flow__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.p-flow__title span {
+  color: #5b7052;
+  font-family: "JetBrains Mono", monospace;
+}
+.p-flow__timeline {
+  position: relative;
+}
+.p-flow__timeline-line {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e2e8f0;
+}
+.p-flow__step {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 3rem;
+}
+.p-flow__step:last-child {
+  padding-bottom: 0;
+}
+.p-flow__step-dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background-color: #5b7052;
+  border: 4px solid #fff;
+  z-index: 10;
+  transition: transform 0.15s ease-in-out;
+}
+.p-flow__step:hover .p-flow__step-dot {
+  transform: scale(1.25);
+}
+.p-flow__step-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+.p-flow__step-description {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
 .u-bg-light_green {
   background-color: rgba(194, 200, 181, 0.8);
 }

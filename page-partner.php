@@ -234,42 +234,42 @@
       </div>
     </div>
   </section>
-  <section class="py-24" id="flow">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-16 text-center flex items-center justify-center gap-3">
-        <span class="text-primary font-mono">04.</span> 制作フロー
+  <section class="p-flow" id="flow">
+    <div class="p-flow__container">
+      <h2 class="p-flow__title">
+        <span>04.</span> 制作フロー
       </h2>
-      <div class="space-y-0 relative">
-        <div class="absolute left-[7px] top-0 bottom-0 w-[2px] bg-slate-200 dark:bg-white/10"></div>
-        <div class="relative pl-10 pb-12 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">お問い合わせ</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">まずは当サイトのコンタクトフォームよりお気軽にお問い合わせください。メールでのやり取りの後、ビデオツールにて打ち合わせを行います。</p>
+      <div class="p-flow__timeline">
+        <div class="p-flow__timeline-line"></div>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">お問い合わせ</h3>
+          <p class="p-flow__step-description">まずは当サイトのコンタクトフォームよりお気軽にお問い合わせください。メールでのやり取りの後、ビデオツールにて打ち合わせを行います。</p>
         </div>
-        <div class="relative pl-10 pb-12 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">お打ち合わせ・ヒアリング</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">ZoomやGoogle Meetなどで、ご依頼内容の詳細、作業範囲や条件などのすり合わせを行います。</p>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">お打ち合わせ・ヒアリング</h3>
+          <p class="p-flow__step-description">ZoomやGoogle Meetなどで、ご依頼内容の詳細、作業範囲や条件などのすり合わせを行います。</p>
         </div>
-        <div class="relative pl-10 pb-12 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">お見積り・スケジュール提示</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">打ち合わせ後、原則1-2営業日以内に正式なお見積書と納品までのスケジュールを提示させていただきます。</p>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">お見積り・スケジュール提示</h3>
+          <p class="p-flow__step-description">打ち合わせ後、原則1-2営業日以内に正式なお見積書と納品までのスケジュールを提示させていただきます。</p>
         </div>
-        <div class="relative pl-10 pb-12 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">コーディング実装・WP構築</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">デザインを元にSEOに配慮した実装を行います。中間報告としてテストサイトに制作過程をアップし、随時共有いたします。</p>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">コーディング実装・WP構築</h3>
+          <p class="p-flow__step-description">デザインを元にSEOに配慮した実装を行います。中間報告としてテストサイトに制作過程をアップし、随時共有いたします。</p>
         </div>
-        <div class="relative pl-10 pb-12 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">修正・改修</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">コーディング後、修正、報告を繰り返し、問題がなければ納品へと進みます。</p>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">修正・改修</h3>
+          <p class="p-flow__step-description">コーディング後、修正、報告を繰り返し、問題がなければ納品へと進みます。</p>
         </div>
-        <div class="relative pl-10 group">
-          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark group-hover:scale-125 transition-transform z-10"></div>
-          <h3 class="font-bold text-xl mb-2 dark:text-white">納品・本番公開</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-sm">本番公開、またはデータ引き渡しを持って納品とさせていただきます。</p>
+        <div class="p-flow__step">
+          <div class="p-flow__step-dot"></div>
+          <h3 class="p-flow__step-title">納品・本番公開</h3>
+          <p class="p-flow__step-description">本番公開、またはデータ引き渡しを持って納品とさせていただきます。</p>
         </div>
       </div>
     </div>
