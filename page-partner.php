@@ -316,19 +316,7 @@
       </div>
     </div>
   </section>
-  <section class="py-32" id="contact">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 dark:text-white">プロジェクトのご相談はこちら</h2>
-      <p class="text-slate-500 dark:text-slate-400 mb-12">
-        コーディングのみ、WordPress構築、既存サイトの修正など、<br />
-        規模の大小を問わずまずはお気軽にご相談ください。
-      </p>
-      <a class="inline-flex items-center gap-4 px-10 py-5 bg-primary text-black text-xl font-bold rounded hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all transform hover:-translate-y-1 rounded-full" href="mailto:example@domain.com">
-        CONTACT ME
-        <span class="material-icons-round">arrow_forward</span>
-      </a>
-    </div>
-  </section>
+ 
 
 
   <?php get_template_part('template/footer-item'); ?>
