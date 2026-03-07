@@ -2,86 +2,91 @@
 // Object / Project - Voice（voice.cssから統合）
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .p-voice {
-  &__items {
-    display: flex;
-    flex-direction: column;
+  // Placeholder
+}
+
+.p-voice__items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.p-voice__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: $color-white;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  align-items: center;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+
+  &.js-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px;
     gap: 40px;
   }
+}
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px;
-    background-color: $color-white;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-    align-items: center;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.8s ease, opacity 0.8s ease;
+.p-voice__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
 
-    &.js-fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.p-voice__img {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $color-white;
+  overflow: hidden;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 
-    @media screen and (min-width: $bp-md) {
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 40px;
-      gap: 40px;
-    }
+  @include mq(pc) {
+    margin: 0;
+    width: 150px;
+    height: 150px;
   }
 
-  &__meta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    flex-shrink: 0;
-  }
-
-  &__img {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background-color: $color-white;
-    overflow: hidden;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-
-    @media screen and (min-width: $bp-md) {
-      margin: 0;
-      width: 150px;
-      height: 150px;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  &__name {
-    font-weight: 700;
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0.05em;
-  }
-
-  &__text-box {
-    flex-grow: 1;
+  img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
+}
 
-  &__text {
-    line-height: 1.8;
-    font-size: 16px;
-    text-align: justify;
-  }
+.p-voice__name {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.p-voice__text-box {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.p-voice__text {
+  line-height: 1.8;
+  font-size: 16px;
+  text-align: justify;
 }

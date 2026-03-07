@@ -1735,6 +1735,7 @@ p {
   flex-direction: column;
   gap: 40px;
 }
+
 .p-voice__item {
   display: flex;
   flex-direction: column;
@@ -1760,6 +1761,7 @@ p {
     gap: 40px;
   }
 }
+
 .p-voice__meta {
   display: flex;
   flex-direction: column;
@@ -1767,6 +1769,7 @@ p {
   gap: 16px;
   flex-shrink: 0;
 }
+
 .p-voice__img {
   width: 120px;
   height: 120px;
@@ -1789,16 +1792,19 @@ p {
   height: 100%;
   object-fit: contain;
 }
+
 .p-voice__name {
   font-weight: 700;
   font-size: 16px;
   text-align: center;
   letter-spacing: 0.05em;
 }
+
 .p-voice__text-box {
   flex-grow: 1;
   width: 100%;
 }
+
 .p-voice__text {
   line-height: 1.8;
   font-size: 16px;
