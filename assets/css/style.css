@@ -237,6 +237,7 @@ p {
 .c-button:hover .c-button__icon {
   right: 0.5rem;
 }
+
 .c-button__icon {
   position: absolute;
   top: 50%;
@@ -244,6 +245,7 @@ p {
   transform: translateY(-50%);
   transition: right 0.3s;
 }
+
 .c-button__arrow::after {
   display: block;
   content: "";
@@ -255,6 +257,7 @@ p {
 .button--bg {
   background-color: #fff;
 }
+
 .button--bg .button__text {
   color: #464f43;
 }
@@ -262,6 +265,7 @@ p {
 .button--border {
   border: solid #fff 1px;
 }
+
 .button--border .button__text {
   color: #fff;
 }
@@ -308,6 +312,7 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
 .c-card__img {
   display: block;
   aspect-ratio: 4/3;
@@ -315,19 +320,23 @@ p {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   transition: all 0.3s;
 }
+
 .c-card__img img {
   object-fit: cover;
   transition: all 0.3s;
 }
+
 .c-card__link:hover .c-card__img img {
   transform: scale(1.2);
   opacity: 0.8;
 }
+
 .c-card__title {
   letter-spacing: 1.2px;
   font-size: clamp(16px, 0.751vw + 13.183px, 24px);
   font-weight: bold;
 }
+
 .c-card__text {
   font-size: 12px;
   line-height: 1.6;
@@ -339,6 +348,7 @@ p {
     font-size: 16px;
   }
 }
+
 .c-card__footer {
   margin-left: auto;
   margin-right: auto;
@@ -348,15 +358,19 @@ p {
     margin-right: 0;
   }
 }
-.c-card__user-name, .c-card__pass {
+
+.c-card__user-name,
+.c-card__pass {
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
 }
+
 .c-card__footer-text {
   font-weight: bold;
   margin-block: auto;
 }
+
 .c-card__footer-btn {
   overflow: hidden;
   border-radius: 3px;
@@ -378,6 +392,7 @@ p {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   background-color: #fafafa;
 }
+
 .c-card-swiper__img {
   display: block;
   aspect-ratio: 4/3;
@@ -385,6 +400,7 @@ p {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   transition: all 0.3s;
 }
+
 .c-card-swiper__img img {
   object-fit: cover;
   transition: all 0.3s;
@@ -401,21 +417,25 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
 .c-service__card-inner {
   display: flex;
   gap: 16px;
 }
+
 .c-service__card-img {
   width: 48px;
   height: auto;
   overflow: hidden;
   aspect-ratio: 1/1;
 }
+
 .c-service__card-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+
 .c-service__card-title {
   font-size: 1.5rem;
   font-weight: 700;

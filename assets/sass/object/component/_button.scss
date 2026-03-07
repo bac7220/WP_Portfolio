@@ -2,6 +2,7 @@
 // Object / Component - Button
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .c-button {
   display: inline-flex;
@@ -13,7 +14,7 @@
   transition: opacity 0.3s;
   padding: 1rem 5rem 1rem 4rem;
 
-  @media screen and (min-width: $bp-md) {
+  @include mq(pc) {
     padding: 1rem 3rem 1rem 2rem;
   }
 
@@ -24,38 +25,38 @@
   &:hover .c-button__icon {
     right: 0.5rem;
   }
+}
 
-  &__icon {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    transition: right 0.3s;
-  }
+.c-button__icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  transition: right 0.3s;
+}
 
-  &__arrow::after {
-    display: block;
-    content: "";
-    background: url(../../../css/img/arrow-right.svg) center/cover no-repeat;
-    width: 24px;
-    height: 24px;
-  }
+.c-button__arrow::after {
+  display: block;
+  content: "";
+  background: url(../../../css/img/arrow-right.svg) center/cover no-repeat;
+  width: 24px;
+  height: 24px;
 }
 
 .button--bg {
   background-color: $color-white;
+}
 
-  .button__text {
-    color: $color-main-dark;
-  }
+.button--bg .button__text {
+  color: $color-main-dark;
 }
 
 .button--border {
   border: solid $color-white 1px;
+}
 
-  .button__text {
-    color: $color-white;
-  }
+.button--border .button__text {
+  color: $color-white;
 }
 
 .button__icon {
