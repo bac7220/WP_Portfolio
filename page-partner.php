@@ -120,60 +120,55 @@
 </section>
 <section class="p-pricing" id="pricing">
   <div class="p-pricing__container">
-    <h2 class="p-pricing__title">
-      <span>03.</span> 項目参考価格
-    </h2>
-    <div class="p-pricing__table">
-      <table class="w-full text-left border-collapse">
-        <thead class="p-pricing__table-header">
-          <tr>
-            <th>項目名</th>
-            <th>参考価格 (税込)</th>
-            <th>備考・詳細</th>
-          </tr>
-        </thead>
-        <tbody class="p-pricing__table-body">
-          <tr>
-            <td>トップページコーディング</td>
-            <td class="price">50,000円〜</td>
-            <td class="note">レスポンシブ対応込 / 標準的なJS込</td>
-          </tr>
-          <tr>
-            <td>下層ページコーディング</td>
-            <td class="price">20,000円〜 / 1P</td>
-            <td class="note">ボリュームにより変動</td>
-          </tr>
-          <tr>
-            <td>LPコーディング</td>
-            <td class="price">100,000円〜</td>
-            <td class="note">長さ・アニメーション量により変動</td>
-          </tr>
-          <tr>
-            <td>WordPress組み込み</td>
-            <td class="price">50,000円〜</td>
-            <td class="note">カスタム投稿1つ・カスタムフィールド3つまで</td>
-          </tr>
-          <tr>
-            <td>サーバーアップロード</td>
-            <td class="price">30,000円〜</td>
-            <td class="note">本番環境への移行・初期設定・Basic認証など</td>
-          </tr>
-          <tr>
-            <td>各種タグ・ツール設置</td>
-            <td class="price">5,000円〜</td>
-            <td class="note">GA4, GTM, Clarityなど設置・計測タグ</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="p-pricing__additional">
-      <p class="p-pricing__additional-title">
-        <span>verified</span>
-        アフターフォロー（保証期間）について
-      </p>
-      <p class="p-pricing__additional-description">
+    <p class="p-pricing__label">Pricing</p>
+    <h2 class="p-pricing__title">項目参考価格</h2>
+    <div class="p-pricing__divider"></div>
+    <table class="p-pricing__table">
+      <thead>
+        <tr>
+          <th>項目名</th>
+          <th>参考価格 (税込)</th>
+          <th>備考・詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>トップページコーディング</td>
+          <td><span class="p-pricing__price">50,000円〜</span></td>
+          <td class="p-pricing__note">レスポンシブ対応込 / 標準的なJS込</td>
+        </tr>
+        <tr>
+          <td>下層ページコーディング</td>
+          <td><span class="p-pricing__price">20,000円〜 / 1P</span></td>
+          <td class="p-pricing__note">ボリュームにより変動</td>
+        </tr>
+        <tr>
+          <td>LPコーディング</td>
+          <td><span class="p-pricing__price">100,000円〜</span></td>
+          <td class="p-pricing__note">長さ・アニメーション量により変動</td>
+        </tr>
+        <tr>
+          <td>WordPress組み込み</td>
+          <td><span class="p-pricing__price">50,000円〜</span></td>
+          <td class="p-pricing__note">カスタム投稿1つ・カスタムフィールド3つまで</td>
+        </tr>
+        <tr>
+          <td>サーバーアップロード</td>
+          <td><span class="p-pricing__price">30,000円〜</span></td>
+          <td class="p-pricing__note">本番環境への移行・初期設定・Basic認証など</td>
+        </tr>
+        <tr>
+          <td>各種タグ・ツール設置</td>
+          <td><span class="p-pricing__price">5,000円〜</span></td>
+          <td class="p-pricing__note">GA4, GTM, Clarityなど設置・計測タグ</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="p-pricing__note-box">
+      <div>
+        <strong class="p-pricing__note-title">アフターフォロー（保証期間）について</strong>
         納品後1ヶ月間は表示崩れなどの不具合を無償で修正対応いたします。また、当方の瑕疵によるバグは期間を問わず無償で対応させていただきます。
-      </p>
+      </div>
     </div>
   </div>
 </section>
