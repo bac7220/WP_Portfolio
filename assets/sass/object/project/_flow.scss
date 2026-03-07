@@ -2,83 +2,84 @@
 // Object / Project - Flow
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .p-flow {
   padding-top: 6rem; // py-24
   padding-bottom: 6rem;
+}
 
-  &__container {
-    max-width: 56rem; // max-w-4xl
-    margin: 0 auto;
-    padding-left: 1.5rem; // px-6
-    padding-right: 1.5rem;
+.p-flow__container {
+  max-width: 56rem; // max-w-4xl
+  margin: 0 auto;
+  padding-left: 1.5rem; // px-6
+  padding-right: 1.5rem;
+}
+
+.p-flow__title {
+  font-size: 1.875rem; // text-3xl
+  font-weight: 700;
+  margin-bottom: 4rem; // mb-16
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; // gap-3
+
+  span {
+    color: #5b7052; // text-primary
+    font-family: "JetBrains Mono", monospace; // font-mono
   }
+}
 
-  &__title {
-    font-size: 1.875rem; // text-3xl
-    font-weight: 700;
-    margin-bottom: 4rem; // mb-16
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem; // gap-3
+.p-flow__timeline {
+  position: relative;
+}
 
-    span {
-      color: #5b7052; // text-primary
-      font-family: "JetBrains Mono", monospace; // font-mono
-    }
+.p-flow__timeline-line {
+  position: absolute;
+  left: 7px; // left-[7px]
+  top: 0;
+  bottom: 0;
+  width: 2px; // w-[2px]
+  background-color: #e2e8f0; // bg-slate-200
+}
+
+.p-flow__step {
+  position: relative;
+  padding-left: 2.5rem; // pl-10
+  padding-bottom: 3rem; // pb-12
+
+  &:last-child {
+    padding-bottom: 0;
   }
+}
 
-  &__timeline {
-    position: relative;
+.p-flow__step-dot {
+  position: absolute;
+  left: 0;
+  top: 4px; // top-1
+  width: 1rem; // w-4
+  height: 1rem; // h-4
+  border-radius: 9999px; // rounded-full
+  background-color: #5b7052; // bg-primary
+  border: 4px solid #fff; // border-4 border-background-light
+  z-index: 10;
+  transition: transform 0.15s ease-in-out; // transition-transform
+
+  .p-flow__step:hover & {
+    transform: scale(1.25); // group-hover:scale-125
   }
+}
 
-  &__timeline-line {
-    position: absolute;
-    left: 7px; // left-[7px]
-    top: 0;
-    bottom: 0;
-    width: 2px; // w-[2px]
-    background-color: #e2e8f0; // bg-slate-200
-  }
+.p-flow__step-title {
+  font-weight: 700;
+  font-size: 1.25rem; // text-xl
+  margin-bottom: 0.5rem; // mb-2
+  color: #000; // dark:text-white
+}
 
-  &__step {
-    position: relative;
-    padding-left: 2.5rem; // pl-10
-    padding-bottom: 3rem; // pb-12
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  &__step-dot {
-    position: absolute;
-    left: 0;
-    top: 4px; // top-1
-    width: 1rem; // w-4
-    height: 1rem; // h-4
-    border-radius: 9999px; // rounded-full
-    background-color: #5b7052; // bg-primary
-    border: 4px solid #fff; // border-4 border-background-light
-    z-index: 10;
-    transition: transform 0.15s ease-in-out; // transition-transform
-
-    .p-flow__step:hover & {
-      transform: scale(1.25); // group-hover:scale-125
-    }
-  }
-
-  &__step-title {
-    font-weight: 700;
-    font-size: 1.25rem; // text-xl
-    margin-bottom: 0.5rem; // mb-2
-    color: #000; // dark:text-white
-  }
-
-  &__step-description {
-    color: #64748b; // text-slate-500
-    font-size: 0.875rem; // text-sm
-  }
+.p-flow__step-description {
+  color: #64748b; // text-slate-500
+  font-size: 0.875rem; // text-sm
 }

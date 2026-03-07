@@ -2408,12 +2408,14 @@ p {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+
 .p-flow__container {
   max-width: 56rem;
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
 .p-flow__title {
   font-size: 1.875rem;
   font-weight: 700;
@@ -2428,9 +2430,11 @@ p {
   color: #5b7052;
   font-family: "JetBrains Mono", monospace;
 }
+
 .p-flow__timeline {
   position: relative;
 }
+
 .p-flow__timeline-line {
   position: absolute;
   left: 7px;
@@ -2439,6 +2443,7 @@ p {
   width: 2px;
   background-color: #e2e8f0;
 }
+
 .p-flow__step {
   position: relative;
   padding-left: 2.5rem;
@@ -2447,6 +2452,7 @@ p {
 .p-flow__step:last-child {
   padding-bottom: 0;
 }
+
 .p-flow__step-dot {
   position: absolute;
   left: 0;
@@ -2462,12 +2468,14 @@ p {
 .p-flow__step:hover .p-flow__step-dot {
   transform: scale(1.25);
 }
+
 .p-flow__step-title {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: #000;
 }
+
 .p-flow__step-description {
   color: #64748b;
   font-size: 0.875rem;
