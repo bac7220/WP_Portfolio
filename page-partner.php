@@ -77,62 +77,62 @@
       </div>
     </div>
   </section>
-  <section class="py-24 bg-slate-50 dark:bg-card-dark/50" id="skills">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
-        <span class="text-primary font-mono">01.</span> コーディングスキル
+  <section class="p-skills" id="skills">
+    <div class="p-skills__container">
+      <h2 class="p-skills__title">
+        <span>01.</span> コーディングスキル
       </h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-8 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark hover:border-primary/50 transition-colors group shadow-sm border-none bg-white">
-          <span class="material-icons-round text-primary/80 mb-4 text-3xl">code</span>
-          <h3 class="text-xl font-bold mb-4 dark:text-white">HTML/CSS</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
+      <div class="p-skills__grid">
+        <div class="p-skills__card">
+          <span class="material-icons-round p-skills__icon">code</span>
+          <h3 class="p-skills__card-title">HTML/CSS</h3>
+          <p class="p-skills__description">
             BEM/FLOCSSを用いたCSS設計。納品後の運用や、貴社内のエンジニア様が触ることを前提としたコーディングを行います。
           </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">BEM</span>
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">FLOCSS</span>
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">Bootstrap</span>
+          <div class="p-skills__tags">
+            <span>BEM</span>
+            <span>FLOCSS</span>
+            <span>Bootstrap</span>
           </div>
         </div>
-        <div class="p-8 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark hover:border-primary/50 transition-colors shadow-sm border-none bg-white">
-          <span class="material-icons-round text-primary/80 mb-4 text-3xl">javascript</span>
-          <h3 class="text-xl font-bold mb-4 dark:text-white">JavaScript</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
+        <div class="p-skills__card">
+          <span class="material-icons-round p-skills__icon">javascript</span>
+          <h3 class="p-skills__card-title">JavaScript</h3>
+          <p class="p-skills__description">
             jQuery, GSAP, Swiper等を用いたアニメーション実装。リッチな演出から軽量なライブラリ選定まで幅広く対応可能です。
           </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">jQuery</span>
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">GSAP</span>
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">Swiper</span>
+          <div class="p-skills__tags">
+            <span>jQuery</span>
+            <span>GSAP</span>
+            <span>Swiper</span>
           </div>
         </div>
-        <div class="p-8 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark hover:border-primary/50 transition-colors shadow-sm border-none bg-white">
-          <span class="material-icons-round text-primary/80 mb-4 text-3xl">wordpress</span>
-          <h3 class="text-xl font-bold mb-4 dark:text-white">WordPress</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
+        <div class="p-skills__card">
+          <span class="material-icons-round p-skills__icon">wordpress</span>
+          <h3 class="p-skills__card-title">WordPress</h3>
+          <p class="p-skills__description">
             オリジナルテーマ構築、カスタムフィールド、カスタム投稿タイプの設定。管理者が使いやすい管理画面構成を提案します。
           </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">Theme Dev</span>
-            <span class="px-2 py-1 bg-slate-100 dark:bg-white/5 text-[10px] rounded font-bold">Local</span>
+          <div class="p-skills__tags">
+            <span>Theme Dev</span>
+            <span>Local</span>
           </div>
         </div>
       </div>
-      <div class="mt-12 grid md:grid-cols-2 gap-8 items-center border border-primary/20 p-8 rounded-2xl bg-white shadow-sm border-none">
+      <div class="p-skills__additional">
         <div>
-          <h3 class="text-lg font-bold mb-4 flex items-center gap-2 dark:text-white">
-            <span class="material-icons-round text-primary/80 mb-4 text-3xl">brush</span>
+          <h3 class="p-skills__additional-title">
+            <span class="material-icons-round p-skills__icon">brush</span>
             対応デザインツール
           </h3>
-          <div class="flex gap-6 grayscale opacity-70">
-            <span class="font-bold">Photoshop</span>
-            <span class="font-bold">Adobe XD</span>
-            <span class="font-bold">Figma</span>
-            <span class="font-bold">Canva</span>
+          <div class="p-skills__tools">
+            <span>Photoshop</span>
+            <span>Adobe XD</span>
+            <span>Figma</span>
+            <span>Canva</span>
           </div>
         </div>
-        <div class="text-sm text-slate-500 dark:text-slate-400 border-l border-primary/20 pl-8 bg-white shadow-sm border-none">
+        <div class="p-skills__additional-description">
           <p>デザインデータ・既存サイトのトレース、PDFデータからのコーディングなど、素材の形式を問わず対応させていただきます。</p>
         </div>
       </div>
