@@ -138,39 +138,39 @@
       </div>
     </div>
   </section>
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
-        <span class="text-primary font-mono">02.</span> 稼働体制・連絡手段
+  <section class="p-operation" id="operation">
+    <div class="p-operation__container">
+      <h2 class="p-operation__title">
+        <span>02.</span> 稼働体制・連絡手段
       </h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="space-y-4">
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center rounded-full">
-            <span class="material-icons-round text-primary">schedule</span>
+      <div class="p-operation__grid">
+        <div class="p-operation__item">
+          <div class="p-operation__icon">
+            <span class="material-icons-round">schedule</span>
           </div>
-          <h4 class="font-bold dark:text-white">メイン稼働時間</h4>
-          <p class="text-sm text-slate-500 dark:text-slate-400">5:00 ~ 11:00 / 13:00 ~ 17:00<br />土日祝も柔軟に対応します。</p>
+          <h4 class="p-operation__heading">メイン稼働時間</h4>
+          <p class="p-operation__description">5:00 ~ 11:00 / 13:00 ~ 17:00<br />土日祝も柔軟に対応します。</p>
         </div>
-        <div class="space-y-4">
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center rounded-full">
-            <span class="material-icons-round text-primary">bolt</span>
+        <div class="p-operation__item">
+          <div class="p-operation__icon">
+            <span class="material-icons-round">bolt</span>
           </div>
-          <h4 class="font-bold dark:text-white">レスポンス速度</h4>
-          <p class="text-sm text-slate-500 dark:text-slate-400">基本3時間以内<br />(遅くとも12時間以内)</p>
+          <h4 class="p-operation__heading">レスポンス速度</h4>
+          <p class="p-operation__description">基本3時間以内<br />(遅くとも12時間以内)</p>
         </div>
-        <div class="space-y-4">
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center rounded-full">
-            <span class="material-icons-round text-primary">work</span>
+        <div class="p-operation__item">
+          <div class="p-operation__icon">
+            <span class="material-icons-round">work</span>
           </div>
-          <h4 class="font-bold dark:text-white">週の稼働時間</h4>
-          <p class="text-sm text-slate-500 dark:text-slate-400">50時間〜 (フルコミット可能)<br />急ぎの案件もご相談ください。</p>
+          <h4 class="p-operation__heading">週の稼働時間</h4>
+          <p class="p-operation__description">50時間〜 (フルコミット可能)<br />急ぎの案件もご相談ください。</p>
         </div>
-        <div class="space-y-4">
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center rounded-full">
-            <span class="material-icons-round text-primary">chat</span>
+        <div class="p-operation__item">
+          <div class="p-operation__icon">
+            <span class="material-icons-round">chat</span>
           </div>
-          <h4 class="font-bold dark:text-white">ツール</h4>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Slack, Chatwork, Zoom, Meet, LINE等、貴社のツールに合わせます。</p>
+          <h4 class="p-operation__heading">ツール</h4>
+          <p class="p-operation__description">Slack, Chatwork, Zoom, Meet, LINE等、貴社のツールに合わせます。</p>
         </div>
       </div>
     </div>
