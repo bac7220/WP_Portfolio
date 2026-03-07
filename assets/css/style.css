@@ -2079,13 +2079,16 @@ p {
   padding: 20px;
   margin-bottom: 170px;
 }
+
 .p-error-404__title {
   font-size: clamp(2rem, 2.381vw + 0.857rem, 3rem);
   margin-bottom: 16px;
 }
+
 .p-error-404__text {
   line-height: 1.6;
 }
+
 .p-error-404__button {
   text-align: right;
 }
