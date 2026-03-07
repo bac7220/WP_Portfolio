@@ -1369,10 +1369,12 @@ p {
 .p-about {
   background-color: #fffff2;
 }
+
 .p-about__img {
   max-width: 100%;
   overflow: hidden;
 }
+
 .p-about__background {
   position: relative;
   overflow: hidden;
@@ -1387,6 +1389,7 @@ p {
   z-index: -1;
   opacity: 0.8;
 }
+
 .p-about__contents {
   background-color: #fff;
   padding: 1rem;
@@ -1405,6 +1408,7 @@ p {
     grid-template-areas: "p-about-img    p-about-skill   p-about-skill" "p-about-img    p-about-web     p-about-writing" "p-about-time   p-about-text    p-about-text";
   }
 }
+
 .p-about__top {
   margin-top: 10vh;
   margin-bottom: 5vh;
@@ -1414,10 +1418,12 @@ p {
     margin-top: 30vh;
   }
 }
+
 .p-about__top-text {
   display: flex;
   gap: 0.5rem;
 }
+
 .p-about__card {
   width: 100%;
   padding: 16px;
@@ -1431,6 +1437,7 @@ p {
     padding: 1rem 1.5rem;
   }
 }
+
 .p-about__container {
   display: grid;
   grid-template-columns: 1fr;
@@ -1443,11 +1450,13 @@ p {
     grid-template-rows: auto;
   }
 }
+
 .p-about__container-title {
   font-size: clamp(19px, 0.469vw + 17.239px, 24px);
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
+
 .p-about__container-sp {
   display: grid;
   grid-template-columns: 1fr;
@@ -1462,19 +1471,24 @@ p {
     grid-template-areas: "p-about__text-kick p-about__text-kick p-about__text-kick" "p-about__img-kick1 p-about__img-kick2 p-about__img-kick3";
   }
 }
+
 .p-about__text-kick {
   grid-area: p-about__text-kick;
   margin-bottom: 1rem;
 }
+
 .p-about__img-kick1 {
   grid-area: p-about__img-kick1;
 }
+
 .p-about__img-kick2 {
   grid-area: p-about__img-kick2;
 }
+
 .p-about__img-kick3 {
   grid-area: p-about__img-kick3;
 }
+
 .p-about__img {
   display: flex;
   justify-self: center;
@@ -1490,6 +1504,7 @@ p {
     align-self: center;
   }
 }
+
 @media screen and (min-width: 768px) {
   .p-about__reverse {
     display: flex;
@@ -1497,7 +1512,6 @@ p {
     justify-content: space-between;
   }
 }
-
 .p-about-img {
   grid-area: p-about-img;
   max-width: 120px;
