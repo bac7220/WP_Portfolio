@@ -11,28 +11,28 @@
   padding-top: 100px;
   padding-bottom: 100px;
   grid-template-areas: "main sidebar" "footer footer";
+}
 
-  &__main {
-    height: 1000px;
-    background-color: #a3c1da;
-    grid-area: main;
-  }
+.l-subpage__main {
+  height: 1000px;
+  background-color: #a3c1da;
+  grid-area: main;
+}
 
-  &__sidebar {
-    height: 1000px;
-    background-color: #b2e0b2;
-    grid-area: sidebar;
-  }
+.l-subpage__sidebar {
+  height: 1000px;
+  background-color: #b2e0b2;
+  grid-area: sidebar;
+}
 
-  &__footer {
-    max-width: 100%;
-    height: 100px;
-    background-color: #d3d3d3;
-    grid-area: footer;
-  }
+.l-subpage__footer {
+  max-width: 100%;
+  height: 100px;
+  background-color: #d3d3d3;
+  grid-area: footer;
+}
 
-  &__section {
-    padding-top: 200px;
-    background-color: rgba(194, 200, 181, 0.8);
-  }
+.l-subpage__section {
+  padding-top: 200px;
+  background-color: rgba(194, 200, 181, 0.8);
 }

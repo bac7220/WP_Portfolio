@@ -2,6 +2,7 @@
 // Layout - Grid
 // ============================================================
 @use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
 
 .l-grid {
   display: grid;
@@ -9,7 +10,7 @@
   gap: 16px 32px;
   justify-content: center;
 
-  @media screen and (min-width: $bp-md) {
+  @include mq(pc) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
