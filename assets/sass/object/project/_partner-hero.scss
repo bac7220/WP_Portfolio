@@ -1,0 +1,55 @@
+// ============================================================
+// Object / Project - Partner Hero
+// ============================================================
+@use "../../foundation/variables" as *;
+
+.p-partner-hero {
+  position: relative;
+  padding-top: 8rem; // pt-32 equivalent
+  padding-bottom: 5rem; // pb-20
+  overflow: hidden;
+
+  &__container {
+    max-width: 80rem; // max-w-5xl
+    margin: 0 auto;
+    padding-left: 1.5rem; // px-6
+    padding-right: 1.5rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 0.25rem 1rem; // px-4 py-1
+    margin-bottom: 1.5rem; // mb-6
+    border-radius: 9999px; // rounded-full
+    background-color: rgba(91, 112, 82, 0.1); // bg-primary/10
+    color: #5b7052; // text-primary
+    font-size: 0.75rem; // text-xs
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: clamp(2.25rem, 4vw, 4rem); // text-4xl md:text-6xl
+    font-weight: 700;
+    line-height: 1.25; // leading-tight
+    margin-bottom: 2rem; // mb-8
+    color: #000; // dark:text-white but assuming light mode
+
+    span {
+      color: #5b7052; // text-primary
+    }
+  }
+
+  &__description {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // grid md:grid-cols-2
+    gap: 3rem; // gap-12
+    color: #64748b; // text-slate-600
+    line-height: 1.625; // leading-relaxed
+
+    p {
+      margin: 0;
+    }
+  }
+}

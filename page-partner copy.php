@@ -57,16 +57,16 @@
       </nav>
     </div>
   </header>
-  <section class="p-partner-hero">
-    <div class="p-partner-hero__container">
-      <div class="p-partner-hero__badge">
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="inline-block px-4 py-1 mb-6 rounded-full bg-primary/10 text-primary text-xs font-bold">
         AVAILABLE FOR NEW PROJECTS
       </div>
-      <h1 class="p-partner-hero__title">
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8 dark:text-white">
         コーディングからWordPress構築、<br />
-        <span>サイトアップロードまで完遂します。</span>
+        <span class="text-primary">サイトアップロードまで完遂します。</span>
       </h1>
-      <div class="p-partner-hero__description">
+      <div class="grid md:grid-cols-2 gap-12 text-slate-600 dark:text-slate-400 leading-relaxed">
         <p>
           AIコーディングが世を席巻する現在ですが、細かなデザインの反映ができない、一部の修正をしようとして全体が崩れる、AIのトラブルにより思わぬ手戻り…。そんな経験はございませんか？<br />
           そんな中、AIにはできない汲み取り力、頂いたデザインをトレースしてサイトへ表現、SEOに対するご提案、WordPressの構築から設定、サイトのアップロードまで、デザイン以降の作業をお任せください！
@@ -331,10 +331,10 @@
   </section>
 
 
-  <?php get_template_part('template/footer-item'); ?>
+<?php get_template_part('template/footer-item'); ?>
 
 
-  <?php get_template_part('template/svg'); ?>
+<?php get_template_part('template/svg'); ?>
 
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
