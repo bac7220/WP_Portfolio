@@ -2371,6 +2371,70 @@ p {
   font-size: 0.875rem;
 }
 
+.p-thought {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #5b7052;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.p-thought__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33.333%;
+  height: 100%;
+  background-color: rgba(91, 112, 82, 0.1);
+  filter: blur(120px);
+  border-radius: 9999px;
+}
+.p-thought__container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+.p-thought__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.p-thought__title span {
+  color: #fff;
+}
+.p-thought__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+.p-thought__column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.p-thought__item-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.p-thought__item-title span {
+  color: #fff;
+}
+.p-thought__item-description {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
 .u-bg-light_green {
   background-color: rgba(194, 200, 181, 0.8);
 }

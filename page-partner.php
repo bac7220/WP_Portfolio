@@ -274,43 +274,43 @@
       </div>
     </div>
   </section>
-  <section class="py-24 bg-primary text-white overflow-hidden relative">
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[120px] rounded-full"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <h2 class="text-3xl font-bold mb-16 flex items-center gap-3">
-        <span class="material-icons-round text-white">05.</span> 大切にしていること
+  <section class="p-thought" id="thought">
+    <div class="p-thought__background"></div>
+    <div class="p-thought__container">
+      <h2 class="p-thought__title">
+        <span class="material-icons-round">05.</span> 大切にしていること
       </h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-              <span class="material-icons-round text-white">security</span>
+      <div class="p-thought__grid">
+        <div class="p-thought__column">
+          <div class="p-thought__item">
+            <h3 class="p-thought__item-title">
+              <span class="material-icons-round">security</span>
               保守性を意識した設計
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">text-white/80 text-sm leading-relaxed</p>
+            <p class="p-thought__item-description">納品後の運用・メンテナンスを考慮した、拡張性が高く、理解しやすいコードを書くことを心がけています。</p>
           </div>
-          <div>
-            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-              <span class="material-icons-round text-white">devices</span>
+          <div class="p-thought__item">
+            <h3 class="p-thought__item-title">
+              <span class="material-icons-round">devices</span>
               レスポンシブへのこだわり
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">text-white/80 text-sm leading-relaxed</p>
+            <p class="p-thought__item-description">スマートフォン、タブレット、デスクトップ全てのデバイスで最適な表示と操作性を確保します。</p>
           </div>
         </div>
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-              <span class="material-icons-round text-white">forum</span>
+        <div class="p-thought__column">
+          <div class="p-thought__item">
+            <h3 class="p-thought__item-title">
+              <span class="material-icons-round">forum</span>
               コミュニケーションコスト最小化
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">text-white/80 text-sm leading-relaxed</p>
+            <p class="p-thought__item-description">定期的な進捗報告と、わかりやすい説明で、クライアント様の負担を最小限に抑えます。</p>
           </div>
-          <div>
-            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-              <span class="material-icons-round text-white">mouse</span>
+          <div class="p-thought__item">
+            <h3 class="p-thought__item-title">
+              <span class="material-icons-round">mouse</span>
               ユーザビリティへの配慮
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">text-white/80 text-sm leading-relaxed</p>
+            <p class="p-thought__item-description">使いやすさを第一に考え、アクセシビリティとパフォーマンスを両立させた実装を行います。</p>
           </div>
         </div>
       </div>
