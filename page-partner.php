@@ -175,60 +175,60 @@
       </div>
     </div>
   </section>
-  <section class="py-24 bg-slate-50 dark:bg-card-dark/50" id="pricing">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
-        <span class="p-6 border-b border-slate-100 font-bold text-primary">03.</span> 項目参考価格
+  <section class="p-pricing" id="pricing">
+    <div class="p-pricing__container">
+      <h2 class="p-pricing__title">
+        <span>03.</span> 項目参考価格
       </h2>
-      <div class="overflow-hidden rounded-xl border border-slate-200 dark:border-white/10 shadow-sm">
+      <div class="p-pricing__table">
         <table class="w-full text-left border-collapse">
-          <thead class="bg-slate-100 dark:bg-white/5">
+          <thead class="p-pricing__table-header">
             <tr>
-              <th class="p-6 font-bold dark:text-white border-b border-slate-200 dark:border-white/10">項目名</th>
-              <th class="p-6 font-bold dark:text-white border-b border-slate-200 dark:border-white/10">参考価格 (税込)</th>
-              <th class="p-6 font-bold dark:text-white border-b border-slate-200 dark:border-white/10">備考・詳細</th>
+              <th>項目名</th>
+              <th>参考価格 (税込)</th>
+              <th>備考・詳細</th>
             </tr>
           </thead>
-          <tbody class="bg-white dark:bg-background-dark">
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">トップページコーディング</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">50,000円〜</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">レスポンシブ対応込 / 標準的なJS込</td>
+          <tbody class="p-pricing__table-body">
+            <tr>
+              <td>トップページコーディング</td>
+              <td class="price">50,000円〜</td>
+              <td class="note">レスポンシブ対応込 / 標準的なJS込</td>
             </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">下層ページコーディング</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">20,000円〜 / 1P</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">ボリュームにより変動</td>
+            <tr>
+              <td>下層ページコーディング</td>
+              <td class="price">20,000円〜 / 1P</td>
+              <td class="note">ボリュームにより変動</td>
             </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">LPコーディング</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">100,000円〜</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">長さ・アニメーション量により変動</td>
+            <tr>
+              <td>LPコーディング</td>
+              <td class="price">100,000円〜</td>
+              <td class="note">長さ・アニメーション量により変動</td>
             </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">WordPress組み込み</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">50,000円〜</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">カスタム投稿1つ・カスタムフィールド3つまで</td>
+            <tr>
+              <td>WordPress組み込み</td>
+              <td class="price">50,000円〜</td>
+              <td class="note">カスタム投稿1つ・カスタムフィールド3つまで</td>
             </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">サーバーアップロード</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">30,000円〜</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">本番環境への移行・初期設定・Basic認証など</td>
+            <tr>
+              <td>サーバーアップロード</td>
+              <td class="price">30,000円〜</td>
+              <td class="note">本番環境への移行・初期設定・Basic認証など</td>
             </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 font-medium">各種タグ・ツール設置</td>
-              <td class="p-6 border-b border-slate-100 font-bold text-primary">5,000円〜</td>
-              <td class="p-6 border-b border-slate-100 dark:border-white/5 text-sm text-slate-500">GA4, GTM, Clarityなど設置・計測タグ</td>
+            <tr>
+              <td>各種タグ・ツール設置</td>
+              <td class="price">5,000円〜</td>
+              <td class="note">GA4, GTM, Clarityなど設置・計測タグ</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="mt-8 p-8 rounded-2xl bg-white shadow-sm border-none text-sm">
-        <p class="font-bold mb-2 flex items-center gap-2">
-          <span class="p-6 border-b border-slate-100 font-bold text-primary">verified</span>
+      <div class="p-pricing__additional">
+        <p class="p-pricing__additional-title">
+          <span>verified</span>
           アフターフォロー（保証期間）について
         </p>
-        <p class="text-slate-600 dark:text-slate-400">
+        <p class="p-pricing__additional-description">
           納品後1ヶ月間は表示崩れなどの不具合を無償で修正対応いたします。また、当方の瑕疵によるバグは期間を問わず無償で対応させていただきます。
         </p>
       </div>
