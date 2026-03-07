@@ -455,6 +455,7 @@ p {
   object-fit: cover;
   border-radius: 6px;
 }
+
 .c-img__top {
   object-fit: contain;
   aspect-ratio: 1/1;
@@ -469,22 +470,28 @@ p {
     font-size: 1.2rem;
   }
 }
+
 .c-text--html {
   color: #e44d26;
 }
+
 .c-text--css {
   color: #264de4;
 }
+
 .c-text--js {
   color: #f0db4f;
   text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
+
 .c-text--wordpress {
   color: #21759b;
 }
+
 .c-text--writing {
   color: #464f43;
 }
+
 .c-text__category {
   display: flex;
   flex-direction: column;
@@ -495,16 +502,19 @@ p {
     gap: 3vw;
   }
 }
+
 .c-text__category-name {
   font-size: clamp(1rem, 0.563vw + 0.868rem, 1.375rem);
   margin-bottom: clamp(0.5rem, 0.751vw + 0.324rem, 1rem);
 }
+
 .c-text__category-items {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.3rem;
 }
+
 .c-text__category-item {
   display: flex;
   gap: 0.8rem;
@@ -516,6 +526,7 @@ p {
   font-size: 3.5rem;
   letter-spacing: 0.1em;
 }
+
 .c-title__sub {
   font-size: 1rem;
   align-items: end;
@@ -553,6 +564,7 @@ p {
   color: #fff;
   font-weight: 700;
 }
+
 .c-price-table__note {
   margin-top: 1em;
   font-size: 0.95em;
@@ -571,6 +583,7 @@ p {
     display: none;
   }
 }
+
 .c-drawer-icon__bar {
   position: absolute;
   top: 0;

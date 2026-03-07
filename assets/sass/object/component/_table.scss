@@ -2,6 +2,7 @@
 // Object / Component - Table
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .price-table__container {
   margin-block: 3em;
@@ -36,10 +37,10 @@
     color: $color-white;
     font-weight: 700;
   }
+}
 
-  &__note {
-    margin-top: 1em;
-    font-size: 0.95em;
-    color: $color-text;
-  }
+.c-price-table__note {
+  margin-top: 1em;
+  font-size: 0.95em;
+  color: $color-text;
 }
