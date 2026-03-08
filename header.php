@@ -74,7 +74,7 @@
                         <svg width="24" height="24" role="img" aria-label="laptop-icon">
                             <use href="#laptop-svg"></use>
                         </svg>
-                        <a href="<?php echo esc_url(get_post_type_archive_link('work')); ?>">Works
+                        <a href="<?php echo esc_url(get_post_type_archive_link('works')); ?>">Works
                         </a>
                     </li>
                     <li class="p-header__nav-item">
@@ -98,7 +98,7 @@
             </nav>
             <div class="p-drawer__footer u-white-color">
                 <div class="p-drawer__footer-left ">
-                    <a href="https://webworklog.com/" target="_blank" class="header__nav-link">
+                    <a href="#" target="_blank" class="header__nav-link">
                         <svg width="24" height="24" role="img" aria-label="book-icon">
                             <use href="#book-svg"></use>
                         </svg>
