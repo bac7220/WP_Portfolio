@@ -2,55 +2,58 @@
 // Object / Project - Service & Work Flow
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .p-service {
   padding-block: 120px;
-
-  &__cards {
-    margin-top: 100px;
-    gap: 48px;
-  }
 }
+
+.p-service__cards {
+  margin-top: 100px;
+  gap: 48px;
+}
+
 
 .p-work-flow {
   padding: 60px 0;
   z-index: 10;
+}
 
-  &__items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    flex-direction: column;
-    margin-top: 32px;
+.p-work-flow__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 32px;
 
-    @media screen and (min-width: $bp-md) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &__item {
-    border: solid 2px $color-gray;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 8px;
+  @include mq(pc) {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px 8px;
-    align-items: center;
-  }
-
-  &__icon {
-    grid-row: span 2 / span 2;
-  }
-
-  &__title {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  &__text {
-    grid-column-start: 2;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.p-work-flow__item {
+  border: solid 2px $color-gray;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 8px;
+  align-items: center;
+}
+
+.p-work-flow__icon {
+  grid-row: span 2 / span 2;
+}
+
+.p-work-flow__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.p-work-flow__text {
+  grid-column-start: 2;
+}
+
