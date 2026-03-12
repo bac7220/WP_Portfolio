@@ -8,9 +8,9 @@
   left: 0;
   width: 100%;
   z-index: 50;
-  // height: 80px;
-  // transition: all 0.3s linear;
-  // background-color: $color-main;
+  height: 80px;
+  transition: all 0.3s linear;
+  background-color: $color-main;
 
   @include mq(pc) {
     height: 100px;
