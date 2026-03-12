@@ -2781,6 +2781,12 @@ p {
   border-color: #688166;
 }
 
+.p-blog__categories-item.is-active a {
+  background-color: #688166;
+  color: #fff;
+  border-color: #688166;
+}
+
 .p-blog__posts-list {
   display: grid;
   grid-template-columns: 1fr;

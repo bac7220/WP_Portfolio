@@ -1,4 +1,4 @@
-<?php /* home.php */ get_header(); ?>
+<?php /* archive.php */ get_header(); ?>
 
 <main class="p-blog">
 
@@ -6,14 +6,16 @@
   <section class="p-blog__categories">
     <h2 class="p-blog__categories-title">カテゴリ</h2>
     <ul class="p-blog__categories-list">
-      <li class="p-blog__categories-item is-active">
+      <li class="p-blog__categories-item">
         <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>">すべて</a>
       </li>
       <?php
       $categories = get_categories();
+      $current_cat_id = get_queried_object_id();
       foreach ($categories as $cat) : 
+        $is_active = ($cat->term_id === $current_cat_id) ? 'is-active' : '';
       ?>
-        <li class="p-blog__categories-item">
+        <li class="p-blog__categories-item <?php echo $is_active; ?>">
           <a href="<?php echo get_category_link($cat->term_id); ?>">
             <?php echo esc_html($cat->name); ?>
             <span>(<?php echo $cat->count; ?>)</span>
@@ -25,7 +27,7 @@
 
   <!-- 記事一覧 -->
   <section class="p-blog__posts">
-    <h2 class="p-blog__posts-title">新着記事</h2>
+    <h2 class="p-blog__posts-title"><?php single_term_title(''); ?></h2>
     <?php if (have_posts()) : ?>
       <ul class="p-blog__posts-list">
         <?php while (have_posts()) : the_post(); ?>

@@ -632,6 +632,9 @@ p {
   left: 0;
   width: 100%;
   z-index: 50;
+  height: 80px;
+  transition: all 0.3s linear;
+  background-color: #688166;
 }
 @media screen and (min-width: 768px) {
   .p-header {
@@ -2327,6 +2330,12 @@ p {
   transition: all 0.3s;
 }
 .p-blog__categories-item a:hover {
+  background-color: #688166;
+  color: #fff;
+  border-color: #688166;
+}
+
+.p-blog__categories-item.is-active a {
   background-color: #688166;
   color: #fff;
   border-color: #688166;

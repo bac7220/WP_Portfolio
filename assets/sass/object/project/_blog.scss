@@ -60,6 +60,12 @@
   }
 }
 
+.p-blog__categories-item.is-active a {
+  background-color: $color-main;
+  color: #fff;
+  border-color: $color-main;
+}
+
 .p-blog__posts-list {
   display: grid;
   grid-template-columns: 1fr;
