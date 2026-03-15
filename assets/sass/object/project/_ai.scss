@@ -1,0 +1,83 @@
+// ============================================================
+// Object / Project - AI Policy
+// ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+
+.p-ai {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: $color-bg-light;
+}
+
+.p-ai__container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.p-ai__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  span {
+    color: $color-main;
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+.p-ai__lead {
+  font-size: 0.9375rem;
+  color: $color-gray;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  background-color: $color-white;
+  border-left: 3px solid rgba($color-main, 0.4);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.p-ai__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.p-ai__item {
+  padding: 2rem;
+  background-color: $color-white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba($color-main, 0.12);
+}
+
+.p-ai__item-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-black;
+
+  .material-icons-round {
+    font-size: 1.25rem;
+    color: rgba($color-main, 0.8);
+  }
+}
+
+.p-ai__item-description {
+  font-size: 0.875rem;
+  color: $color-gray;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

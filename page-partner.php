@@ -285,6 +285,56 @@
     </div>
   </div>
 </section>
+<section class="p-ai" id="ai">
+  <div class="p-ai__container">
+    <h2 class="p-ai__title">
+      <span>06.</span> AIツールの活用とリスク管理方針について
+    </h2>
+    <p class="p-ai__lead">
+      制作の効率化・スピードアップを図るため、主にGeminiおよびClaudeなどの生成AIツールを活用しております。<br />
+      制作会社様やクライアント様に安心してご依頼いただけるよう、セキュリティや著作権に関して以下の厳格な運用ルールを設けております。
+    </p>
+    <div class="p-ai__grid">
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">lock</span>
+          機密情報の保護（学習利用の防止）
+        </h3>
+        <p class="p-ai__item-description">
+          Google Workspaceを契約し、入力した情報やコードがAIの学習データとして利用されない環境で運用しております。<br />
+          お預かりした案件の機密情報が外部に漏洩することのないよう運用します。
+        </p>
+      </div>
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">verified</span>
+          コードの品質担保（ブラックボックス化の防止）
+        </h3>
+        <p class="p-ai__item-description">
+          コーディングの効率化・時短のためにVS CodeのAI拡張機能（Claude Code等）を使用しています。<br />
+          ですが、生成されたコードをそのまま右から左へ、といったことはなく、<br />
+          私自身が理解し、今後の管理・保守に確実に責任を持てるコードのみを実装しております。
+        </p>
+      </div>
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">fact_check</span>
+          情報の裏取りと著作権の徹底
+        </h3>
+        <p class="p-ai__item-description">
+          AIから得た情報は複数ツールでクロスチェックを行い、<br />
+          さらに自身での検索や専門書籍等を用いた「裏取り」を必ず実施します。
+        </p>
+        <p class="p-ai__item-description">
+          AIを用いた画像生成は、原則として自社（おくだ屋）サイトの制作にのみ使用しています。<br />
+          もしクライアント様案件でAI画像の利用を検討する際は、<br />
+          既存作品との類似性や著作権問題を調査した上で、<br />
+          必ずディレクター様に事前のご了承を得てから使用いたします。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="p-thought" id="thought">
   <div class="p-thought__background"></div>
   <div class="p-thought__container">
