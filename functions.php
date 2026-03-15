@@ -13,7 +13,7 @@ function my_script_init()
 
     // テーマのスタイルシートの読み込み（Sass コンパイル済み: assets/css/style.css）
     // contact / privacy / voice のスタイルは style.scss に統合済み
-    wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path("/assets/css/style.css")), "all");
+    wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.css", array(), filemtime(get_theme_file_path("/assets/css/style.css")), "all");
 
     // gsapを追加
     wp_enqueue_script("gsap-core", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js", array(), "3.12.2", true);
