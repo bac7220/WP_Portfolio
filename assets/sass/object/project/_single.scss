@@ -2,6 +2,7 @@
 // Object / Project - Single (Works)
 // ============================================================
 @use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
 
 .p-single {
   padding: 60px 0;
@@ -112,3 +113,234 @@
     }
   }
 }
+
+// ============================================================
+// Object / Project - Single (Blog)
+// ============================================================
+
+.p-single-blog {
+  padding: 60px 0 0;
+
+  @include mq(pc) {
+    padding: 80px 0 0;
+  }
+}
+
+.p-single-blog__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $inner-padding;
+}
+
+.p-single-blog__breadcrumb {
+  font-size: 13px;
+  color: $color-gray;
+  margin-bottom: 24px;
+  
+  a {
+    color: $color-main;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.p-single-blog__header {
+  margin-bottom: 32px;
+}
+
+.p-single-blog__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.p-single-blog__category {
+  display: inline-block;
+  background-color: $color-main;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.p-single-blog__date {
+  font-size: 14px;
+  color: $color-gray;
+}
+
+.p-single-blog__title {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: $color-text-dark;
+  
+  @include mq(pc) {
+    font-size: 36px;
+  }
+}
+
+.p-single-blog__thumbnail {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+// ------------------------------------------------------------
+// WordPress standard content styles (.p-single-blog__content)
+// ------------------------------------------------------------
+.p-single-blog__content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: $color-text;
+  
+  // headings
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: $color-text-dark;
+    margin: 60px 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $color-main;
+    
+    @include mq(pc) {
+      font-size: 28px;
+    }
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-text-dark;
+    margin: 40px 0 20px;
+    padding-left: 12px;
+    border-left: 4px solid $color-main;
+    
+    @include mq(pc) {
+      font-size: 24px;
+    }
+  }
+  
+  h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-text-dark;
+    margin: 32px 0 16px;
+  }
+  
+  // text
+  p {
+    margin-bottom: 24px;
+  }
+  
+  // lists
+  ul {
+    list-style-type: disc;
+    margin: 0 0 24px 24px;
+    
+    li {
+      margin-bottom: 8px;
+    }
+  }
+  
+  ol {
+    list-style-type: decimal;
+    margin: 0 0 24px 24px;
+    
+    li {
+      margin-bottom: 8px;
+    }
+  }
+  
+  // media
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 32px 0;
+    border-radius: 4px;
+  }
+  
+  // link
+  a {
+    color: $color-main;
+    text-decoration: underline;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  // blockquote
+  blockquote {
+    margin: 32px 0;
+    padding: 16px 24px;
+    background-color: $color-bg-light;
+    border-left: 4px solid $color-gray;
+    color: $color-gray;
+    font-style: italic;
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+  
+  // table
+  table {
+    width: 100%;
+    margin-bottom: 32px;
+    border-collapse: collapse;
+    
+    th, td {
+      border: 1px solid $color-border;
+      padding: 12px;
+    }
+    
+    th {
+      background-color: $color-bg-green;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  
+  // figure/caption
+  figure {
+    margin: 32px 0;
+    
+    figcaption {
+      font-size: 13px;
+      color: $color-gray;
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Related posts
+// ------------------------------------------------------------
+.p-single-blog__related {
+  margin-top: 80px;
+  padding-top: 60px;
+  background-color: $color-bg-light;
+  padding-bottom: 80px;
+}
+
+.p-single-blog__related-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: $color-text-dark;
+}
+

@@ -16,7 +16,7 @@
 
 <body>
     <header id="js-header" class="p-header
-     <?php if (!is_front_page()) {
+    <?php if (!is_front_page()) {
             echo ' u-bg-header';
         } ?>">
         <div class=" p-header__container p-header__fz">
