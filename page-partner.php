@@ -51,34 +51,107 @@
         </div>
       </div>
       <div class="p-skills__card">
-        <span class="material-icons-round p-skills__icon">wordpress</span>
-        <h3 class="p-skills__card-title">WordPress</h3>
+        <span class="material-icons-round p-skills__icon">brush</span>
+        <h3 class="p-skills__card-title">対応デザインツール</h3>
         <p class="p-skills__description">
-          オリジナルテーマ構築、カスタムフィールド、カスタム投稿タイプの設定。管理者が使いやすい管理画面構成を提案します。
+          デザインデータ・既存サイトのトレース、PDFデータからのコーディングなど、素材の形式を問わず対応させていただきます。
         </p>
         <div class="p-skills__tags">
-          <span>Theme Dev</span>
-          <span>Local</span>
-        </div>
-      </div>
-    </div>
-    <div class="p-skills__additional">
-      <div>
-        <h3 class="p-skills__additional-title">
-          <span class="material-icons-round p-skills__icon">brush</span>
-          対応デザインツール
-        </h3>
-        <div class="p-skills__tools">
           <span>Photoshop</span>
           <span>Adobe XD</span>
           <span>Figma</span>
           <span>Canva</span>
         </div>
       </div>
-      <div class="p-skills__additional-description">
-        <p>デザインデータ・既存サイトのトレース、PDFデータからのコーディングなど、素材の形式を問わず対応させていただきます。</p>
+    </div>
+
+    <!-- WordPress 詳細スキルセクション（下段・全幅） -->
+    <div class="p-skills__wp-detail">
+      <div class="p-skills__wp-detail-header">
+        <span class="material-icons-round p-skills__icon">wordpress</span>
+        <div>
+          <h3 class="p-skills__card-title">WordPress</h3>
+          <p class="p-skills__description">オリジナルテーマ構築、カスタムフィールド、カスタム投稿タイプの設定。管理者が使いやすい管理画面構成を提案します。</p>
+          <div class="p-skills__tags">
+            <span>Theme Dev</span>
+            <span>Local</span>
+            <span>ACF</span>
+            <span>WooCommerce</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-skills__wp-detail-inner">
+
+        <div class="p-skills__wp-block">
+          <h3 class="p-skills__wp-block-title">
+            <span class="material-icons-round">build</span>
+            対応可能な実装・スキル
+          </h3>
+          <div class="p-skills__wp-items">
+            <div class="p-skills__wp-item">
+              <h4 class="p-skills__wp-item-heading">
+                <span class="material-icons-round">tune</span>
+                柔軟なサイト設計
+              </h4>
+              <ul class="p-skills__wp-list">
+                <li>カスタム投稿 / カスタムタクソノミー / カスタムフィールドを用いた構築</li>
+              </ul>
+            </div>
+            <div class="p-skills__wp-item">
+              <h4 class="p-skills__wp-item-heading">
+                <span class="material-icons-round">palette</span>
+                テーマ制作・改修
+              </h4>
+              <ul class="p-skills__wp-list">
+                <li>オリジナルテーマのゼロからの構築</li>
+                <li>既存テーマのカスタマイズ・改修</li>
+              </ul>
+            </div>
+            <div class="p-skills__wp-item">
+              <h4 class="p-skills__wp-item-heading">
+                <span class="material-icons-round">star</span>
+                クライアント向けの更新性向上
+              </h4>
+              <ul class="p-skills__wp-list">
+                <li>投稿編集画面へのテンプレート仕込み（入力の手間とレイアウト崩れを防ぎます）</li>
+                <li>画像の増減に自動対応するスライダー実装（カスタムフィールド連携）</li>
+                <li>管理画面のカスタマイズ（クライアントの誤操作を防ぐための不要メニュー非表示など）</li>
+              </ul>
+            </div>
+            <div class="p-skills__wp-item">
+              <h4 class="p-skills__wp-item-heading">
+                <span class="material-icons-round">cloud_upload</span>
+                環境構築・公開作業
+              </h4>
+              <ul class="p-skills__wp-list">
+                <li>テスト環境の構築 〜 本番公開（サーバーアップ・データベースの置換移行）まで丸ごと対応可能</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-skills__wp-support">
+          <div class="p-skills__wp-support-header">
+            <span class="material-icons-round">menu_book</span>
+            <h3 class="p-skills__wp-block-title">納品後の手厚いサポート</h3>
+          </div>
+          <p class="p-skills__wp-support-text">
+            クライアント様がご自身でサイトを更新できるよう、<strong>画像付きの丁寧な操作マニュアル（Notion等）</strong>を作成し、納品物としてご提出することが可能です。<br />
+            ディレクター様の「納品後のクライアントサポート負担」を大幅に軽減いたします。
+          </p>
+          <div class="p-skills__wp-manual">
+            <span class="material-icons-round">open_in_new</span>
+            <div>
+              <p class="p-skills__wp-manual-label">▼ クライアント向け更新マニュアルの作成例（Notion）</p>
+              <a href="https://magnetic-quiet-4db.notion.site/320cbbb93dc080ae9904ded89bfd5549?source=copy_link" target="_blank" rel="noopener noreferrer" class="p-skills__wp-manual-link">こちらから実際のサンプルをご覧いただけます</a>
+              <p class="p-skills__wp-manual-note">※リンク先はサンプル用の情報です。</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
 </section>
 <section class="p-operation" id="operation">
@@ -208,6 +281,56 @@
         <div class="p-flow__step-dot"></div>
         <h3 class="p-flow__step-title">納品・本番公開</h3>
         <p class="p-flow__step-description">本番公開、またはデータ引き渡しを持って納品とさせていただきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="p-ai" id="ai">
+  <div class="p-ai__container">
+    <h2 class="p-ai__title">
+      <span>06.</span> AIツールの活用とリスク管理方針について
+    </h2>
+    <p class="p-ai__lead">
+      制作の効率化・スピードアップを図るため、主にGeminiおよびClaudeなどの生成AIツールを活用しております。<br />
+      制作会社様やクライアント様に安心してご依頼いただけるよう、セキュリティや著作権に関して以下の厳格な運用ルールを設けております。
+    </p>
+    <div class="p-ai__grid">
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">lock</span>
+          機密情報の保護（学習利用の防止）
+        </h3>
+        <p class="p-ai__item-description">
+          Google Workspaceを契約し、入力した情報やコードがAIの学習データとして利用されない環境で運用しております。<br />
+          お預かりした案件の機密情報が外部に漏洩することのないよう運用します。
+        </p>
+      </div>
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">verified</span>
+          コードの品質担保（ブラックボックス化の防止）
+        </h3>
+        <p class="p-ai__item-description">
+          コーディングの効率化・時短のためにVS CodeのAI拡張機能（Claude Code等）を使用しています。<br />
+          ですが、生成されたコードをそのまま右から左へ、といったことはなく、<br />
+          私自身が理解し、今後の管理・保守に確実に責任を持てるコードのみを実装しております。
+        </p>
+      </div>
+      <div class="p-ai__item">
+        <h3 class="p-ai__item-title">
+          <span class="material-icons-round">fact_check</span>
+          情報の裏取りと著作権の徹底
+        </h3>
+        <p class="p-ai__item-description">
+          AIから得た情報は複数ツールでクロスチェックを行い、<br />
+          さらに自身での検索や専門書籍等を用いた「裏取り」を必ず実施します。
+        </p>
+        <p class="p-ai__item-description">
+          AIを用いた画像生成は、原則として自社（おくだ屋）サイトの制作にのみ使用しています。<br />
+          もしクライアント様案件でAI画像の利用を検討する際は、<br />
+          既存作品との類似性や著作権問題を調査した上で、<br />
+          必ずディレクター様に事前のご了承を得てから使用いたします。
+        </p>
       </div>
     </div>
   </div>
