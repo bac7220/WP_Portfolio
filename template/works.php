@@ -54,7 +54,7 @@
                   ?>
                </a>
 
-               <?php if (get_field('user_name') || get_field('portfolio_url')): ?>
+               <!-- <?php if (get_field('user_name') || get_field('portfolio_url')): ?>
                  <div class="c-card__footer">
                    <?php if (get_field('user_name')): ?>
                      <div class="c-card__user-name">
@@ -73,7 +73,7 @@
                      </div>
                    <?php endif; ?>
                  </div>
-               <?php endif; ?>
+               <?php endif; ?> -->
              </li>
 
              <?php wp_reset_postdata(); ?>
