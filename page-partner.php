@@ -20,6 +20,9 @@
     </div>
   </div>
 </section>
+
+<?php get_template_part('template/partner-works-slider'); ?>
+
 <section class="p-skills" id="skills">
   <div class="p-skills__container">
     <h2 class="p-skills__title">

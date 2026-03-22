@@ -31,6 +31,57 @@ function my_script_init()
 
 add_action("wp_enqueue_scripts", "my_script_init");
 
+// Swiperをpartnerページのみ読み込む
+add_action('wp_enqueue_scripts', function () {
+    if (!is_page('partner')) return;
+
+    wp_enqueue_style(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11'
+    );
+    wp_enqueue_script(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11',
+        true
+    );
+    wp_add_inline_script('swiper', "
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.p-partner-works__swiper', {
+    slidesPerView: 1.6,
+    spaceBetween: 16,
+    centeredSlides: false,
+    loop: true,
+    pagination: {
+      el: '.p-partner-works__pagination',
+      clickable: true,
+    },
+    navigation: {
+      prevEl: '.p-partner-works__button-prev',
+      nextEl: '.p-partner-works__button-next',
+    },
+    breakpoints: {
+      600: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+      },
+      1000: {
+        slidesPerView: 3.6,
+        spaceBetween: 24,
+      },
+      1400: {
+        slidesPerView: 4.5,
+        spaceBetween: 24,
+      },
+    },
+  });
+});
+");
+});
+
 
 // テーマのセットアップ関数
 function my_setup()
