@@ -26,6 +26,31 @@
                                     <p><?php the_title(); ?></p>
                                 </div>
                             </div>
+                            <div class="p-single__info-section">
+                                <div class="p-single__info-heading">
+                                    <h2>クライアント様</h2>
+                                </div>
+                                <div class="p-single__info-text">
+                                    <?php if (get_field('user_name') || get_field('portfolio_url')): ?>
+                                        <?php if (get_field('user_name')): ?>
+                                            <div class="c-card__user-name">
+                                                <p class="c-card__footer-text">
+                                                    <?php the_field('user_name'); ?>
+                                                </p>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <?php if (get_field('portfolio_url')): ?>
+                                            <div class="c-card__pass">
+                                                <a href="<?php the_field('portfolio_url'); ?>" class="c-card__footer-text">
+                                                    <?php the_field('portfolio_url'); ?>
+                                                </a>
+
+                                            </div>
+                                        <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+                            </div>
 
                             <?php if (get_field('period')): ?>
                                 <div class="p-single__info-section">
@@ -94,7 +119,7 @@
 
                         <div class="p-single__right">
                             <div class="p-single__image">
-                              <?php if (get_field('screenshot')): ?>
+                                <?php if (get_field('screenshot')): ?>
                                     <img src="<?php the_field('screenshot'); ?>" alt="">
                                 <?php elseif (is_single('b_after')): ?>
                                     <img src="<?php echo esc_html(get_theme_file_uri()) ?>/img/B_AFTER.webp" alt="b-after">

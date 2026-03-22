@@ -219,7 +219,7 @@
     font-weight: bold;
     color: $color-text-dark;
     margin: 60px 0 24px;
-    padding-bottom: 8px;
+    border-bottom: none;
 
     @include mq(pc) {
       font-size: 28px;
