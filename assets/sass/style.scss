@@ -11,6 +11,7 @@
 @use "foundation/base";
 @use "foundation/animation";
 @use "foundation/mixin" as *;
+@use "foundation/function" as *;
 
 // ------------------------------------------------------------
 // Layout
@@ -48,14 +49,7 @@
 @use "object/project/blog";
 @use "object/project/footer";
 @use "object/project/error";
-@use "object/project/partner-hero";
-@use "object/project/partner-works";
-@use "object/project/skills";
-@use "object/project/operation";
-@use "object/project/pricing";
-@use "object/project/flow";
-@use "object/project/thought";
-@use "object/project/ai";
+@use "object/project/partner";
 
 // ------------------------------------------------------------
 // Object / Utility

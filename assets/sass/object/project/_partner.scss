@@ -1,0 +1,399 @@
+// ============================================================
+// Object / Project - Partner Page (page-partner.php)
+// ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+@use "../../foundation/function" as *;
+
+// ----------------------------
+// Color tokens（DESIGN.md準拠）
+// ----------------------------
+$partner-color-main: #2e4e2d; // メイン（深緑）
+$partner-color-base: #7d987c; // ベース（淡緑）
+$partner-color-accent: #df5b38; // アクセント（オレンジ）
+$partner-color-text: #4f4f4f; // 本文
+$partner-color-bg-light: #f8fafc; // セクション薄背景
+$partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
+
+// ----------------------------
+// Wrapper（全体）
+// ----------------------------
+.p-partner {
+  color: $partner-color-text;
+  font-family: "Noto Sans JP", sans-serif;
+  overflow: hidden; // 装飾はみ出し対策
+}
+
+// ============================================================
+// Section 1: Hero (FV)
+// ============================================================
+.p-partner-hero {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  padding: rem(48) rem(16) rem(16);
+  overflow: hidden;
+
+  @include mq(pc) {
+    padding: rem(128) rem(144) rem(24);
+  }
+}
+
+.p-partner-hero__inner {
+  position: relative;
+  max-width: rem(1152);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(48);
+  }
+}
+
+// ----------------------------
+// 装飾（背景の図形）
+// ----------------------------
+.p-partner-hero__decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-hero__deco {
+  position: absolute;
+}
+
+// 右上の緑円弧
+.p-partner-hero__deco--arc {
+  top: rem(-34);
+  right: 0;
+  width: rem(150);
+  height: auto;
+
+  @include mq(pc) {
+    top: rem(-150);
+    left: rem(389);
+    right: auto;
+    width: rem(422);
+  }
+}
+
+// 左側のストライプ
+.p-partner-hero__deco--stripe {
+  top: rem(-150);
+  left: rem(-173);
+  width: rem(206);
+  height: auto;
+
+  @include mq(pc) {
+    top: rem(-47);
+    left: rem(-408);
+    width: rem(502);
+  }
+}
+
+// 左上の小さな円弧
+.p-partner-hero__deco--dots {
+  top: rem(-39);
+  left: rem(-69);
+  width: rem(164);
+  height: auto;
+
+  @include mq(pc) {
+    top: rem(224);
+    left: rem(-154);
+    width: rem(400);
+  }
+}
+
+// 右側の波
+.p-partner-hero__deco--wave {
+  top: 38%;
+  right: -60%;
+  width: 60%;
+  height: auto;
+
+  @include mq(pc) {
+    top: 38%;
+    right: -5%;
+    width: 30%;
+  }
+}
+
+// 黄色いポリゴン（PCのみ）
+.p-partner-hero__deco--polygon {
+  display: none;
+
+  @include mq(lg) {
+    display: block;
+    top: rem(159);
+    right: rem(-90);
+    width: rem(167);
+    transform: rotate(12.81deg);
+  }
+}
+
+// 黄色い円（左下）
+.p-partner-hero__deco--circle-yellow {
+  bottom: rem(40);
+  left: rem(-26);
+  width: rem(65);
+  height: rem(65);
+
+  @include mq(pc) {
+    bottom: auto;
+    top: rem(452);
+    left: rem(1113);
+    width: rem(131);
+    height: rem(131);
+  }
+}
+
+// ----------------------------
+// テキストブロック
+// ----------------------------
+.p-partner-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  @include mq(pc) {
+    gap: rem(24);
+    flex-shrink: 0;
+  }
+}
+
+.p-partner-hero__badge {
+  align-self: flex-start;
+  background-color: rgba(46, 78, 45, 0.1);
+  color: $partner-color-main;
+  font-weight: 700;
+  font-size: rem(7.01);
+  line-height: rem(10);
+  padding: rem(3) rem(8);
+  border-radius: 9999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+
+  @include mq(pc) {
+    font-size: rem(14);
+    line-height: rem(20);
+    padding: rem(6) rem(16);
+  }
+}
+
+.p-partner-hero__title {
+  position: relative;
+  color: $partner-color-main;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.p-partner-hero__title-large {
+  font-size: rem(28);
+  letter-spacing: 1.12px;
+
+  @include mq(pc) {
+    font-size: rem(48);
+    letter-spacing: 1.92px;
+  }
+}
+
+.p-partner-hero__title-small {
+  font-size: rem(22);
+  letter-spacing: 0.88px;
+
+  @include mq(pc) {
+    font-size: rem(40);
+    letter-spacing: 1.6px;
+  }
+}
+
+.p-partner-hero__title-marker {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  color: $partner-color-accent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: rem(4);
+    height: rem(14);
+    background-color: $partner-color-yellow;
+    z-index: -1;
+
+    @include mq(pc) {
+      height: rem(17);
+      bottom: rem(6);
+    }
+  }
+}
+
+.p-partner-hero__lead {
+  color: $partner-color-main;
+  font-weight: 700;
+  font-size: rem(12);
+  line-height: 1.8;
+  margin: 0;
+
+  @include mq(pc) {
+    font-size: rem(18);
+  }
+}
+
+// ----------------------------
+// 写真エリア
+// ----------------------------
+.p-partner-hero__photos {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: rem(220);
+  margin: rem(8) 0;
+
+  @include mq(pc) {
+    flex-shrink: 0;
+    width: rem(540);
+    height: rem(420);
+    margin: 0;
+  }
+}
+
+.p-partner-hero__photo {
+  position: absolute;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.p-partner-hero__photo--kick {
+  top: 0;
+  left: rem(100);
+  width: 100%;
+  max-width: rem(144);
+  height: auto;
+  z-index: 1;
+
+  @include mq(pc) {
+    top: 0;
+    left: auto;
+    right: rem(30);
+    width: rem(240);
+    height: rem(240);
+    border-width: 6px;
+  }
+}
+
+.p-partner-hero__photo--portrait {
+  top: rem(50);
+  right: rem(20);
+  width: rem(174);
+  height: rem(174);
+  z-index: 2;
+
+  @include mq(pc) {
+    top: rem(130);
+    right: auto;
+    left: rem(60);
+    width: rem(280);
+    height: rem(280);
+    border-width: 6px;
+  }
+}
+
+// ----------------------------
+// CTA
+// ----------------------------
+.p-partner-hero__cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+
+  @include mq(pc) {
+    align-items: flex-start;
+    gap: rem(16);
+  }
+}
+
+.p-partner-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(4);
+  width: 100%;
+  height: rem(54);
+  padding: rem(8) rem(16);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 5px 7.5px rgba(0, 0, 0, 0.1),
+    0 2px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  @include mq(pc) {
+    width: auto;
+    height: rem(60);
+    padding: rem(10) rem(24);
+    gap: rem(8);
+    font-size: rem(18);
+    font-weight: 700;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.p-partner-hero__btn-icon {
+  flex-shrink: 0;
+  width: rem(20);
+  height: rem(20);
+
+  @include mq(pc) {
+    width: rem(24);
+    height: rem(24);
+  }
+}
+
+.p-partner-hero__note {
+  color: $partner-color-text;
+  font-size: rem(12);
+  line-height: 1.4;
+  margin: 0;
+
+  @include mq(pc) {
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(20);
+  }
+}

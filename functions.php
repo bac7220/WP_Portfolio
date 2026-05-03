@@ -51,33 +51,40 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('swiper', "
 document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.p-partner-works__swiper', {
-    slidesPerView: 1.6,
+    slidesPerView: 1.15,
     spaceBetween: 16,
-    centeredSlides: false,
+    centeredSlides: true,
     loop: true,
-    pagination: {
-      el: '.p-partner-works__pagination',
-      clickable: true,
-    },
     navigation: {
       prevEl: '.p-partner-works__button-prev',
       nextEl: '.p-partner-works__button-next',
     },
     breakpoints: {
-      600: {
-        slidesPerView: 2.6,
-        spaceBetween: 20,
-      },
-      1000: {
-        slidesPerView: 3.6,
+      768: {
+        slidesPerView: 3,
         spaceBetween: 24,
-      },
-      1400: {
-        slidesPerView: 4.5,
-        spaceBetween: 24,
+        centeredSlides: true,
       },
     },
   });
+
+  // Skills toggle
+  var toggleBtn = document.getElementById('js-skills-toggle');
+  if (toggleBtn) {
+    var detailInner = document.querySelector('.p-skills__wp-detail-inner');
+    var toggleText = toggleBtn.querySelector('.p-skills__toggle-text');
+    toggleBtn.addEventListener('click', function() {
+      var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', !isOpen);
+      if (!isOpen) {
+        detailInner.classList.add('is-open');
+        toggleText.textContent = '閉じる';
+      } else {
+        detailInner.classList.remove('is-open');
+        toggleText.textContent = '詳細をみる';
+      }
+    });
+  }
 });
 ");
 });
