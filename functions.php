@@ -2,8 +2,8 @@
 function my_script_init()
 
 {
-    // Google Fonts (Noto Sans JP, Nunito Sans に Zen Old Mincho を追加)
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Old+Mincho:wght@700&display=swap', array(), null);
+    // Google Fonts (Noto Sans JP, Nunito Sans, Zen Old Mincho, Montserrat)
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Old+Mincho:wght@700&display=swap', array(), null);
 
     // Font Awesome
     wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", array(), "5.8.2", "all");
@@ -51,33 +51,94 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('swiper', "
 document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.p-partner-works__swiper', {
-    slidesPerView: 1.6,
+    slidesPerView: 'auto',
     spaceBetween: 16,
-    centeredSlides: false,
+    centeredSlides: true,
     loop: true,
-    pagination: {
-      el: '.p-partner-works__pagination',
-      clickable: true,
-    },
     navigation: {
-      prevEl: '.p-partner-works__button-prev',
-      nextEl: '.p-partner-works__button-next',
+      prevEl: '.p-partner-works__nav--prev',
+      nextEl: '.p-partner-works__nav--next',
     },
     breakpoints: {
-      600: {
-        slidesPerView: 2.6,
-        spaceBetween: 20,
-      },
-      1000: {
-        slidesPerView: 3.6,
-        spaceBetween: 24,
-      },
-      1400: {
-        slidesPerView: 4.5,
+      768: {
         spaceBetween: 24,
       },
     },
   });
+
+  // Skills toggle
+  var toggleBtn = document.getElementById('js-skills-toggle');
+  if (toggleBtn) {
+    var detailInner = document.querySelector('.p-skills__wp-detail-inner');
+    var toggleText = toggleBtn.querySelector('.p-skills__toggle-text');
+    toggleBtn.addEventListener('click', function() {
+      var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', !isOpen);
+      if (!isOpen) {
+        detailInner.classList.add('is-open');
+        toggleText.textContent = '閉じる';
+      } else {
+        detailInner.classList.remove('is-open');
+        toggleText.textContent = '詳細をみる';
+      }
+    });
+  }
+
+  // Capabilities WordPress 詳細トグル（高さはJSで動的制御）
+  var capToggle = document.getElementById('js-cap-toggle');
+  if (capToggle) {
+    var capWrap = capToggle.closest('.p-partner-cap__wp');
+    var capDetail = document.getElementById('js-cap-detail');
+    var capLabel = capToggle.querySelector('.p-partner-cap__wp-toggle-text');
+    var DURATION = 600; // ms（CSSと合わせる）
+
+    // 閉じた状態の見える高さ（PCは240、SPは280。matchMedia判定）
+    function getClosedHeight() {
+      return window.matchMedia('(min-width: 768px)').matches ? 240 : 280;
+    }
+
+    // 初期値セット
+    if (capDetail) {
+      capDetail.style.maxHeight = getClosedHeight() + 'px';
+      capDetail.style.transition = 'max-height ' + DURATION + 'ms ease';
+      capDetail.style.overflow = 'hidden';
+    }
+
+    capToggle.addEventListener('click', function () {
+      if (!capDetail) return;
+      var isOpen = capWrap.getAttribute('data-state') === 'open';
+
+      if (isOpen) {
+        // 開→閉：いったん現在の実高さを固定 → 次フレームで closed 高さへ
+        capDetail.style.maxHeight = capDetail.scrollHeight + 'px';
+        requestAnimationFrame(function () {
+          capDetail.style.maxHeight = getClosedHeight() + 'px';
+        });
+        capWrap.setAttribute('data-state', 'closed');
+        capToggle.setAttribute('aria-expanded', 'false');
+        if (capLabel) capLabel.textContent = '詳細をみる';
+      } else {
+        // 閉→開：実コンテンツ高さへトランジション
+        capDetail.style.maxHeight = capDetail.scrollHeight + 'px';
+        capWrap.setAttribute('data-state', 'open');
+        capToggle.setAttribute('aria-expanded', 'true');
+        if (capLabel) capLabel.textContent = '閉じる';
+        // トランジション完了後に none にして可変対応（リサイズ等）
+        setTimeout(function () {
+          if (capWrap.getAttribute('data-state') === 'open') {
+            capDetail.style.maxHeight = 'none';
+          }
+        }, DURATION + 50);
+      }
+    });
+
+    // リサイズ時、閉じてる場合は再計算
+    window.addEventListener('resize', function () {
+      if (capWrap.getAttribute('data-state') !== 'open') {
+        capDetail.style.maxHeight = getClosedHeight() + 'px';
+      }
+    });
+  }
 });
 ");
 });

@@ -17,8 +17,8 @@
 <body>
     <header id="js-header" class="p-header
     <?php if (!is_front_page()) {
-            echo ' u-bg-header';
-        } ?>">
+        echo ' u-bg-header';
+    } ?>">
         <div class=" p-header__container p-header__fz">
             <a href="<?php echo home_url(); ?>">
 
@@ -52,6 +52,7 @@
                     } ?>" href="<?php echo esc_url(home_url('/contact')); ?>">Contact
                     </a>
                 </li>
+
             </ul>
             <button id="js-drawer-icon" class="c-drawer-icon">
                 <span class="c-drawer-icon__bar"></span>
@@ -92,13 +93,16 @@
                         <a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a>
                     </li>
                     <li class="p-header__nav-item">
-
+                        <svg width="24" height="24" role="img" aria-label="book-icon">
+                            <use href="#book-svg"></use>
+                        </svg>
+                        <a href="<?php echo esc_url(home_url('/blog')); ?>" target="_blank" rel="noopener noreferrer">Blog</a>
                     </li>
                 </ul>
             </nav>
             <div class="p-drawer__footer u-white-color">
                 <div class="p-drawer__footer-left ">
-                    <a href="#" target="_blank" class="header__nav-link">
+                    <a href="<?php echo esc_url(home_url('/blog')); ?>" target="_blank" rel="noopener noreferrer" class="header__nav-link">
                         <svg width="24" height="24" role="img" aria-label="book-icon">
                             <use href="#book-svg"></use>
                         </svg>

@@ -1,0 +1,2895 @@
+// ============================================================
+// Object / Project - Partner Page (page-partner.php)
+// ============================================================
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixin" as *;
+@use "../../foundation/function" as *;
+
+// ----------------------------
+// Color tokens（DESIGN.md準拠）
+// ----------------------------
+$partner-color-main: #2e4e2d; // メイン（深緑）
+$partner-color-base: #7d987c; // ベース（淡緑）
+$partner-color-accent: #df5b38; // アクセント（オレンジ）
+$partner-color-text: #4f4f4f; // 本文
+$partner-color-bg-light: #f8fafc; // セクション薄背景
+$partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
+
+// ----------------------------
+// Wrapper（全体）
+// ----------------------------
+
+.p-partner {
+  color: $partner-color-text;
+  font-family: "Noto Sans JP", sans-serif;
+  overflow: clip; // 装飾はみ出し対策
+}
+
+// ============================================================
+// Section 1: Hero (FV)
+// ============================================================
+.p-partner-hero {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  padding: rem(48) rem(16) rem(16);
+
+  @include mq(pc) {
+    padding: rem(28) rem(16) rem(16);
+    padding-left: rem(26);
+  }
+}
+
+.p-partner-hero__inner {
+  // display: flex;
+  flex-direction: column;
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(48);
+  }
+}
+
+.p-partner-hero__wrapper {
+  display: grid;
+  margin: 0 auto;
+  max-width: rem(450);
+  gap: rem(24);
+  @include mq(pc) {
+    max-width: rem(1152);
+  }
+  @include mq(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ----------------------------
+// 装飾（背景の図形）
+// ----------------------------
+.p-partner-hero__decorations {
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-hero__deco {
+  position: absolute;
+}
+
+.p-partner-hero__deco-1 {
+  max-width: rem(380);
+  width: 100%;
+  height: auto;
+  top: rem(300);
+  left: calc(50% + rem(100));
+  @include mq(pc) {
+    top: rem(224);
+    left: auto;
+    right: rem(80);
+    max-width: rem(450);
+  }
+}
+.p-partner-hero__deco-2 {
+  max-width: rem(180);
+  width: 100%;
+  height: auto;
+  top: rem(-48);
+  left: calc(50% - rem(300));
+  @include mq(pc) {
+    max-width: rem(380);
+    top: rem(300);
+    left: calc(50% - rem(780));
+  }
+}
+.p-partner-hero__deco-3 {
+  max-width: rem(250);
+  width: 100%;
+  height: auto;
+  top: rem(-48);
+  left: rem(-64);
+}
+.p-partner-hero__deco-4 {
+  max-width: rem(250);
+  width: 100%;
+  height: auto;
+  top: rem(-60);
+  left: calc(50% + rem(10));
+  @include mq(pc) {
+    left: auto;
+    top: rem(-100);
+    right: rem(480);
+    max-width: rem(350);
+  }
+}
+.p-partner-hero__deco-5 {
+  max-width: rem(80);
+  width: 100%;
+  height: auto;
+  top: rem(380);
+  left: 0;
+  @include mq(pc) {
+    right: rem(48);
+    left: auto;
+    top: rem(482);
+    max-width: rem(130);
+  }
+}
+
+// ----------------------------
+// テキストブロック
+// ----------------------------
+.p-partner-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  @include mq(pc) {
+    gap: rem(24);
+    flex-shrink: 0;
+    width: fit-content;
+  }
+}
+
+.p-partner-hero__badge {
+  align-self: flex-start;
+  background-color: rgba(46, 78, 45, 0.1);
+  color: $partner-color-main;
+  font-weight: 700;
+  font-size: rem(7.01);
+  line-height: rem(10);
+  padding: rem(3) rem(8);
+  border-radius: 9999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+
+  @include mq(pc) {
+    font-size: rem(14);
+    line-height: rem(20);
+    padding: rem(6) rem(16);
+  }
+}
+
+.p-partner-hero__title {
+  position: relative;
+  color: $partner-color-main;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  margin: 0;
+  @include mq(pc) {
+    white-space: nowrap;
+  }
+}
+
+.p-partner-hero__title-large {
+  font-size: rem(28);
+  letter-spacing: 1.12px;
+
+  @include mq(pc) {
+    font-size: rem(48);
+    letter-spacing: 1.92px;
+  }
+}
+
+.p-partner-hero__title-small {
+  font-size: rem(22);
+  letter-spacing: 0.88px;
+
+  @include mq(pc) {
+    font-size: rem(40);
+    letter-spacing: 1.6px;
+  }
+}
+
+.p-partner-hero__title-marker {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  color: $partner-color-accent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: rem(4);
+    height: rem(14);
+    background-color: $partner-color-yellow;
+    z-index: -1;
+
+    @include mq(pc) {
+      height: rem(17);
+      bottom: rem(6);
+    }
+  }
+}
+
+.p-partner-hero__lead {
+  color: $partner-color-main;
+  font-weight: 700;
+  font-size: rem(12);
+  line-height: 1.8;
+  margin: 0;
+
+  @include mq(pc) {
+    font-size: rem(18);
+  }
+}
+
+// ----------------------------
+// 写真エリア
+// ----------------------------
+.p-partner-hero__photos {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: rem(220);
+  margin: rem(8) 0;
+
+  @include mq(pc) {
+    flex-shrink: 0;
+    width: rem(540);
+    height: rem(320);
+    margin: 0;
+  }
+}
+
+.p-partner-hero__photo {
+  position: absolute;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @include mq(pc) {
+    position: relative;
+  }
+}
+
+.p-partner-hero__photo--kick {
+  top: rem(-24);
+  left: rem(8);
+  width: 100%;
+  max-width: rem(180);
+  height: auto;
+  z-index: 1;
+  @include mq(pc) {
+    left: calc(50% - rem(60));
+  }
+
+  @include mq(lg) {
+    top: rem(58);
+    left: auto;
+    right: rem(-168);
+    max-width: rem(256);
+  }
+}
+
+.p-partner-hero__photo--portrait {
+  top: rem(-100);
+  left: calc(50% - rem(60));
+  width: 100%;
+  max-width: rem(250);
+  height: auto;
+  z-index: 2;
+  @include mq(pc) {
+    top: rem(-250);
+    left: calc(50% + rem(160));
+  }
+
+  @include mq(lg) {
+    top: rem(-148);
+    right: auto;
+    left: rem(-120);
+    max-width: rem(352);
+  }
+}
+
+// ----------------------------
+// CTA
+// ----------------------------
+.p-partner-hero__cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+  @include mq(pc) {
+    align-items: center;
+  }
+
+  @include mq(lg) {
+    align-items: flex-start;
+    gap: rem(16);
+    margin-top: rem(20);
+  }
+}
+
+.p-partner-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(4);
+  max-width: rem(500);
+  width: 100%;
+  padding: rem(16) rem(24);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 5px 7.5px rgba(0, 0, 0, 0.1),
+    0 2px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  @include mq(pc) {
+    width: auto;
+    height: rem(60);
+    padding: rem(10) rem(24);
+    gap: rem(8);
+    font-size: rem(18);
+    font-weight: 700;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.p-partner-hero__btn-icon {
+  flex-shrink: 0;
+  width: rem(20);
+  height: rem(20);
+
+  @include mq(pc) {
+    width: rem(24);
+    height: rem(24);
+  }
+}
+
+.p-partner-hero__note {
+  color: $partner-color-text;
+  font-size: rem(12);
+  line-height: 1.4;
+  margin: 0;
+
+  @include mq(pc) {
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(20);
+  }
+}
+
+.p-partner-hero--bottom {
+  background-color: #dfe8f1;
+}
+
+// ============================================================
+// Section 2: Worry（お悩み）
+// ============================================================
+.p-partner-worry {
+  background-color: #dfe8f1;
+  padding: rem(32) rem(16) rem(48);
+
+  @include mq(pc) {
+    padding: rem(48) rem(24);
+  }
+}
+
+.p-partner-worry__inner {
+  max-width: rem(674);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+
+  @include mq(pc) {
+    gap: rem(16);
+  }
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-worry__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(20);
+  font-weight: 700;
+  line-height: rem(40);
+  letter-spacing: 1.6px;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(20);
+    line-height: rem(28);
+    white-space: nowrap;
+  }
+}
+
+.p-partner-worry__title-emphasis {
+  position: relative;
+  display: inline-block;
+  color: $partner-color-accent;
+  font-size: rem(24);
+}
+
+.p-partner-worry__title-dots {
+  position: absolute;
+  top: rem(-7);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(57);
+  height: rem(4);
+}
+
+// ----------------------------
+// イラスト + チェックリストの土台
+// ----------------------------
+.p-partner-worry__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(16);
+    margin-left: rem(-153);
+  }
+}
+
+// ----------------------------
+// 困った男性のイラスト + 吹き出し
+// ----------------------------
+.p-partner-worry__illust {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-partner-worry__bubble {
+  position: relative;
+  width: rem(150);
+  height: rem(85);
+  flex-shrink: 0;
+  @include mq(pc) {
+    margin-top: rem(-30);
+  }
+}
+
+.p-partner-worry__bubble-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p-partner-worry__bubble-text {
+  position: relative;
+  margin: 0;
+  padding-top: rem(18);
+  padding-left: rem(5);
+  width: rem(140);
+  color: $partner-color-main;
+  font-size: rem(13);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.p-partner-worry__man {
+  width: rem(142);
+  height: auto;
+  flex-shrink: 0;
+}
+
+// ----------------------------
+// チェックリスト
+// ----------------------------
+.p-partner-worry__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  @include mq(pc) {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, rem(200));
+    gap: rem(8) rem(16);
+  }
+}
+
+.p-partner-worry__item {
+  display: flex;
+  align-items: center;
+  gap: rem(16);
+  padding: rem(20) rem(12) rem(20) rem(16);
+  background-color: $partner-color-bg-light;
+  border-radius: rem(4);
+  @include mq(pc) {
+    padding: rem(12) rem(12) rem(12) rem(16);
+    gap: rem(18);
+  }
+}
+
+.p-partner-worry__check {
+  width: rem(16);
+  height: rem(16);
+  flex-shrink: 0;
+}
+
+.p-partner-worry__text {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+// ----------------------------
+// メッセージボックス
+// ----------------------------
+.p-partner-worry__message {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid $partner-color-accent;
+  border-radius: rem(8);
+  padding: rem(36) rem(20) rem(16);
+  margin-top: rem(12);
+
+  @include mq(pc) {
+    padding: rem(28) rem(24) rem(16);
+    margin-top: rem(40);
+  }
+}
+
+.p-partner-worry__message-badge {
+  position: absolute;
+  top: rem(-18);
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(12) rem(20);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1;
+  border-radius: rem(4);
+  white-space: nowrap;
+  @include mq(pc) {
+    top: rem(-24);
+  }
+}
+
+.p-partner-worry__message-icon {
+  width: rem(16);
+  height: rem(21);
+  flex-shrink: 0;
+}
+
+.p-partner-worry__message-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+
+  strong {
+    font-size: rem(19);
+    font-weight: 700;
+    color: $partner-color-text;
+  }
+}
+
+// ============================================================
+// Section 3: Responsiveness（圧倒的なレスポンス）
+// ============================================================
+.p-partner-resp {
+  background-color: #fff;
+  padding: rem(80) rem(16);
+
+  @include mq(pc) {
+    padding: rem(80) rem(24);
+  }
+}
+
+.p-partner-resp__inner {
+  max-width: rem(1024);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+
+  @include mq(pc) {
+    gap: rem(16);
+  }
+}
+
+// ----------------------------
+// 見出し（英字背景＋日本語）
+// ----------------------------
+.p-partner-resp__heading {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.p-partner-resp__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-resp__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 900;
+  line-height: rem(36);
+  letter-spacing: 1.2px;
+}
+
+// ----------------------------
+// リード文
+// ----------------------------
+.p-partner-resp__lead {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: rem(24);
+  text-align: center;
+
+  strong {
+    color: $partner-color-accent;
+    font-weight: 700;
+  }
+}
+
+// ----------------------------
+// カード3枚
+// ----------------------------
+.p-partner-resp__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: rem(24);
+    margin-top: rem(32);
+  }
+}
+
+.p-partner-resp__card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(18);
+  padding: rem(32);
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(16);
+  text-align: center;
+}
+
+.p-partner-resp__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(56);
+  height: rem(56);
+  background-color: rgba(46, 78, 45, 0.1);
+  border-radius: rem(12);
+  flex-shrink: 0;
+
+  img {
+    width: rem(30);
+    height: rem(30);
+    // Figmaから書き出したSVGが上下反転状態になっているため、表示時に正立に戻す
+    transform: scaleY(-1);
+  }
+}
+
+.p-partner-resp__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 700;
+  line-height: rem(28);
+}
+
+.p-partner-resp__card-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+
+// ----------------------------
+// 補足テキスト
+// ----------------------------
+.p-partner-resp__note {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ============================================================
+// Section 4: Promise（3つの約束）
+// ============================================================
+.p-partner-promise {
+  position: relative;
+  background-color: $partner-color-base;
+  padding: rem(64) rem(16) rem(64);
+  overflow: hidden;
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-promise__deco {
+  position: absolute;
+  bottom: rem(-50);
+  right: rem(-50);
+  width: rem(415);
+  height: auto;
+  pointer-events: none;
+  opacity: 0.5;
+
+  @include mq(pc) {
+    bottom: rem(-100);
+    right: rem(-100);
+    width: rem(750);
+  }
+}
+
+.p-partner-promise__inner {
+  position: relative;
+  z-index: 1;
+  max-width: rem(1024);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(48);
+
+  @include mq(pc) {
+    gap: rem(64);
+    padding-inline: rem(24);
+  }
+}
+
+// ----------------------------
+// 見出し（英字背景＋日本語＋リード）
+// ----------------------------
+.p-partner-promise__heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: rem(16);
+}
+
+.p-partner-promise__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - #{rem(40)}));
+  color: rgba(234, 240, 234, 0.2);
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(64);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  @include mq(pc) {
+    top: 82%;
+  }
+}
+
+.p-partner-promise__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(4);
+  color: #fff;
+  font-size: rem(24);
+  font-weight: 900;
+  line-height: rem(36);
+  letter-spacing: 1.2px;
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.p-partner-promise__heading-line {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: rem(4);
+}
+
+.p-partner-promise__heading-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(56);
+  height: rem(56);
+  background-color: #fff;
+  color: $partner-color-accent;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(47);
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 9999px;
+  letter-spacing: 0;
+}
+
+.p-partner-promise__lead {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ----------------------------
+// カード3枚
+// ----------------------------
+.p-partner-promise__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mq(pc) {
+    gap: rem(48);
+    max-width: rem(936);
+    margin: 0 auto;
+  }
+}
+
+.p-partner-promise__card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #fff;
+  border-radius: rem(24);
+  padding: rem(24);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(24);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    padding: rem(40) rem(88);
+    gap: rem(40);
+    min-height: rem(300);
+  }
+}
+
+.p-partner-promise__card--reverse {
+  @include mq(pc) {
+    flex-direction: row-reverse;
+  }
+}
+
+.p-partner-promise__badge {
+  position: absolute;
+  top: rem(-8);
+  width: rem(65);
+  height: rem(65);
+
+  @include mq(pc) {
+    width: rem(96);
+    height: rem(96);
+    top: rem(-34);
+  }
+}
+
+.p-partner-promise__badge--left {
+  left: calc(50% - rem(102));
+
+  @include mq(pc) {
+    left: rem(-48);
+  }
+}
+
+.p-partner-promise__badge--right {
+  right: calc(50% - rem(102));
+
+  @include mq(pc) {
+    right: rem(-48);
+  }
+}
+
+// ----------------------------
+// アイコンボックス（白枠の中にイラスト）
+// ----------------------------
+.p-partner-promise__icon {
+  flex-shrink: 0;
+  width: rem(130);
+  height: auto;
+  background-color: $partner-color-bg-light;
+  border: 1.625px solid rgba(46, 78, 45, 0.1);
+  border-radius: rem(13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(35) rem(12);
+
+  @include mq(pc) {
+    width: rem(160);
+    height: rem(160);
+  }
+}
+
+.p-partner-promise__illust {
+  object-fit: contain;
+
+  @include mq(pc) {
+  }
+}
+
+.p-partner-promise__illust-1 {
+  width: rem(105);
+  height: rem(55);
+}
+.p-partner-promise__illust-2 {
+  width: rem(48);
+  height: rem(55);
+}
+.p-partner-promise__illust-3 {
+  width: rem(102);
+  height: rem(55);
+}
+
+// ----------------------------
+// テキストエリア
+// ----------------------------
+.p-partner-promise__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.p-partner-promise__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 700;
+  line-height: rem(32);
+}
+
+.p-partner-promise__text {
+  margin: rem(16) 0 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+// ----------------------------
+// チェックリスト
+// ----------------------------
+.p-partner-promise__checklist {
+  margin: rem(8) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.p-partner-promise__check-item {
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+  color: $partner-color-text;
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: rem(20);
+  @include mq(pc) {
+    gap: rem(12);
+  }
+}
+
+.p-partner-promise__check-icon {
+  flex-shrink: 0;
+  width: rem(12);
+  height: rem(12);
+}
+
+// ----------------------------
+// テキストリンク
+// ----------------------------
+.p-partner-promise__link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  margin-top: rem(8);
+  color: $partner-color-accent;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+  align-self: flex-start;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  @include mq(pc) {
+    margin-top: rem(4);
+  }
+}
+
+.p-partner-promise__link-icon {
+  width: rem(16);
+  height: rem(16);
+  // Figma書き出し時の上下反転を戻す
+  transform: scaleY(-1);
+}
+
+// ============================================================
+// Section 5: CTA（情報交換しませんか？）
+// ============================================================
+.p-partner-cta {
+  background-color: #fff;
+  padding: rem(40) rem(16);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-cta__inner {
+  max-width: rem(896);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(8);
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-cta__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(20);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(32);
+    letter-spacing: 3.2px;
+  }
+}
+
+// ----------------------------
+// リード
+// ----------------------------
+.p-partner-cta__lead {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(13);
+  font-weight: 700;
+  line-height: rem(24);
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(16);
+  }
+}
+
+// ----------------------------
+// ボタン2つ
+// ----------------------------
+.p-partner-cta__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+  max-width: rem(500);
+  margin: rem(8) auto 0;
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(32);
+    margin-top: rem(48);
+    max-width: fit-content;
+  }
+}
+
+// 共通ボタンベース
+.p-partner-cta__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+// Webセッションボタン（オレンジ）
+// SP: イラストとボタン本体（pill）が縦並びで分離
+// PC: ボタン全体がオレンジ pill で、中にイラスト + テキスト
+.p-partner-cta__btn--web {
+  width: 100%;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fff;
+  padding: 0;
+  gap: rem(8);
+  box-shadow: none;
+  border-radius: 0;
+
+  @include mq(pc) {
+    width: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: $partner-color-accent;
+    padding: rem(16) rem(32) rem(16) rem(24);
+    height: rem(110);
+    gap: rem(8);
+    border-radius: 9999px;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.p-partner-cta__btn-illust {
+  width: rem(121);
+  height: rem(100);
+  object-fit: contain;
+
+  @include mq(pc) {
+    width: rem(160);
+    height: rem(132);
+  }
+}
+
+// SPのときだけ、テキスト部分が pill 形状のボタンになる
+.p-partner-cta__btn--web .p-partner-cta__btn-text {
+  width: 100%;
+  height: rem(63);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  padding: rem(16) rem(32) rem(16) rem(24);
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  @include mq(pc) {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: rem(18);
+    line-height: rem(28);
+    margin-bottom: rem(12);
+  }
+}
+
+// Xボタン用テキスト（共通）
+.p-partner-cta__btn--x .p-partner-cta__btn-text {
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(18);
+    line-height: rem(28);
+  }
+}
+
+// Xボタン（緑）
+.p-partner-cta__btn--x {
+  width: 100%;
+  background-color: $partner-color-main;
+  color: #fff;
+  height: rem(66);
+  padding: rem(16) rem(64);
+  gap: rem(8);
+
+  @include mq(pc) {
+    width: auto;
+    height: rem(110);
+  }
+}
+
+.p-partner-cta__btn-badge {
+  position: absolute;
+  top: rem(-18);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: $partner-color-main;
+  font-size: rem(11);
+  font-weight: 700;
+  line-height: 1;
+  padding: rem(8) rem(16);
+  border-radius: rem(136);
+  white-space: nowrap;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.05));
+
+  @include mq(pc) {
+    top: rem(-26);
+    font-size: rem(14);
+    padding: rem(10) rem(36);
+  }
+}
+
+.p-partner-cta__btn-x-icon {
+  width: rem(23);
+  height: rem(23);
+  flex-shrink: 0;
+
+  @include mq(pc) {
+    width: rem(35);
+    height: rem(36);
+  }
+}
+
+// ----------------------------
+// Voiceバナー
+// ----------------------------
+.p-partner-cta__voice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(16);
+  width: 100%;
+  background-color: $partner-color-bg-light;
+  border-radius: rem(16);
+  padding: rem(16) rem(24);
+  text-decoration: none;
+  margin-top: rem(16);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #eef2f6;
+  }
+
+  @include mq(pc) {
+    width: auto;
+    padding: rem(16) rem(32);
+    margin: rem(48) auto 0;
+  }
+}
+
+.p-partner-cta__voice-body {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  flex: 1;
+
+  @include mq(pc) {
+    width: rem(320);
+    flex: none;
+  }
+}
+
+.p-partner-cta__voice-text {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(22);
+
+  @include mq(pc) {
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+}
+
+.p-partner-cta__voice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  color: $partner-color-accent;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+
+  @include mq(pc) {
+    font-size: rem(16);
+  }
+}
+
+.p-partner-cta__voice-arrow {
+  width: rem(16);
+  height: rem(16);
+  // Figma書き出し時の上下反転を戻す
+  transform: scaleY(-1);
+}
+
+.p-partner-cta__voice-illust {
+  flex-shrink: 0;
+  width: rem(80);
+  height: rem(82);
+  object-fit: contain;
+
+  @include mq(pc) {
+    width: rem(95);
+    height: rem(98);
+  }
+}
+
+// ============================================================
+// Section 6: WORKS（実績紹介）
+// ============================================================
+.p-partner-works {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  padding: rem(96) 0;
+  overflow: hidden;
+}
+
+.p-partner-works__deco {
+  position: absolute;
+  top: rem(-41);
+  left: rem(-33);
+  width: rem(155);
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-works__inner {
+  position: relative;
+  z-index: 1;
+  max-width: rem(1024);
+  margin: 0 auto;
+  padding: 0 rem(16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-works__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-works__lead {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ----------------------------
+// スライダー
+// ----------------------------
+.p-partner-works__slider-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: rem(32);
+
+  @include mq(pc) {
+    margin-top: rem(48);
+  }
+}
+
+// .swiper のデフォルト（padding:0 / overflow:hidden）を上書きするため
+// 複合セレクタで specificity を上げる
+// 左右padding は 0（カード側 max-width で余白を制御）
+.swiper.p-partner-works__swiper {
+  width: 100%;
+  padding: rem(60) 0 rem(72);
+  overflow: hidden;
+
+  @include mq(pc) {
+    padding: rem(72) 0 rem(80);
+  }
+}
+
+// ----------------------------
+// カード（345px固定）
+// Swiperのデフォルト .swiper-slide { width: 100% } を上書きする必要があるため
+// specificity を上げて指定
+// ----------------------------
+.p-partner-works__swiper .swiper-slide.p-partner-works__card {
+  flex-shrink: 0;
+  width: rem(345);
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  // SP: カードを少し小さくして両端のカードがチラ見えするように
+  @include mq(sp) {
+    width: rem(280);
+    max-width: calc(100vw - #{rem(80)});
+  }
+}
+
+.p-partner-works__card-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid $partner-color-accent;
+  border-radius: rem(16);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow:
+    -7px -7px 18px 0 rgba(223, 91, 56, 0.15),
+    7px 7px 18px 0 rgba(229, 143, 121, 0.15);
+  transform: scale(0.9); // 非アクティブは少し小さく
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+// アクティブスライドの中央カードだけ拡大
+.swiper-slide-active .p-partner-works__card-link {
+  transform: scale(1);
+}
+
+@include mq(pc) {
+  // PCではアクティブをさらに少し大きく
+  .swiper-slide-active .p-partner-works__card-link {
+    transform: scale(1.08);
+  }
+}
+
+.p-partner-works__card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #ddd;
+
+  // 画像の上に半透明オーバーレイ
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.p-partner-works__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  padding: rem(20);
+}
+
+.p-partner-works__card-category {
+  color: $partner-color-accent;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(20);
+}
+
+.p-partner-works__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: rem(28);
+}
+
+.p-partner-works__card-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(13);
+  font-weight: 400;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p-partner-works__card-more {
+  margin-top: rem(4);
+  color: $partner-color-text;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(20);
+  text-decoration: underline;
+  text-align: right;
+}
+
+// ----------------------------
+// ナビ矢印（オレンジ円）
+// ----------------------------
+.p-partner-works__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: rem(40);
+  height: rem(40);
+  border-radius: 50%;
+  background-color: $partner-color-accent;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @include mq(pc) {
+    width: rem(48);
+    height: rem(48);
+  }
+
+  // 三角形矢印（CSS border trick）
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+}
+
+// PCでは中央カード（345px幅）の左右端にボタン中心がくるように配置
+.p-partner-works__nav--prev {
+  left: rem(8);
+
+  @include mq(pc) {
+    left: calc(50% - #{rem(188.5)});
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    border-width: rem(11) rem(11) rem(11) 0;
+    border-color: transparent #fff transparent transparent;
+    margin-right: rem(3); // 視覚的な中央寄せ調整
+  }
+}
+
+.p-partner-works__nav--next {
+  right: rem(8);
+
+  @include mq(pc) {
+    right: auto;
+    left: calc(50% + #{rem(188.5)});
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    border-width: rem(11) 0 rem(11) rem(11);
+    border-color: transparent transparent transparent #fff;
+    margin-left: rem(3); // 視覚的な中央寄せ調整
+  }
+}
+
+// ----------------------------
+// もっと見る
+// ----------------------------
+.p-partner-works__footer {
+  margin-top: rem(8);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.p-partner-works__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  color: $partner-color-accent;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+// ============================================================
+// Section 7: CAPABILITIES（スキル・対応領域）
+// ============================================================
+.p-partner-cap {
+  background-color: #fff;
+  padding: rem(80) rem(16) rem(81);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-cap__inner {
+  max-width: rem(1024);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mq(pc) {
+    gap: rem(32);
+  }
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-cap__heading {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.p-partner-cap__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-cap__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 900;
+  line-height: rem(36);
+  letter-spacing: 1.2px;
+}
+
+.p-partner-cap__lead {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ----------------------------
+// 上段3カード
+// ----------------------------
+.p-partner-cap__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: rem(16);
+  }
+}
+
+.p-partner-cap__card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(2);
+  padding: rem(27) rem(25) rem(25);
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(12);
+  text-align: center;
+}
+
+.p-partner-cap__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(36);
+  height: rem(36);
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(-1); // Figma書き出しが反転
+  }
+}
+
+.p-partner-cap__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+}
+
+.p-partner-cap__card-sub {
+  margin: 0;
+  padding: rem(6) 0 rem(8);
+  color: $partner-color-text;
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: rem(16);
+}
+
+.p-partner-cap__card-text {
+  margin: 0;
+  width: 100%;
+  color: $partner-color-text;
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+}
+
+// ----------------------------
+// WordPress大カード
+// ----------------------------
+.p-partner-cap__wp {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(12);
+  padding: rem(27) rem(25) rem(64); // 下に折りたたみボタン分
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: rem(48);
+    padding: rem(40) rem(40) rem(72);
+  }
+}
+
+// おくだやPoint! バッジ（skills.webp：テキスト入り画像をそのまま使用）
+.p-partner-cap__wp-point {
+  position: absolute;
+  top: rem(-15);
+  left: rem(13);
+  width: rem(77);
+  height: rem(77);
+  z-index: 2;
+}
+
+.p-partner-cap__wp-point-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// 上半分（WordPress 見出しエリア）
+// SP: 縦並び中央 / PC: 左カラム固定幅
+.p-partner-cap__wp-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(2);
+  text-align: center;
+  padding-top: rem(30); // バッジと干渉しないように
+
+  .p-partner-cap__card-text {
+    text-align: left;
+  }
+
+  @include mq(pc) {
+    width: rem(220);
+    flex-shrink: 0;
+    padding-top: rem(30);
+  }
+}
+
+// 下半分：詳細リスト（折りたたみ対象）
+// 閉じている状態でも一部が見える + 下フェード
+.p-partner-cap__wp-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  width: 100%;
+  // 高さ制御は JS（functions.php）で行う
+
+  @include mq(pc) {
+    flex: 1;
+  }
+
+  // 下フェード（白→透明、背景色になじませる）
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: rem(100);
+    background: linear-gradient(to top, $partner-color-bg-light 20%, rgba(248, 250, 252, 0));
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+  }
+
+  // 開いた時：フェード消す
+  .p-partner-cap__wp[data-state="open"] &::after {
+    opacity: 0;
+  }
+}
+
+.p-partner-cap__wp-block {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.p-partner-cap__wp-block-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(6);
+  color: $partner-color-text;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.p-partner-cap__wp-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: $partner-color-base;
+  color: #fff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(18);
+  padding: rem(2) rem(8);
+  border-radius: rem(21);
+}
+
+.p-partner-cap__wp-list {
+  margin: 0;
+  padding: 0 0 0 rem(24);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+
+  li {
+    position: relative;
+    padding-left: rem(16);
+    color: $partner-color-text;
+    font-size: rem(15);
+    font-weight: 500;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(10);
+      left: 0;
+      width: rem(8);
+      height: rem(8);
+      background-color: $partner-color-base;
+      border-radius: 50%;
+    }
+  }
+}
+
+// 納品後のサポートブロック
+.p-partner-cap__wp-support {
+  background-color: #fff;
+  border-radius: rem(8);
+  padding: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.p-partner-cap__wp-support-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(15);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.p-partner-cap__wp-support-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(8);
+}
+
+.p-partner-cap__wp-support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  height: rem(60);
+  padding: rem(10) rem(24);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  img {
+    width: rem(16);
+    height: rem(16);
+    transform: scaleY(-1);
+  }
+}
+
+.p-partner-cap__wp-support-note {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+// 折りたたみトリガー（カード下部の中央に固定）
+.p-partner-cap__wp-toggle {
+  position: absolute;
+  bottom: rem(14);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; // フェードより前面
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  background: transparent;
+  border: none;
+  color: $partner-color-accent;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: rem(8);
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.p-partner-cap__wp-toggle-icon {
+  width: rem(16);
+  height: rem(16);
+  transition: transform 0.3s ease;
+
+  .p-partner-cap__wp[data-state="open"] & {
+    transform: rotate(180deg);
+  }
+}
+
+// ----------------------------
+// フッター（マスコット + メッセージ）
+// ----------------------------
+.p-partner-cap__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  padding: rem(15) 0;
+  border-radius: rem(12);
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(24);
+  }
+}
+
+.p-partner-cap__footer-mascot {
+  flex-shrink: 0;
+  width: rem(66);
+  height: rem(66);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.p-partner-cap__footer-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+// ============================================================
+// Section 8: PRICE（料金表）
+// SP: name+price 横並び / note 全幅2段目
+// PC: 3カラムテーブル（name | price | note）
+// ============================================================
+.p-partner-price {
+  background-color: $partner-color-base;
+  padding: rem(80) rem(16);
+
+  @include mq(pc) {
+    padding: rem(80) rem(24);
+  }
+}
+
+.p-partner-price__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+  max-width: rem(1024);
+  margin: 0 auto;
+
+  @include mq(pc) {
+    gap: rem(48);
+  }
+}
+
+.p-partner-price__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  width: 100%;
+}
+
+.p-partner-price__heading-en {
+  margin: 0;
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: rem(64);
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.p-partner-price__lead {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  text-align: center;
+}
+
+// テーブルカード
+.p-partner-price__table {
+  background-color: #fff;
+  border-radius: rem(12);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+}
+
+// 行：通常はSPで2段（name+price / note）、PCで3カラム横並び
+.p-partner-price__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-bottom: 1px solid $partner-color-bg-light;
+
+  &:nth-of-type(odd):not(.p-partner-price__row--head) {
+    background-color: $partner-color-bg-light;
+  }
+
+  @include mq(pc) {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
+
+// ヘッダー行
+.p-partner-price__row--head {
+  background-color: $partner-color-main;
+
+  &:nth-of-type(odd) {
+    background-color: $partner-color-main;
+  }
+
+  .p-partner-price__cell {
+    color: #fff;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: 20 / 14;
+  }
+
+  .p-partner-price__cell--name {
+    flex: 1;
+
+    @include mq(pc) {
+      flex: 0 0 rem(258);
+    }
+  }
+
+  // SPでは price/note ヘッダーは非表示
+  .p-partner-price__cell--price,
+  .p-partner-price__cell--note {
+    display: none;
+
+    @include mq(pc) {
+      display: block;
+    }
+  }
+
+  .p-partner-price__cell--price {
+    @include mq(pc) {
+      flex: 0 0 rem(176);
+    }
+  }
+
+  .p-partner-price__cell--note {
+    @include mq(pc) {
+      flex: 1;
+    }
+  }
+}
+
+// セル共通
+.p-partner-price__cell {
+  padding: rem(8) rem(16);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+
+  @include mq(pc) {
+    padding: rem(16) rem(24);
+  }
+}
+
+// 通常行：name セル
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--name {
+  flex: 1;
+  min-width: 0;
+  color: $partner-color-text;
+  font-weight: 700;
+  font-size: rem(16);
+
+  @include mq(pc) {
+    flex: 0 0 rem(258);
+  }
+}
+
+// 通常行：price セル（SP=右上、PC=中央カラム）
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--price {
+  width: rem(130);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: rem(16);
+  color: $partner-color-accent;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+
+  @include mq(pc) {
+    flex: 0 0 rem(176);
+    width: auto;
+    padding-right: rem(24);
+  }
+}
+
+.p-partner-price__num {
+  font-size: rem(18);
+  line-height: 20 / 18;
+}
+
+.p-partner-price__unit {
+  font-size: rem(14);
+  line-height: 20 / 14;
+}
+
+.p-partner-price__per {
+  margin-left: rem(2);
+  color: $partner-color-text;
+  font-weight: 700;
+  font-size: rem(12);
+  line-height: 16 / 12;
+}
+
+// 通常行：note セル（SP=2段目で全幅、PC=右カラム）
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--note {
+  flex: 0 0 100%;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: rem(8);
+  color: #808080;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: 20 / 14;
+
+  @include mq(pc) {
+    flex: 1;
+    width: auto;
+    padding: rem(16) rem(24);
+  }
+}
+
+// もっと見る
+.p-partner-price__more {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  min-width: rem(200);
+  height: rem(60);
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1.5;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.p-partner-price__more-text {
+  text-decoration: underline;
+}
+
+.p-partner-price__more-icon {
+  width: rem(16);
+  height: rem(16);
+  // Figma書き出しSVG（-scale-y-100 が当たっているので元に戻す）
+  transform: scaleY(-1);
+}
+
+// ============================================================
+// Section 9: FLOW（制作フロー）
+// SP: イラスト上 / テキスト下（中央寄せ）
+// PC: イラスト左 / テキスト右（横並び）
+// 中央に縦の太いライン（カードの裏側を貫通）
+// ============================================================
+.p-partner-flow {
+  background-color: #fff;
+  padding: rem(96) rem(16);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-flow__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(48);
+  max-width: rem(1024);
+  margin: 0 auto;
+
+  @include mq(pc) {
+    gap: rem(64);
+  }
+}
+
+.p-partner-flow__heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  width: 100%;
+}
+
+.p-partner-flow__heading-en {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - #{rem(7)}));
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: rem(64);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-flow__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-main;
+  font-weight: 900;
+  font-size: rem(24);
+  line-height: 36 / 24;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.p-partner-flow__lead {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-text;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  text-align: center;
+}
+
+// ステップ列
+.p-partner-flow__steps {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 rem(32);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: rem(24);
+  width: 100%;
+  max-width: rem(688);
+
+  @include mq(pc) {
+    gap: rem(48);
+  }
+
+  // 中央を貫く縦ライン
+  &::before {
+    content: "";
+    position: absolute;
+    top: rem(80);
+    bottom: rem(80);
+    left: 50%;
+    transform: translateX(-50%);
+    width: rem(9);
+    background-color: $partner-color-main;
+    z-index: 0;
+  }
+}
+
+.p-partner-flow__step {
+  position: relative;
+  z-index: 1;
+  background-color: $partner-color-bg-light;
+  border: 2px solid $partner-color-main;
+  border-radius: rem(16);
+  padding: rem(34) rem(26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    gap: rem(24);
+    padding: rem(34) rem(42);
+  }
+}
+
+// Step 04 装飾アイコン（右下）
+.p-partner-flow__step--deco {
+  overflow: hidden;
+}
+
+.p-partner-flow__step-deco {
+  position: absolute;
+  right: rem(-52);
+  bottom: rem(-52);
+  width: rem(181);
+  height: rem(181);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+
+  img {
+    width: rem(128);
+    height: rem(128);
+    transform: rotate(45deg) scaleY(-1);
+  }
+}
+
+// イラスト
+.p-partner-flow__step-illust {
+  flex-shrink: 0;
+  width: rem(126);
+  height: rem(94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+// テキストブロック
+.p-partner-flow__step-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+  width: 100%;
+}
+
+.p-partner-flow__step-num {
+  color: $partner-color-accent;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 24 / 16;
+}
+
+.p-partner-flow__step-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 28 / 20;
+}
+
+.p-partner-flow__step-text {
+  margin: rem(7) 0 0;
+  color: $partner-color-main;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+}
+
+// Step 01 の Contact ボタン
+.p-partner-flow__step-btn {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  margin-top: rem(12);
+  padding: rem(10) rem(24);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 24 / 16;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px 0 rgba(0, 0, 0, 0.1),
+    0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+.p-partner-flow__step-btn-icon {
+  width: rem(24);
+  height: rem(24);
+}
+
+// ============================================================
+// Section 10: PHILOSOPHY（大切にしていること）
+// SP: 円カード4つ縦並び
+// PC: 2x2 グリッド配置（中央にマスコット）
+// ============================================================
+.p-partner-philosophy {
+  position: relative;
+  z-index: 1; // 他セクションより上に重ねる（隣接セクションのbgに沈まないように）
+  background-color: $partner-color-base;
+  padding: rem(96) rem(16);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+// PC装飾（右上 / 左下）
+.p-partner-philosophy__decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; // 自身の section bg より上に
+}
+
+.p-partner-philosophy__deco {
+  position: absolute;
+  height: auto;
+}
+
+.p-partner-philosophy__deco--hd1 {
+  top: rem(-40);
+  right: rem(-60);
+  max-width: rem(380);
+  width: 100%;
+  z-index: 1;
+}
+
+.p-partner-philosophy__deco--hd5 {
+  top: rem(60);
+  right: rem(280);
+  width: rem(120);
+}
+
+.p-partner-philosophy__deco--cta1 {
+  bottom: rem(-40);
+  left: rem(-60);
+  width: rem(280);
+}
+
+.p-partner-philosophy__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(56);
+  max-width: rem(896);
+  margin: 0 auto;
+}
+
+.p-partner-philosophy__heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(24);
+  width: 100%;
+}
+
+.p-partner-philosophy__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - #{rem(7)}));
+  color: rgba(234, 240, 234, 0.35);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: rem(64);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-philosophy__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-weight: 900;
+  font-size: rem(24);
+  line-height: 36 / 24;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.p-partner-philosophy__lead {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 24 / 16;
+  text-align: center;
+}
+
+// 円カード列
+.p-partner-philosophy__circles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(40);
+  width: 100%;
+
+  @include mq(pc) {
+    display: grid;
+    grid-template-columns: repeat(2, rem(280));
+    grid-template-rows: rem(280) rem(280);
+    gap: rem(72) rem(90);
+    justify-content: center;
+    padding: rem(40) 0;
+  }
+
+  // PC中央の白いリング（マスコットの裏に配置）
+  &::before {
+    content: "";
+    display: none;
+
+    @include mq(pc) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(378);
+      height: rem(378);
+      border: 1px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+}
+
+// 中央マスコット
+.p-partner-philosophy__mascot {
+  width: rem(162);
+  height: rem(162);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #b6c8b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include mq(pc) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// 円カード
+.p-partner-philosophy__card {
+  position: relative;
+  width: rem(280);
+  height: rem(280);
+  border: 1px solid #fff;
+  border-radius: rem(216);
+  background-color: $partner-color-main;
+  padding: rem(32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(12);
+  text-align: center;
+  box-shadow: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+// タグピル（カード上端中央）
+.p-partner-philosophy__tag {
+  position: absolute;
+  top: rem(-9);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: $partner-color-main;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1;
+  padding: rem(3) rem(16);
+  border-radius: rem(32);
+  white-space: nowrap;
+}
+
+.p-partner-philosophy__card-title {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 24 / 20;
+
+  @include mq(pc) {
+    font-size: rem(22);
+    line-height: 31 / 22;
+  }
+}
+
+.p-partner-philosophy__card-text {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+
+  @include mq(pc) {
+    font-size: rem(14);
+  }
+}
