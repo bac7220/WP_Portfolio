@@ -83,6 +83,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // Capabilities WordPress 詳細トグル
+  var capToggle = document.getElementById('js-cap-toggle');
+  if (capToggle) {
+    var capWrap = capToggle.closest('.p-partner-cap__wp');
+    var capLabel = capToggle.querySelector('.p-partner-cap__wp-toggle-text');
+    capToggle.addEventListener('click', function () {
+      var isOpen = capWrap.getAttribute('data-state') === 'open';
+      if (isOpen) {
+        capWrap.setAttribute('data-state', 'closed');
+        capToggle.setAttribute('aria-expanded', 'false');
+        if (capLabel) capLabel.textContent = '詳細をみる';
+      } else {
+        capWrap.setAttribute('data-state', 'open');
+        capToggle.setAttribute('aria-expanded', 'true');
+        if (capLabel) capLabel.textContent = '閉じる';
+      }
+    });
+  }
 });
 ");
 });

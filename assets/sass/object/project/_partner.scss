@@ -1716,3 +1716,477 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     opacity: 0.85;
   }
 }
+
+
+// ============================================================
+// Section 7: CAPABILITIES（スキル・対応領域）
+// ============================================================
+.p-partner-cap {
+  background-color: #fff;
+  padding: rem(80) rem(16) rem(81);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-cap__inner {
+  max-width: rem(1024);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mq(pc) {
+    gap: rem(32);
+  }
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-cap__heading {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.p-partner-cap__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-cap__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 900;
+  line-height: rem(36);
+  letter-spacing: 1.2px;
+}
+
+.p-partner-cap__lead {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ----------------------------
+// 上段3カード
+// ----------------------------
+.p-partner-cap__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: rem(16);
+  }
+}
+
+.p-partner-cap__card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(2);
+  padding: rem(27) rem(25) rem(25);
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(12);
+  text-align: center;
+}
+
+.p-partner-cap__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(36);
+  height: rem(36);
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(-1); // Figma書き出しが反転
+  }
+}
+
+.p-partner-cap__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+}
+
+.p-partner-cap__card-sub {
+  margin: 0;
+  padding: rem(6) 0 rem(8);
+  color: $partner-color-text;
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: rem(16);
+}
+
+.p-partner-cap__card-text {
+  margin: 0;
+  width: 100%;
+  color: $partner-color-text;
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+}
+
+// ----------------------------
+// WordPress大カード
+// ----------------------------
+.p-partner-cap__wp {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(12);
+  padding: rem(27) rem(25) rem(64); // 下に折りたたみボタン分
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: rem(48);
+    padding: rem(40) rem(40) rem(72);
+  }
+}
+
+// おくだやPoint! バッジ
+.p-partner-cap__wp-point {
+  position: absolute;
+  top: rem(-15);
+  left: rem(13);
+  width: rem(77);
+  height: rem(77);
+  z-index: 2;
+}
+
+.p-partner-cap__wp-point-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p-partner-cap__wp-point-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $partner-color-accent;
+  font-weight: 700;
+  text-align: center;
+}
+
+.p-partner-cap__wp-point-small {
+  font-size: rem(12);
+  line-height: 1;
+}
+
+.p-partner-cap__wp-point-large {
+  font-size: rem(16);
+  line-height: 1;
+  margin-top: rem(2);
+}
+
+// 上半分（WordPress 見出しエリア）
+// SP: 縦並び中央 / PC: 左カラム固定幅
+.p-partner-cap__wp-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(2);
+  text-align: center;
+  padding-top: rem(30); // バッジと干渉しないように
+
+  .p-partner-cap__card-text {
+    text-align: left;
+  }
+
+  @include mq(pc) {
+    width: rem(220);
+    flex-shrink: 0;
+    padding-top: rem(30);
+  }
+}
+
+// 下半分：詳細リスト（折りたたみ対象）
+// 閉じている状態でも一部が見える + 下フェード
+.p-partner-cap__wp-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  width: 100%;
+  // SP: 閉じてる時の見える高さ
+  max-height: rem(280);
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+
+  @include mq(pc) {
+    flex: 1;
+    max-height: rem(240);
+  }
+
+  // 下フェード（白→透明、背景色になじませる）
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: rem(100);
+    background: linear-gradient(
+      to top,
+      $partner-color-bg-light 20%,
+      rgba(248, 250, 252, 0)
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  // 開いた時：max-height を解除 + フェード消す
+  .p-partner-cap__wp[data-state="open"] & {
+    max-height: rem(3000);
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.p-partner-cap__wp-block {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.p-partner-cap__wp-block-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(6);
+  color: $partner-color-text;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.p-partner-cap__wp-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: $partner-color-base;
+  color: #fff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(18);
+  padding: rem(2) rem(8);
+  border-radius: rem(21);
+}
+
+.p-partner-cap__wp-list {
+  margin: 0;
+  padding: 0 0 0 rem(24);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+
+  li {
+    position: relative;
+    padding-left: rem(16);
+    color: $partner-color-text;
+    font-size: rem(15);
+    font-weight: 500;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(10);
+      left: 0;
+      width: rem(8);
+      height: rem(8);
+      background-color: $partner-color-base;
+      border-radius: 50%;
+    }
+  }
+}
+
+// 納品後のサポートブロック
+.p-partner-cap__wp-support {
+  background-color: #fff;
+  border-radius: rem(8);
+  padding: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.p-partner-cap__wp-support-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(15);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.p-partner-cap__wp-support-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(8);
+}
+
+.p-partner-cap__wp-support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  height: rem(60);
+  padding: rem(10) rem(24);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  img {
+    width: rem(16);
+    height: rem(16);
+    transform: scaleY(-1);
+  }
+}
+
+.p-partner-cap__wp-support-note {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+// 折りたたみトリガー（カード下部の中央に固定）
+.p-partner-cap__wp-toggle {
+  position: absolute;
+  bottom: rem(14);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; // フェードより前面
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  background: transparent;
+  border: none;
+  color: $partner-color-accent;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: rem(8);
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.p-partner-cap__wp-toggle-icon {
+  width: rem(16);
+  height: rem(16);
+  transition: transform 0.3s ease;
+
+  .p-partner-cap__wp[data-state="open"] & {
+    transform: rotate(180deg);
+  }
+}
+
+// ----------------------------
+// フッター（マスコット + メッセージ）
+// ----------------------------
+.p-partner-cap__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  padding: rem(15) 0;
+  border-radius: rem(12);
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(24);
+  }
+}
+
+.p-partner-cap__footer-mascot {
+  flex-shrink: 0;
+  width: rem(66);
+  height: rem(66);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.p-partner-cap__footer-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 700;
+  }
+}

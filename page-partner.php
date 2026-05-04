@@ -14,6 +14,8 @@
 
     <?php get_template_part('template/partner/partner-works-slider') ?>
 
+    <?php get_template_part('template/partner/partner-capabilities') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>
