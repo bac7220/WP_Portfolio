@@ -4260,34 +4260,10 @@ p {
   z-index: 2;
 }
 
-.p-partner-cap__wp-point-bg {
-  position: absolute;
-  inset: 0;
+.p-partner-cap__wp-point-img {
   width: 100%;
   height: 100%;
-}
-
-.p-partner-cap__wp-point-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #df5b38;
-  font-weight: 700;
-  text-align: center;
-}
-
-.p-partner-cap__wp-point-small {
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
-.p-partner-cap__wp-point-large {
-  font-size: 1rem;
-  line-height: 1;
-  margin-top: 0.125rem;
+  object-fit: contain;
 }
 
 .p-partner-cap__wp-head {
@@ -4315,14 +4291,10 @@ p {
   flex-direction: column;
   gap: 1.25rem;
   width: 100%;
-  max-height: 17.5rem;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
 }
 @media screen and (min-width: 768px) {
   .p-partner-cap__wp-detail {
     flex: 1;
-    max-height: 15rem;
   }
 }
 .p-partner-cap__wp-detail::after {
@@ -4335,10 +4307,7 @@ p {
   background: linear-gradient(to top, #f8fafc 20%, rgba(248, 250, 252, 0));
   pointer-events: none;
   z-index: 1;
-  transition: opacity 0.3s ease;
-}
-.p-partner-cap__wp[data-state=open] .p-partner-cap__wp-detail {
-  max-height: 187.5rem;
+  transition: opacity 0.4s ease;
 }
 .p-partner-cap__wp[data-state=open] .p-partner-cap__wp-detail::after {
   opacity: 0;

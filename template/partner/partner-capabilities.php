@@ -52,11 +52,7 @@
 
             <!-- おくだやPoint! バッジ -->
             <div class="p-partner-cap__wp-point" aria-hidden="true">
-                <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cap-okudaya-bg.svg')); ?>" alt="" class="p-partner-cap__wp-point-bg">
-                <span class="p-partner-cap__wp-point-text">
-                    <span class="p-partner-cap__wp-point-small">おくだや</span>
-                    <span class="p-partner-cap__wp-point-large">Point!</span>
-                </span>
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/skills.webp')); ?>" alt="" class="p-partner-cap__wp-point-img">
             </div>
 
             <!-- 上半分：見出しエリア -->
