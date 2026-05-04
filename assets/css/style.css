@@ -4723,6 +4723,226 @@ p {
   transform: scaleY(-1);
 }
 
+.p-partner-flow {
+  background-color: #fff;
+  padding: 6rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-flow {
+    padding: 6rem 1.5rem;
+  }
+}
+
+.p-partner-flow__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-flow__inner {
+    gap: 4rem;
+  }
+}
+
+.p-partner-flow__heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.p-partner-flow__heading-en {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 0.4375rem));
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-flow__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #2e4e2d;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 36/24;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.p-partner-flow__lead {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #4f4f4f;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.p-partner-flow__steps {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 43rem;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-flow__steps {
+    gap: 3rem;
+  }
+}
+.p-partner-flow__steps::before {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5625rem;
+  background-color: #2e4e2d;
+  z-index: 0;
+}
+
+.p-partner-flow__step {
+  position: relative;
+  z-index: 1;
+  background-color: #f8fafc;
+  border: 2px solid #2e4e2d;
+  border-radius: 1rem;
+  padding: 2.125rem 1.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-flow__step {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.125rem 2.625rem;
+  }
+}
+
+.p-partner-flow__step--deco {
+  overflow: hidden;
+}
+
+.p-partner-flow__step-deco {
+  position: absolute;
+  right: -3.25rem;
+  bottom: -3.25rem;
+  width: 11.3125rem;
+  height: 11.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+.p-partner-flow__step-deco img {
+  width: 8rem;
+  height: 8rem;
+  transform: rotate(45deg) scaleY(-1);
+}
+
+.p-partner-flow__step-illust {
+  flex-shrink: 0;
+  width: 7.875rem;
+  height: 5.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-partner-flow__step-illust img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.p-partner-flow__step-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.p-partner-flow__step-num {
+  color: #df5b38;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24/16;
+}
+
+.p-partner-flow__step-title {
+  margin: 0;
+  color: #2e4e2d;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 28/20;
+}
+
+.p-partner-flow__step-text {
+  margin: 0.4375rem 0 0;
+  color: #2e4e2d;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.p-partner-flow__step-btn {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.625rem 1.5rem;
+  background-color: #df5b38;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24/16;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.p-partner-flow__step-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.p-partner-flow__step-btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .u-bg-light_green {
   background-color: rgba(194, 200, 181, 0.8);
 }

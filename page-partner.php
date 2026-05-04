@@ -18,6 +18,8 @@
 
     <?php get_template_part('template/partner/partner-price') ?>
 
+    <?php get_template_part('template/partner/partner-flow') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>
