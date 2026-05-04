@@ -16,6 +16,8 @@
 
     <?php get_template_part('template/partner/partner-capabilities') ?>
 
+    <?php get_template_part('template/partner/partner-price') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>

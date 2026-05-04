@@ -1183,6 +1183,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     justify-content: center;
     gap: rem(32);
     margin-top: rem(24);
+    max-width: fit-content;
   }
 }
 
@@ -1425,7 +1426,6 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   }
 }
 
-
 // ============================================================
 // Section 6: WORKS（実績紹介）
 // ============================================================
@@ -1645,7 +1645,9 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     opacity: 0.9;
@@ -1716,7 +1718,6 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     opacity: 0.85;
   }
 }
-
 
 // ============================================================
 // Section 7: CAPABILITIES（スキル・対応領域）
@@ -1946,11 +1947,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     left: 0;
     right: 0;
     height: rem(100);
-    background: linear-gradient(
-      to top,
-      $partner-color-bg-light 20%,
-      rgba(248, 250, 252, 0)
-    );
+    background: linear-gradient(to top, $partner-color-bg-light 20%, rgba(248, 250, 252, 0));
     pointer-events: none;
     z-index: 1;
     transition: opacity 0.4s ease;
@@ -2063,7 +2060,9 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   box-shadow:
     0 10px 15px rgba(0, 0, 0, 0.1),
     0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     opacity: 0.9;
@@ -2157,4 +2156,242 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   strong {
     font-weight: 700;
   }
+}
+
+// ============================================================
+// Section 8: PRICE（料金表）
+// SP: name+price 横並び / note 全幅2段目
+// PC: 3カラムテーブル（name | price | note）
+// ============================================================
+.p-partner-price {
+  background-color: $partner-color-base;
+  padding: rem(80) rem(16);
+
+  @include mq(pc) {
+    padding: rem(80) rem(24);
+  }
+}
+
+.p-partner-price__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+  max-width: rem(1024);
+  margin: 0 auto;
+
+  @include mq(pc) {
+    gap: rem(48);
+  }
+}
+
+.p-partner-price__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  width: 100%;
+}
+
+.p-partner-price__heading-en {
+  margin: 0;
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: rem(64);
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.p-partner-price__lead {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  text-align: center;
+}
+
+// テーブルカード
+.p-partner-price__table {
+  background-color: #fff;
+  border-radius: rem(12);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+}
+
+// 行：通常はSPで2段（name+price / note）、PCで3カラム横並び
+.p-partner-price__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-bottom: 1px solid $partner-color-bg-light;
+
+  &:nth-of-type(odd):not(.p-partner-price__row--head) {
+    background-color: $partner-color-bg-light;
+  }
+
+  @include mq(pc) {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
+
+// ヘッダー行
+.p-partner-price__row--head {
+  background-color: $partner-color-main;
+
+  &:nth-of-type(odd) {
+    background-color: $partner-color-main;
+  }
+
+  .p-partner-price__cell {
+    color: #fff;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: 20 / 14;
+  }
+
+  .p-partner-price__cell--name {
+    flex: 1;
+
+    @include mq(pc) {
+      flex: 0 0 rem(258);
+    }
+  }
+
+  // SPでは price/note ヘッダーは非表示
+  .p-partner-price__cell--price,
+  .p-partner-price__cell--note {
+    display: none;
+
+    @include mq(pc) {
+      display: block;
+    }
+  }
+
+  .p-partner-price__cell--price {
+    @include mq(pc) {
+      flex: 0 0 rem(176);
+    }
+  }
+
+  .p-partner-price__cell--note {
+    @include mq(pc) {
+      flex: 1;
+    }
+  }
+}
+
+// セル共通
+.p-partner-price__cell {
+  padding: rem(8) rem(16);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+
+  @include mq(pc) {
+    padding: rem(16) rem(24);
+  }
+}
+
+// 通常行：name セル
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--name {
+  flex: 1;
+  min-width: 0;
+  color: $partner-color-text;
+  font-weight: 700;
+  font-size: rem(16);
+
+  @include mq(pc) {
+    flex: 0 0 rem(258);
+  }
+}
+
+// 通常行：price セル（SP=右上、PC=中央カラム）
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--price {
+  width: rem(130);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: rem(16);
+  color: $partner-color-accent;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+
+  @include mq(pc) {
+    flex: 0 0 rem(176);
+    width: auto;
+    padding-right: rem(24);
+  }
+}
+
+.p-partner-price__num {
+  font-size: rem(18);
+  line-height: 20 / 18;
+}
+
+.p-partner-price__unit {
+  font-size: rem(14);
+  line-height: 20 / 14;
+}
+
+.p-partner-price__per {
+  margin-left: rem(2);
+  color: $partner-color-text;
+  font-weight: 700;
+  font-size: rem(12);
+  line-height: 16 / 12;
+}
+
+// 通常行：note セル（SP=2段目で全幅、PC=右カラム）
+.p-partner-price__row:not(.p-partner-price__row--head) .p-partner-price__cell--note {
+  flex: 0 0 100%;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: rem(8);
+  color: #808080;
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: 20 / 14;
+
+  @include mq(pc) {
+    flex: 1;
+    width: auto;
+    padding: rem(16) rem(24);
+  }
+}
+
+// もっと見る
+.p-partner-price__more {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  min-width: rem(200);
+  height: rem(60);
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1.5;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.p-partner-price__more-text {
+  text-decoration: underline;
+}
+
+.p-partner-price__more-icon {
+  width: rem(16);
+  height: rem(16);
+  // Figma書き出しSVG（-scale-y-100 が当たっているので元に戻す）
+  transform: scaleY(-1);
 }
