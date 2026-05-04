@@ -1424,3 +1424,295 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     height: rem(98);
   }
 }
+
+
+// ============================================================
+// Section 6: WORKS（実績紹介）
+// ============================================================
+.p-partner-works {
+  position: relative;
+  background-color: $partner-color-bg-light;
+  padding: rem(96) 0;
+  overflow: hidden;
+}
+
+.p-partner-works__deco {
+  position: absolute;
+  top: rem(-41);
+  left: rem(-33);
+  width: rem(155);
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.p-partner-works__inner {
+  position: relative;
+  z-index: 1;
+  max-width: rem(1024);
+  margin: 0 auto;
+  padding: 0 rem(16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-works__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-works__lead {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(24);
+  text-align: center;
+}
+
+// ----------------------------
+// スライダー
+// ----------------------------
+.p-partner-works__slider-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: rem(32);
+
+  @include mq(pc) {
+    margin-top: rem(48);
+  }
+}
+
+// .swiper のデフォルト（padding:0 / overflow:hidden）を上書きするため
+// 複合セレクタで specificity を上げる
+// 左右padding は 0（カード側 max-width で余白を制御）
+.swiper.p-partner-works__swiper {
+  width: 100%;
+  padding: rem(60) 0 rem(72);
+  overflow: hidden;
+
+  @include mq(pc) {
+    padding: rem(72) 0 rem(80);
+  }
+}
+
+// ----------------------------
+// カード（345px固定）
+// Swiperのデフォルト .swiper-slide { width: 100% } を上書きする必要があるため
+// specificity を上げて指定
+// ----------------------------
+.p-partner-works__swiper .swiper-slide.p-partner-works__card {
+  flex-shrink: 0;
+  width: rem(345);
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  // SP: カードを少し小さくして両端のカードがチラ見えするように
+  @include mq(sp) {
+    width: rem(280);
+    max-width: calc(100vw - #{rem(80)});
+  }
+}
+
+.p-partner-works__card-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid $partner-color-accent;
+  border-radius: rem(16);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow:
+    -7px -7px 18px 0 rgba(223, 91, 56, 0.15),
+    7px 7px 18px 0 rgba(229, 143, 121, 0.15);
+  transform: scale(0.9); // 非アクティブは少し小さく
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+// アクティブスライドの中央カードだけ拡大
+.swiper-slide-active .p-partner-works__card-link {
+  transform: scale(1);
+}
+
+@include mq(pc) {
+  // PCではアクティブをさらに少し大きく
+  .swiper-slide-active .p-partner-works__card-link {
+    transform: scale(1.08);
+  }
+}
+
+.p-partner-works__card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #ddd;
+
+  // 画像の上に半透明オーバーレイ
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.p-partner-works__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  padding: rem(20);
+}
+
+.p-partner-works__card-category {
+  color: $partner-color-accent;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(20);
+}
+
+.p-partner-works__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: rem(28);
+}
+
+.p-partner-works__card-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(13);
+  font-weight: 400;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p-partner-works__card-more {
+  margin-top: rem(4);
+  color: $partner-color-text;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(20);
+  text-decoration: underline;
+  text-align: right;
+}
+
+// ----------------------------
+// ナビ矢印（オレンジ円）
+// ----------------------------
+.p-partner-works__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: rem(40);
+  height: rem(40);
+  border-radius: 50%;
+  background-color: $partner-color-accent;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @include mq(pc) {
+    width: rem(48);
+    height: rem(48);
+  }
+
+  svg {
+    width: rem(20);
+    height: rem(20);
+
+    @include mq(pc) {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+}
+
+// PCでは中央カード（345px幅）の左右端にボタン中心がくるように配置
+.p-partner-works__nav--prev {
+  left: rem(8);
+
+  @include mq(pc) {
+    left: calc(50% - #{rem(172.5)});
+    transform: translate(-50%, -50%);
+  }
+}
+
+.p-partner-works__nav--next {
+  right: rem(8);
+
+  @include mq(pc) {
+    right: auto;
+    left: calc(50% + #{rem(172.5)});
+    transform: translate(-50%, -50%);
+  }
+}
+
+// ----------------------------
+// もっと見る
+// ----------------------------
+.p-partner-works__footer {
+  margin-top: rem(8);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.p-partner-works__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  color: $partner-color-accent;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

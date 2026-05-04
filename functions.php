@@ -51,19 +51,17 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('swiper', "
 document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.p-partner-works__swiper', {
-    slidesPerView: 1.15,
+    slidesPerView: 'auto',
     spaceBetween: 16,
     centeredSlides: true,
     loop: true,
     navigation: {
-      prevEl: '.p-partner-works__button-prev',
-      nextEl: '.p-partner-works__button-next',
+      prevEl: '.p-partner-works__nav--prev',
+      nextEl: '.p-partner-works__nav--next',
     },
     breakpoints: {
       768: {
-        slidesPerView: 3,
         spaceBetween: 24,
-        centeredSlides: true,
       },
     },
   });
