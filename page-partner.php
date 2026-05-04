@@ -20,6 +20,10 @@
 
     <?php get_template_part('template/partner/partner-flow') ?>
 
+    <?php get_template_part('template/partner/partner-philosophy') ?>
+    
+    <?php get_template_part('template/partner/partner-cta') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>
