@@ -2461,31 +2461,30 @@ p {
   text-align: right;
 }
 
+* {
+  outline: orange 1px solid;
+}
+
 .p-partner {
   color: #4f4f4f;
   font-family: "Noto Sans JP", sans-serif;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .p-partner-hero {
   position: relative;
   background-color: #f8fafc;
   padding: 3rem 1rem 1rem;
-  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero {
-    padding: 8rem 9rem 1.5rem;
+    padding: 1.75rem 1rem 1rem;
+    padding-left: 1.625rem;
   }
 }
 
 .p-partner-hero__inner {
-  position: relative;
-  max-width: 72rem;
-  margin: 0 auto;
-  display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__inner {
@@ -2496,8 +2495,24 @@ p {
   }
 }
 
+.p-partner-hero__wrapper {
+  display: grid;
+  margin: 0 auto;
+  max-width: 28.125rem;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-hero__wrapper {
+    max-width: 72rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .p-partner-hero__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .p-partner-hero__decorations {
-  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -2507,89 +2522,74 @@ p {
   position: absolute;
 }
 
-.p-partner-hero__deco--arc {
-  top: -2.125rem;
-  right: 0;
-  width: 9.375rem;
+.p-partner-hero__deco-1 {
+  max-width: 23.75rem;
+  width: 100%;
   height: auto;
+  top: 18.75rem;
+  left: calc(50% + 6.25rem);
 }
 @media screen and (min-width: 768px) {
-  .p-partner-hero__deco--arc {
-    top: -9.375rem;
-    left: 24.3125rem;
-    right: auto;
-    width: 26.375rem;
-  }
-}
-
-.p-partner-hero__deco--stripe {
-  top: -9.375rem;
-  left: -10.8125rem;
-  width: 12.875rem;
-  height: auto;
-}
-@media screen and (min-width: 768px) {
-  .p-partner-hero__deco--stripe {
-    top: -2.9375rem;
-    left: -25.5rem;
-    width: 31.375rem;
-  }
-}
-
-.p-partner-hero__deco--dots {
-  top: -2.4375rem;
-  left: -4.3125rem;
-  width: 10.25rem;
-  height: auto;
-}
-@media screen and (min-width: 768px) {
-  .p-partner-hero__deco--dots {
+  .p-partner-hero__deco-1 {
     top: 14rem;
-    left: -9.625rem;
-    width: 25rem;
+    left: auto;
+    right: 5rem;
+    max-width: 28.125rem;
   }
 }
 
-.p-partner-hero__deco--wave {
-  top: 38%;
-  right: -60%;
-  width: 60%;
+.p-partner-hero__deco-2 {
+  max-width: 11.25rem;
+  width: 100%;
   height: auto;
+  top: -3rem;
+  left: calc(50% - 18.75rem);
 }
 @media screen and (min-width: 768px) {
-  .p-partner-hero__deco--wave {
-    top: 38%;
-    right: -5%;
-    width: 30%;
+  .p-partner-hero__deco-2 {
+    max-width: 23.75rem;
+    top: 18.75rem;
+    left: calc(50% - 48.75rem);
   }
 }
 
-.p-partner-hero__deco--polygon {
-  display: none;
+.p-partner-hero__deco-3 {
+  max-width: 15.625rem;
+  width: 100%;
+  height: auto;
+  top: -3rem;
+  left: -4rem;
 }
-@media screen and (min-width: 1000px) {
-  .p-partner-hero__deco--polygon {
-    display: block;
-    top: 9.9375rem;
-    right: -5.625rem;
-    width: 10.4375rem;
-    transform: rotate(12.81deg);
+
+.p-partner-hero__deco-4 {
+  max-width: 15.625rem;
+  width: 100%;
+  height: auto;
+  top: -3.75rem;
+  left: calc(50% + 0.625rem);
+}
+@media screen and (min-width: 768px) {
+  .p-partner-hero__deco-4 {
+    left: auto;
+    top: -6.25rem;
+    right: 30rem;
+    max-width: 21.875rem;
   }
 }
 
-.p-partner-hero__deco--circle-yellow {
-  bottom: 2.5rem;
-  left: -1.625rem;
-  width: 4.0625rem;
-  height: 4.0625rem;
+.p-partner-hero__deco-5 {
+  max-width: 5rem;
+  width: 100%;
+  height: auto;
+  top: 23.75rem;
+  left: 0;
 }
 @media screen and (min-width: 768px) {
-  .p-partner-hero__deco--circle-yellow {
-    bottom: auto;
-    top: 28.25rem;
-    left: 69.5625rem;
-    width: 8.1875rem;
-    height: 8.1875rem;
+  .p-partner-hero__deco-5 {
+    right: 3rem;
+    left: auto;
+    top: 30.125rem;
+    max-width: 8.125rem;
   }
 }
 
@@ -2604,6 +2604,7 @@ p {
   .p-partner-hero__content {
     gap: 1.5rem;
     flex-shrink: 0;
+    width: fit-content;
   }
 }
 
@@ -2634,6 +2635,11 @@ p {
   line-height: 1.4;
   letter-spacing: 0.04em;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-hero__title {
+    white-space: nowrap;
+  }
 }
 
 .p-partner-hero__title-large {
@@ -2705,7 +2711,7 @@ p {
   .p-partner-hero__photos {
     flex-shrink: 0;
     width: 33.75rem;
-    height: 26.25rem;
+    height: 20rem;
     margin: 0;
   }
 }
@@ -2719,41 +2725,54 @@ p {
   object-fit: cover;
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .p-partner-hero__photo {
+    position: relative;
+  }
+}
 
 .p-partner-hero__photo--kick {
-  top: 0;
-  left: 6.25rem;
+  top: -1.5rem;
+  left: 0.5rem;
   width: 100%;
-  max-width: 9rem;
+  max-width: 11.25rem;
   height: auto;
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__photo--kick {
-    top: 0;
+    left: calc(50% - 3.75rem);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .p-partner-hero__photo--kick {
+    top: 3.625rem;
     left: auto;
-    right: 1.875rem;
-    width: 15rem;
-    height: 15rem;
-    border-width: 6px;
+    right: -10.5rem;
+    max-width: 16rem;
   }
 }
 
 .p-partner-hero__photo--portrait {
-  top: 3.125rem;
-  right: 1.25rem;
-  width: 10.875rem;
-  height: 10.875rem;
+  top: -6.25rem;
+  left: calc(50% - 3.75rem);
+  width: 100%;
+  max-width: 15.625rem;
+  height: auto;
   z-index: 2;
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__photo--portrait {
-    top: 8.125rem;
+    top: -15.625rem;
+    left: calc(50% + 10rem);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .p-partner-hero__photo--portrait {
+    top: -9.25rem;
     right: auto;
-    left: 3.75rem;
-    width: 17.5rem;
-    height: 17.5rem;
-    border-width: 6px;
+    left: -7.5rem;
+    max-width: 22rem;
   }
 }
 
@@ -2767,8 +2786,14 @@ p {
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__cta {
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .p-partner-hero__cta {
     align-items: flex-start;
     gap: 1rem;
+    margin-top: 2.75rem;
   }
 }
 
@@ -2777,9 +2802,9 @@ p {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  max-width: 31.25rem;
   width: 100%;
-  height: 3.375rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   background-color: #df5b38;
   color: #fff;
   font-size: 1rem;

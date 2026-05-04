@@ -17,8 +17,8 @@
 <body>
     <header id="js-header" class="p-header
     <?php if (!is_front_page()) {
-            echo ' u-bg-header';
-        } ?>">
+        echo ' u-bg-header';
+    } ?>">
         <div class=" p-header__container p-header__fz">
             <a href="<?php echo home_url(); ?>">
 
@@ -52,10 +52,7 @@
                     } ?>" href="<?php echo esc_url(home_url('/contact')); ?>">Contact
                     </a>
                 </li>
-                <li class="p-header__menu-item u-white-color">
-                    <a class="p-header__menu-link" href="<?php echo esc_url(home_url('/blog')); ?>" target="_blank" rel="noopener noreferrer">Blog
-                    </a>
-                </li>
+
             </ul>
             <button id="js-drawer-icon" class="c-drawer-icon">
                 <span class="c-drawer-icon__bar"></span>
