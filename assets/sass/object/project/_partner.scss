@@ -817,7 +817,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   position: absolute;
   bottom: rem(-50);
   right: rem(-50);
-  width: rem(400);
+  width: rem(415);
   height: auto;
   pointer-events: none;
   opacity: 0.5;
@@ -825,7 +825,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   @include mq(pc) {
     bottom: rem(-100);
     right: rem(-100);
-    width: rem(700);
+    width: rem(750);
   }
 }
 
@@ -939,7 +939,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   background-color: rgba(255, 255, 255, 0.75);
   border: 1px solid #fff;
   border-radius: rem(24);
-  padding: rem(36) rem(25) rem(25);
+  padding: rem(24);
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
   display: flex;
   flex-direction: column;
@@ -949,8 +949,8 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   @include mq(pc) {
     flex-direction: row;
     align-items: center;
-    padding: rem(32) rem(48);
-    gap: rem(48);
+    padding: rem(40) rem(88);
+    gap: rem(40);
   }
 }
 
@@ -962,9 +962,9 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 
 .p-partner-promise__badge {
   position: absolute;
-  top: rem(-20);
-  width: rem(56);
-  height: rem(56);
+  top: rem(-8);
+  width: rem(65);
+  height: rem(65);
 
   @include mq(pc) {
     width: rem(72);
@@ -974,18 +974,18 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 }
 
 .p-partner-promise__badge--left {
-  left: rem(20);
+  left: calc(50% - rem(102));
 
   @include mq(pc) {
-    left: rem(-12);
+    left: rem(-28);
   }
 }
 
 .p-partner-promise__badge--right {
-  right: rem(20);
+  right: calc(50% - rem(102));
 
   @include mq(pc) {
-    right: rem(-12);
+    right: rem(-28);
   }
 }
 
@@ -1002,22 +1002,32 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: rem(37) rem(12);
+  padding: rem(35) rem(12);
 
   @include mq(pc) {
     width: rem(160);
+    height: rem(160);
   }
 }
 
 .p-partner-promise__illust {
-  width: rem(80);
-  height: rem(80);
   object-fit: contain;
 
   @include mq(pc) {
-    width: rem(100);
-    height: rem(100);
   }
+}
+
+.p-partner-promise__illust-1 {
+  width: rem(105);
+  height: rem(55);
+}
+.p-partner-promise__illust-2 {
+  width: rem(48);
+  height: rem(55);
+}
+.p-partner-promise__illust-3 {
+  width: rem(102);
+  height: rem(55);
 }
 
 // ----------------------------

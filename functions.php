@@ -2,8 +2,8 @@
 function my_script_init()
 
 {
-    // Google Fonts (Noto Sans JP, Nunito Sans に Zen Old Mincho を追加)
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Old+Mincho:wght@700&display=swap', array(), null);
+    // Google Fonts (Noto Sans JP, Nunito Sans, Zen Old Mincho, Montserrat)
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zen+Old+Mincho:wght@700&display=swap', array(), null);
 
     // Font Awesome
     wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", array(), "5.8.2", "all");

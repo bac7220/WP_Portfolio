@@ -4,7 +4,7 @@
 <section class="p-partner-promise">
 
     <!-- 装飾（背景の波模様） -->
-    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-deco-wave.svg')); ?>" alt="" class="p-partner-promise__deco" aria-hidden="true">
+    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-1.webp')); ?>" alt="" class="p-partner-promise__deco" aria-hidden="true">
 
     <div class="p-partner-promise__inner">
 
@@ -29,7 +29,7 @@
             <li class="p-partner-promise__card">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-badge-01.svg')); ?>" alt="" class="p-partner-promise__badge p-partner-promise__badge--left">
                 <div class="p-partner-promise__icon">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-01.svg')); ?>" alt="" class="p-partner-promise__illust">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-01.svg')); ?>" alt="" class="p-partner-promise__illust p-partner-promise__illust-1">
                 </div>
                 <div class="p-partner-promise__body">
                     <h3 class="p-partner-promise__title">AIリスクの徹底排除</h3>
@@ -57,7 +57,7 @@
             <li class="p-partner-promise__card p-partner-promise__card--reverse">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-badge-02.svg')); ?>" alt="" class="p-partner-promise__badge p-partner-promise__badge--right">
                 <div class="p-partner-promise__icon">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-02.svg')); ?>" alt="" class="p-partner-promise__illust">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-02.svg')); ?>" alt="" class="p-partner-promise__illust p-partner-promise__illust-2">
                 </div>
                 <div class="p-partner-promise__body">
                     <h3 class="p-partner-promise__title">クライアントサポート負担をゼロへ</h3>
@@ -76,7 +76,7 @@
             <li class="p-partner-promise__card">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-badge-03.svg')); ?>" alt="" class="p-partner-promise__badge p-partner-promise__badge--left">
                 <div class="p-partner-promise__icon">
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-03.svg')); ?>" alt="" class="p-partner-promise__illust">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/promise-illust-03.svg')); ?>" alt="" class="p-partner-promise__illust p-partner-promise__illust-3">
                 </div>
                 <div class="p-partner-promise__body">
                     <h3 class="p-partner-promise__title">納品後1ヶ月の手厚い無償サポート</h3>
