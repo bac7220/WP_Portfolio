@@ -8,6 +8,8 @@
 
     <?php get_template_part('template/partner/partner-responsiveness') ?>
 
+    <?php get_template_part('template/partner/partner-promise') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>
