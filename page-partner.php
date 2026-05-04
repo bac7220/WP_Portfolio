@@ -4,7 +4,10 @@
 
     <?php get_template_part('template/partner/partner-hero') ?>
 
-    
+    <?php get_template_part('template/partner/partner-worry') ?>
+
+    <?php get_template_part('template/partner/partner-responsiveness') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>

@@ -19,9 +19,6 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 // Wrapper（全体）
 // ----------------------------
 
-* {
-  outline: orange 1px solid;
-}
 .p-partner {
   color: $partner-color-text;
   font-family: "Noto Sans JP", sans-serif;
@@ -330,7 +327,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   @include mq(lg) {
     align-items: flex-start;
     gap: rem(16);
-    margin-top: rem(44);
+    margin-top: rem(20);
   }
 }
 
@@ -396,4 +393,408 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     font-weight: 700;
     line-height: rem(20);
   }
+}
+
+.p-partner-hero--bottom {
+  background-color: #dfe8f1;
+}
+
+// ============================================================
+// Section 2: Worry（お悩み）
+// ============================================================
+.p-partner-worry {
+  background-color: #dfe8f1;
+  padding: rem(32) rem(16) rem(48);
+
+  @include mq(pc) {
+    padding: rem(48) rem(24);
+  }
+}
+
+.p-partner-worry__inner {
+  max-width: rem(674);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+
+  @include mq(pc) {
+    gap: rem(16);
+  }
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-worry__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(20);
+  font-weight: 700;
+  line-height: rem(40);
+  letter-spacing: 1.6px;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(20);
+    line-height: rem(28);
+    white-space: nowrap;
+  }
+}
+
+.p-partner-worry__title-emphasis {
+  position: relative;
+  display: inline-block;
+  color: $partner-color-accent;
+  font-size: rem(24);
+}
+
+.p-partner-worry__title-dots {
+  position: absolute;
+  top: rem(-7);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(57);
+  height: rem(4);
+}
+
+// ----------------------------
+// イラスト + チェックリストの土台
+// ----------------------------
+.p-partner-worry__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(16);
+    margin-left: rem(-153);
+  }
+}
+
+// ----------------------------
+// 困った男性のイラスト + 吹き出し
+// ----------------------------
+.p-partner-worry__illust {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-partner-worry__bubble {
+  position: relative;
+  width: rem(150);
+  height: rem(85);
+  flex-shrink: 0;
+  @include mq(pc) {
+    margin-top: rem(-30);
+  }
+}
+
+.p-partner-worry__bubble-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p-partner-worry__bubble-text {
+  position: relative;
+  margin: 0;
+  padding-top: rem(18);
+  padding-left: rem(5);
+  width: rem(140);
+  color: $partner-color-main;
+  font-size: rem(13);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.p-partner-worry__man {
+  width: rem(142);
+  height: auto;
+  flex-shrink: 0;
+}
+
+// ----------------------------
+// チェックリスト
+// ----------------------------
+.p-partner-worry__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  @include mq(pc) {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, rem(200));
+    gap: rem(8) rem(16);
+  }
+}
+
+.p-partner-worry__item {
+  display: flex;
+  align-items: center;
+  gap: rem(16);
+  padding: rem(20) rem(12) rem(20) rem(16);
+  background-color: $partner-color-bg-light;
+  border-radius: rem(4);
+  @include mq(pc) {
+    padding: rem(12) rem(12) rem(12) rem(16);
+    gap: rem(18);
+  }
+}
+
+.p-partner-worry__check {
+  width: rem(16);
+  height: rem(16);
+  flex-shrink: 0;
+}
+
+.p-partner-worry__text {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+// ----------------------------
+// メッセージボックス
+// ----------------------------
+.p-partner-worry__message {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid $partner-color-accent;
+  border-radius: rem(8);
+  padding: rem(36) rem(20) rem(16);
+  margin-top: rem(12);
+
+  @include mq(pc) {
+    padding: rem(28) rem(24) rem(16);
+    margin-top: rem(40);
+  }
+}
+
+.p-partner-worry__message-badge {
+  position: absolute;
+  top: rem(-18);
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(12) rem(20);
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1;
+  border-radius: rem(4);
+  white-space: nowrap;
+  @include mq(pc) {
+    top: rem(-24);
+  }
+}
+
+.p-partner-worry__message-icon {
+  width: rem(16);
+  height: rem(21);
+  flex-shrink: 0;
+}
+
+.p-partner-worry__message-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+
+  strong {
+    font-size: rem(19);
+    font-weight: 700;
+    color: $partner-color-text;
+  }
+}
+
+// ============================================================
+// Section 3: Responsiveness（圧倒的なレスポンス）
+// ============================================================
+.p-partner-resp {
+  background-color: #fff;
+  padding: rem(80) rem(16);
+
+  @include mq(pc) {
+    padding: rem(80) rem(24);
+  }
+}
+
+.p-partner-resp__inner {
+  max-width: rem(1024);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+
+  @include mq(pc) {
+    gap: rem(16);
+  }
+}
+
+// ----------------------------
+// 見出し（英字背景＋日本語）
+// ----------------------------
+.p-partner-resp__heading {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.p-partner-resp__heading-en {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eaf0ea;
+  font-family: "Montserrat", sans-serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+
+  @include mq(pc) {
+    font-size: rem(64);
+  }
+}
+
+.p-partner-resp__heading-ja {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 900;
+  line-height: rem(36);
+  letter-spacing: 1.2px;
+}
+
+// ----------------------------
+// リード文
+// ----------------------------
+.p-partner-resp__lead {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: rem(24);
+  text-align: center;
+
+  strong {
+    color: $partner-color-accent;
+    font-weight: 700;
+  }
+}
+
+// ----------------------------
+// カード3枚
+// ----------------------------
+.p-partner-resp__cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: rem(24);
+    margin-top: rem(32);
+  }
+}
+
+.p-partner-resp__card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(18);
+  padding: rem(32);
+  background-color: $partner-color-bg-light;
+  border: 1px solid $partner-color-bg-light;
+  border-radius: rem(16);
+  text-align: center;
+}
+
+.p-partner-resp__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(56);
+  height: rem(56);
+  background-color: rgba(46, 78, 45, 0.1);
+  border-radius: rem(12);
+  flex-shrink: 0;
+
+  img {
+    width: rem(30);
+    height: rem(30);
+    // Figmaから書き出したSVGが上下反転状態になっているため、表示時に正立に戻す
+    transform: scaleY(-1);
+  }
+}
+
+.p-partner-resp__card-title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(24);
+  font-weight: 700;
+  line-height: rem(28);
+}
+
+.p-partner-resp__card-text {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+
+// ----------------------------
+// 補足テキスト
+// ----------------------------
+.p-partner-resp__note {
+  margin: 0;
+  color: $partner-color-text;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: rem(24);
+  text-align: center;
 }
