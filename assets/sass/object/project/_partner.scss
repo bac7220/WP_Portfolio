@@ -1110,3 +1110,317 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   // Figma書き出し時の上下反転を戻す
   transform: scaleY(-1);
 }
+
+// ============================================================
+// Section 5: CTA（情報交換しませんか？）
+// ============================================================
+.p-partner-cta {
+  background-color: #fff;
+  padding: rem(40) rem(16);
+
+  @include mq(pc) {
+    padding: rem(96) rem(24);
+  }
+}
+
+.p-partner-cta__inner {
+  max-width: rem(896);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(24);
+}
+
+// ----------------------------
+// 見出し
+// ----------------------------
+.p-partner-cta__title {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(20);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(32);
+    letter-spacing: 3.2px;
+  }
+}
+
+// ----------------------------
+// リード
+// ----------------------------
+.p-partner-cta__lead {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(13);
+  font-weight: 700;
+  line-height: rem(24);
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(16);
+  }
+}
+
+// ----------------------------
+// ボタン2つ
+// ----------------------------
+.p-partner-cta__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(32);
+  max-width: rem(500);
+  margin: rem(8) auto 0;
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: center;
+    gap: rem(32);
+    margin-top: rem(24);
+  }
+}
+
+// 共通ボタンベース
+.p-partner-cta__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+// Webセッションボタン（オレンジ）
+// SP: イラストとボタン本体（pill）が縦並びで分離
+// PC: ボタン全体がオレンジ pill で、中にイラスト + テキスト
+.p-partner-cta__btn--web {
+  width: 100%;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fff;
+  padding: 0;
+  gap: rem(8);
+  box-shadow: none;
+  border-radius: 0;
+
+  @include mq(pc) {
+    width: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: $partner-color-accent;
+    padding: rem(16) rem(32) rem(16) rem(24);
+    height: rem(110);
+    gap: rem(8);
+    border-radius: 9999px;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.p-partner-cta__btn-illust {
+  width: rem(121);
+  height: rem(100);
+  object-fit: contain;
+
+  @include mq(pc) {
+    width: rem(160);
+    height: rem(132);
+  }
+}
+
+// SPのときだけ、テキスト部分が pill 形状のボタンになる
+.p-partner-cta__btn--web .p-partner-cta__btn-text {
+  width: 100%;
+  height: rem(63);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $partner-color-accent;
+  color: #fff;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  padding: rem(16) rem(32) rem(16) rem(24);
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  @include mq(pc) {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: rem(18);
+    line-height: rem(28);
+    margin-bottom: rem(12);
+  }
+}
+
+// Xボタン用テキスト（共通）
+.p-partner-cta__btn--x .p-partner-cta__btn-text {
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+
+  @include mq(pc) {
+    font-size: rem(18);
+    line-height: rem(28);
+  }
+}
+
+// Xボタン（緑）
+.p-partner-cta__btn--x {
+  width: 100%;
+  background-color: $partner-color-main;
+  color: #fff;
+  height: rem(66);
+  padding: rem(16) rem(64);
+  gap: rem(8);
+
+  @include mq(pc) {
+    width: auto;
+    height: rem(110);
+  }
+}
+
+.p-partner-cta__btn-badge {
+  position: absolute;
+  top: rem(-18);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: $partner-color-main;
+  font-size: rem(11);
+  font-weight: 700;
+  line-height: 1;
+  padding: rem(8) rem(16);
+  border-radius: rem(136);
+  white-space: nowrap;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.05));
+
+  @include mq(pc) {
+    top: rem(-26);
+    font-size: rem(14);
+    padding: rem(10) rem(20);
+  }
+}
+
+.p-partner-cta__btn-x-icon {
+  width: rem(23);
+  height: rem(23);
+  flex-shrink: 0;
+
+  @include mq(pc) {
+    width: rem(35);
+    height: rem(36);
+  }
+}
+
+// ----------------------------
+// Voiceバナー
+// ----------------------------
+.p-partner-cta__voice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(16);
+  width: 100%;
+  background-color: $partner-color-bg-light;
+  border-radius: rem(16);
+  padding: rem(16) rem(24);
+  text-decoration: none;
+  margin-top: rem(16);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #eef2f6;
+  }
+
+  @include mq(pc) {
+    width: auto;
+    padding: rem(16) rem(32);
+    margin-top: rem(24);
+  }
+}
+
+.p-partner-cta__voice-body {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  flex: 1;
+
+  @include mq(pc) {
+    width: rem(320);
+    flex: none;
+  }
+}
+
+.p-partner-cta__voice-text {
+  margin: 0;
+  color: $partner-color-main;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(22);
+
+  @include mq(pc) {
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+}
+
+.p-partner-cta__voice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4);
+  color: $partner-color-accent;
+  font-size: rem(14);
+  font-weight: 700;
+  line-height: rem(24);
+  text-decoration: underline;
+
+  @include mq(pc) {
+    font-size: rem(16);
+  }
+}
+
+.p-partner-cta__voice-arrow {
+  width: rem(16);
+  height: rem(16);
+  // Figma書き出し時の上下反転を戻す
+  transform: scaleY(-1);
+}
+
+.p-partner-cta__voice-illust {
+  flex-shrink: 0;
+  width: rem(80);
+  height: rem(82);
+  object-fit: contain;
+
+  @include mq(pc) {
+    width: rem(95);
+    height: rem(98);
+  }
+}

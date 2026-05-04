@@ -10,6 +10,8 @@
 
     <?php get_template_part('template/partner/partner-promise') ?>
 
+    <?php get_template_part('template/partner/partner-cta') ?>
+
 </main>
 
 <?php get_template_part('template/footer-item'); ?>
