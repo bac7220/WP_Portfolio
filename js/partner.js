@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // ----- Heroボトム半円のパララックス（XY ＋ 角度変化） -----
   var heroBottomShadow = document.querySelector('.p-partner-hero__bottom-shadow');
   if (heroBottomShadow) {
-    var MAX_OFFSET = 8; // 最大ズレ量(px)
-    var PARALLAX_RATIO = 0.08; // スクロール量への係数
+    var MAX_OFFSET = 12; // 最大ズレ量(px)
+    var PARALLAX_RATIO = 0.05; // スクロール量への係数
     var INITIAL_Y = -1; // 初期Y位置（少し上に持ち上げる）
-    var MAX_ROTATE = 0.2; // 最大回転角(deg)
+    var MAX_ROTATE = 0.3; // 最大回転角(deg)
 
     function updateHeroBottomParallax() {
       var offset = Math.min(window.scrollY * PARALLAX_RATIO, MAX_OFFSET);
@@ -118,6 +118,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     window.addEventListener('scroll', updateHeroBottomParallax, { passive: true });
     updateHeroBottomParallax();
+  }
+
+  // ----- data-fade スクロールフェードイン -----
+  var fadeEls = document.querySelectorAll('[data-fade]');
+  if (fadeEls.length && 'IntersectionObserver' in window) {
+    var fadeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.dataset.fadeDelay;
+          var duration = el.dataset.fadeDuration;
+          if (delay) el.style.transitionDelay = delay + 'ms';
+          if (duration) el.style.transitionDuration = duration + 'ms';
+          el.classList.add('is-visible');
+          fadeObserver.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    });
+    fadeEls.forEach(function (el) { fadeObserver.observe(el); });
   }
 
   // ----- フローティングCTA（PC専用）：.p-partner-cta__buttons を clone -----

@@ -19,7 +19,7 @@
 
         <!-- カード3枚 -->
         <ul class="p-partner-resp__cards">
-            <li class="p-partner-resp__card">
+            <li data-fade="up" data-fade-delay="100" class="p-partner-resp__card">
                 <span class="p-partner-resp__card-icon">
                     <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/icon-bolt.svg')); ?>" alt="" width="30" height="30">
                 </span>
@@ -28,7 +28,7 @@
                     基本3時間以内、遅くとも12時間以内に必ずご返信。プロジェクトを停滞させません。
                 </p>
             </li>
-            <li class="p-partner-resp__card">
+            <li data-fade="up" data-fade-delay="300" class="p-partner-resp__card">
                 <span class="p-partner-resp__card-icon">
                     <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/icon-schedule.svg')); ?>" alt="" width="30" height="30">
                 </span>
@@ -37,7 +37,7 @@
                     フルコミット可能な体制を構築。急ぎの案件やボリュームのある開発もご相談ください。
                 </p>
             </li>
-            <li class="p-partner-resp__card">
+            <li data-fade="up" data-fade-delay="500" class="p-partner-resp__card">
                 <span class="p-partner-resp__card-icon">
                     <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/icon-forum.svg')); ?>" alt="" width="30" height="30">
                 </span>

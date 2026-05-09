@@ -2950,3 +2950,91 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
     }
   }
 }
+
+// ============================================================
+// data-fade（スクロールフェードイン）
+// - data-fade or data-fade="up": 下から上 + バウンド
+// - data-fade="blur"           : その場でボヤーっと
+// オプション: data-fade-delay / data-fade-duration（ms、JS側でinline styleとして付与）
+// ============================================================
+[data-fade] {
+  opacity: 0;
+  transform: translateY(rem(40));
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); // バウンドする ease
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// blur パターン：移動なし、ぼかしだけ
+[data-fade="blur"] {
+  transform: none;
+  filter: blur(rem(12));
+  transition:
+    opacity 0.7s ease-out,
+    filter 0.7s ease-out;
+
+  &.is-visible {
+    filter: blur(0);
+  }
+}
+
+// slide パターン：下からすっとスムーズに（バウンドなし）
+[data-fade="slide"] {
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+// reveal パターン：枠をマスクして中身が下から現れる（要：直下に1つの子要素）
+[data-fade="reveal"] {
+  overflow: hidden;
+  opacity: 1; // 親自体は表示
+  transform: none;
+
+  > * {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &.is-visible > * {
+    transform: translateY(0);
+  }
+}
+
+// reveal-lines パターン：1行ずつ順番に下から現れる
+// 構造： data-fade="reveal-lines" > [line] > [line-inner] > 中身
+[data-fade="reveal-lines"] {
+  opacity: 1;
+  transform: none;
+
+  > * {
+    display: block;
+    overflow: hidden;
+  }
+
+  > * > * {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &.is-visible > * > * {
+    transform: translateY(0);
+  }
+
+  // 行ごとにディレイ（最大8行までスタガー）
+  > *:nth-child(1) > * { transition-delay: 0s; }
+  > *:nth-child(2) > * { transition-delay: 0.12s; }
+  > *:nth-child(3) > * { transition-delay: 0.24s; }
+  > *:nth-child(4) > * { transition-delay: 0.36s; }
+  > *:nth-child(5) > * { transition-delay: 0.48s; }
+  > *:nth-child(6) > * { transition-delay: 0.6s; }
+  > *:nth-child(7) > * { transition-delay: 0.72s; }
+  > *:nth-child(8) > * { transition-delay: 0.84s; }
+}
