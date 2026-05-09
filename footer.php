@@ -1,5 +1,11 @@
 <footer class="l-footer">
-    <small class="u-text-center u-m-center"> &copy;  2026 WEB制作 おくだ屋 All rights reserved. </small>
+    <div class="l-footer__inner">
+        <a href="<?php echo esc_url(home_url('/partner')); ?>" class="l-footer__partner-link">
+            制作会社・ディレクター様はこちら
+            <span class="l-footer__partner-arrow" aria-hidden="true">→</span>
+        </a>
+        <small class="l-footer__copyright"> &copy;  2026 WEB制作 おくだ屋 All rights reserved. </small>
+    </div>
 </footer>
 </main>
 </div>

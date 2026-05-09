@@ -50,10 +50,15 @@
               <h3 class="c-service__card-title">コーディング・WP構築</h3>
               <p class="c-service__card-text">
                 GSAPを用いた動きのある実装や、WordPress化のみのご依頼も承ります </p>
-              <!-- <div class="c-service__card-link"><a href="">ポートフォリオはこちら</a></div> -->
+              <div class="c-service__card-link">
+                <a href="<?php echo esc_url(home_url('/partner')); ?>">
+                  制作会社・ディレクター様はこちら 
+                </a>
+              </div>
             </div>
+          </div>
         </li>
+      </ul>
     </div>
-    </ul>
   </div>
 </section>
