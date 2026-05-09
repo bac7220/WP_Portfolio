@@ -35,6 +35,19 @@
 
         </div>
 
-      
+        <!-- Voiceバナー -->
+        <a href="<?php echo esc_url(home_url('/voice/')); ?>" class="p-partner-cta__voice">
+            <div class="p-partner-cta__voice-body">
+                <p class="p-partner-cta__voice-text">
+                    これまでご対応させていただいたお客様より<br>たくさんの声をいただいています。
+                </p>
+                <span class="p-partner-cta__voice-link">
+                    Voice -お客様の声-
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-arrow.svg')); ?>" alt="" class="p-partner-cta__voice-arrow">
+                </span>
+            </div>
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-voice-illust.svg')); ?>" alt="" class="p-partner-cta__voice-illust">
+        </a>
+
     </div>
 </section>

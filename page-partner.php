@@ -10,7 +10,7 @@
 
     <?php get_template_part('template/partner/partner-promise') ?>
 
-    <?php get_template_part('template/partner/partner-cta') ?>
+    <?php get_template_part('template/partner/partner-cta-voice') ?>
 
     <?php get_template_part('template/partner/partner-works-slider') ?>
 
@@ -21,7 +21,7 @@
     <?php get_template_part('template/partner/partner-flow') ?>
 
     <?php get_template_part('template/partner/partner-philosophy') ?>
-    
+
     <?php get_template_part('template/partner/partner-cta') ?>
 
 </main>

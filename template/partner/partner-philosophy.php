@@ -4,10 +4,14 @@
 <section class="p-partner-philosophy" id="philosophy">
 
     <!-- PC装飾（右上：hero-deco-1, hero-deco-5 / 左下：cta-1） -->
-    <div class="p-partner-philosophy__decorations u-hidden-sp" aria-hidden="true">
-        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-1.webp')); ?>" alt="" class="p-partner-philosophy__deco p-partner-philosophy__deco--hd1">
-        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-5.webp')); ?>" alt="" class="p-partner-philosophy__deco p-partner-philosophy__deco--hd5">
-        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-1.webp')); ?>" alt="" class="p-partner-philosophy__deco p-partner-philosophy__deco--cta1">
+    <div class="p-partner-philosophy__deco p-partner-philosophy__deco--hd1 u-hidden-sp" aria-hidden="true">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/philosophy-deco.webp')); ?>" alt="">
+    </div>
+    <div class="p-partner-philosophy__deco p-partner-philosophy__deco--hd5 u-hidden-sp" aria-hidden="true">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-5.webp')); ?>" alt="">
+    </div>
+    <div class="p-partner-philosophy__deco p-partner-philosophy__deco--cta1 u-hidden-sp" aria-hidden="true">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-1.webp')); ?>" alt="">
     </div>
 
     <div class="p-partner-philosophy__inner">

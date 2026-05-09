@@ -139,6 +139,57 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // フローティングCTA（PC専用）：.p-partner-cta__buttons を clone して body にfixed配置
+  var pcMatchMedia = window.matchMedia('(min-width: 768px)');
+  if (pcMatchMedia.matches) {
+    var ctaSections = document.querySelectorAll('.p-partner-cta');
+    var firstCta = ctaSections[0];
+    var ctaButtons = firstCta ? firstCta.querySelector('.p-partner-cta__buttons') : null;
+
+    if (ctaSections.length && ctaButtons) {
+      // clone を作って body に追加
+      var floatingCta = ctaButtons.cloneNode(true);
+      floatingCta.classList.add('p-partner-floating-cta');
+      floatingCta.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(floatingCta);
+
+      var SHOW_THRESHOLD = 600;
+      // 各セクションの可視状態を Map で管理（どれか1つでも可視なら隠す）
+      var ctaVisibilityMap = new Map();
+      ctaSections.forEach(function (sec) { ctaVisibilityMap.set(sec, false); });
+
+      function anyCtaInView() {
+        var inView = false;
+        ctaVisibilityMap.forEach(function (v) { if (v) inView = true; });
+        return inView;
+      }
+
+      function updateFloatingCta() {
+        var scrolled = window.scrollY > SHOW_THRESHOLD;
+        if (scrolled && !anyCtaInView()) {
+          floatingCta.classList.add('is-visible');
+        } else {
+          floatingCta.classList.remove('is-visible');
+        }
+      }
+
+      // 各CTAセクションを監視（どれか可視 → 隠す）
+      var ctaObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          ctaVisibilityMap.set(entry.target, entry.isIntersecting);
+        });
+        updateFloatingCta();
+      }, {
+        threshold: 0,
+        rootMargin: '0px 0px -10% 0px'
+      });
+      ctaSections.forEach(function (sec) { ctaObserver.observe(sec); });
+
+      window.addEventListener('scroll', updateFloatingCta, { passive: true });
+      updateFloatingCta();
+    }
+  }
 });
 ");
 });

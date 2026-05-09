@@ -1452,7 +1452,6 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   position: relative;
   background-color: $partner-color-bg-light;
   padding: rem(96) 0;
-  overflow: hidden;
 }
 
 .p-partner-works__deco {
@@ -2669,8 +2668,8 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 .p-partner-philosophy {
   position: relative;
   z-index: 1; // 他セクションより上に重ねる（隣接セクションのbgに沈まないように）
-  background-color: $partner-color-base;
   padding: rem(96) rem(16);
+  background-color: $partner-color-base;
 
   @include mq(pc) {
     padding: rem(96) rem(24);
@@ -2678,41 +2677,45 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 }
 
 // PC装飾（右上 / 左下）
-.p-partner-philosophy__decorations {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2; // 自身の section bg より上に
-}
-
+// section 直下に配置。各 div が位置とサイズを持ち、img は親に追従
 .p-partner-philosophy__deco {
   position: absolute;
-  height: auto;
+  pointer-events: none;
+  z-index: 1; // ::before の bg より上
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .p-partner-philosophy__deco--hd1 {
-  top: rem(-40);
-  right: rem(-60);
-  max-width: rem(380);
-  width: 100%;
-  z-index: 1;
+  top: rem(-136);
+  right: rem(-268);
+  width: rem(671);
+  height: rem(620);
+  // background-color: red;
 }
 
 .p-partner-philosophy__deco--hd5 {
-  top: rem(60);
-  right: rem(280);
-  width: rem(120);
+  top: rem(-100);
+  right: rem(264);
+  width: rem(159);
+  height: rem(159);
 }
 
 .p-partner-philosophy__deco--cta1 {
   bottom: rem(-40);
   left: rem(-60);
   width: rem(280);
+  height: rem(280);
 }
 
 .p-partner-philosophy__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2; // deco より上、bg(::before) よりさらに上
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2891,5 +2894,32 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 
   @include mq(pc) {
     font-size: rem(14);
+  }
+}
+
+// ============================================================
+// フローティングCTA（PC専用、.p-partner-cta__buttons を clone して body にfixed配置）
+// ============================================================
+.p-partner-floating-cta {
+  display: none;
+
+  @include mq(pc) {
+    position: fixed;
+    bottom: rem(24);
+    right: rem(24);
+    z-index: 100;
+    display: flex;
+    opacity: 0;
+    transform: translateY(rem(20));
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    pointer-events: none;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
   }
 }

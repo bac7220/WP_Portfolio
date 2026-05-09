@@ -3921,7 +3921,6 @@ p {
   position: relative;
   background-color: #f8fafc;
   padding: 6rem 0;
-  overflow: hidden;
 }
 
 .p-partner-works__deco {
@@ -5040,8 +5039,8 @@ p {
 .p-partner-philosophy {
   position: relative;
   z-index: 1;
-  background-color: #7d987c;
   padding: 6rem 1rem;
+  background-color: #7d987c;
 }
 @media screen and (min-width: 768px) {
   .p-partner-philosophy {
@@ -5049,41 +5048,42 @@ p {
   }
 }
 
-.p-partner-philosophy__decorations {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
 .p-partner-philosophy__deco {
   position: absolute;
-  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+.p-partner-philosophy__deco img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .p-partner-philosophy__deco--hd1 {
-  top: -2.5rem;
-  right: -3.75rem;
-  max-width: 23.75rem;
-  width: 100%;
-  z-index: 1;
+  top: -8.5rem;
+  right: -16.75rem;
+  width: 41.9375rem;
+  height: 38.75rem;
 }
 
 .p-partner-philosophy__deco--hd5 {
-  top: 3.75rem;
-  right: 17.5rem;
-  width: 7.5rem;
+  top: -6.25rem;
+  right: 16.5rem;
+  width: 9.9375rem;
+  height: 9.9375rem;
 }
 
 .p-partner-philosophy__deco--cta1 {
   bottom: -2.5rem;
   left: -3.75rem;
   width: 17.5rem;
+  height: 17.5rem;
 }
 
 .p-partner-philosophy__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5260,6 +5260,28 @@ p {
 @media screen and (min-width: 768px) {
   .p-partner-philosophy__card-text {
     font-size: 0.875rem;
+  }
+}
+
+.p-partner-floating-cta {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-floating-cta {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .p-partner-floating-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
 
