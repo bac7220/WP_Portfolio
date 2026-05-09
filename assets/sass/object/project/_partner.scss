@@ -32,6 +32,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   position: relative;
   background-color: $partner-color-bg-light;
   padding: rem(48) rem(16) rem(16);
+  z-index: 5;
 
   @include mq(pc) {
     padding: rem(28) rem(16) rem(16);
@@ -66,15 +67,18 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 
 // ----------------------------
 // 装飾（背景の図形）
+// section 直下に配置。各 div が位置とサイズを持ち、img は親に追従
 // ----------------------------
-.p-partner-hero__decorations {
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .p-partner-hero__deco {
   position: absolute;
+  pointer-events: none;
+  z-index: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .p-partner-hero__deco-1 {
@@ -396,7 +400,30 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 }
 
 .p-partner-hero--bottom {
+  position: relative;
   background-color: #dfe8f1;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // 後ろの濃い半円（パララックスでスクロール時に少しだけ下にズレる）
+  .p-partner-hero__bottom-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: translateY(0);
+    will-change: transform;
+  }
+
+  // 前面の本体（hero色そのまま）
+  .p-partner-hero__bottom-front {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 // ============================================================

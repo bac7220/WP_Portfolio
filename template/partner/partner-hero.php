@@ -3,16 +3,15 @@
     ============================ -->
 
     <section class="p-partner-hero">
-      <div class="p-partner-hero__inner">
 
-        <!-- 装飾（背景の図形） -->
-        <div class="p-partner-hero__decorations" aria-hidden="true">
-          <div class="p-partner-hero__deco p-partner-hero__deco-1"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-1.webp')); ?>" loading="eager" decoding="async"></div>
-          <div class="p-partner-hero__deco p-partner-hero__deco-2"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-2.webp')); ?>" loading="eager" decoding="async"></div>
-          <div class="p-partner-hero__deco p-partner-hero__deco-3"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-3.webp')); ?>" loading="eager" decoding="async"></div>
-          <div class="p-partner-hero__deco p-partner-hero__deco-4"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-4.webp')); ?>" loading="eager" decoding="async"></div>
-          <div class="p-partner-hero__deco p-partner-hero__deco-5"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-5.webp')); ?>" loading="eager" decoding="async"></div>
-        </div>
+      <!-- 装飾（背景の図形） -->
+      <div class="p-partner-hero__deco p-partner-hero__deco-1" aria-hidden="true"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-1.webp')); ?>" alt="" loading="eager" decoding="async"></div>
+      <div class="p-partner-hero__deco p-partner-hero__deco-2" aria-hidden="true"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-2.webp')); ?>" alt="" loading="eager" decoding="async"></div>
+      <div class="p-partner-hero__deco p-partner-hero__deco-3" aria-hidden="true"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-3.webp')); ?>" alt="" loading="eager" decoding="async"></div>
+      <div class="p-partner-hero__deco p-partner-hero__deco-4" aria-hidden="true"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-4.webp')); ?>" alt="" loading="eager" decoding="async"></div>
+      <div class="p-partner-hero__deco p-partner-hero__deco-5" aria-hidden="true"><img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-deco-5.webp')); ?>" alt="" loading="eager" decoding="async"></div>
+
+      <div class="p-partner-hero__inner">
         <div class="p-partner-hero__wrapper">
           <!-- テキストブロック -->
           <div class="p-partner-hero__content">
@@ -54,5 +53,6 @@
       </div>
     </section>
     <div class="p-partner-hero--bottom">
-      <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-bottom.svg')); ?>" alt="WEB制作 おくだ屋 奥田将輝" loading="eager" decoding="async">
+      <img class="p-partner-hero__bottom-shadow" src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-bottom-shadow.svg')); ?>" alt="" aria-hidden="true" loading="eager" decoding="async">
+      <img class="p-partner-hero__bottom-front" src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/hero-bottom.svg')); ?>" alt="WEB制作 おくだ屋 奥田将輝" loading="eager" decoding="async">
     </div>
