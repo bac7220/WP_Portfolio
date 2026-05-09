@@ -32,6 +32,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   position: relative;
   background-color: $partner-color-bg-light;
   padding: rem(48) rem(16) rem(16);
+  z-index: 5;
 
   @include mq(pc) {
     padding: rem(28) rem(16) rem(16);
@@ -66,15 +67,18 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 
 // ----------------------------
 // 装飾（背景の図形）
+// section 直下に配置。各 div が位置とサイズを持ち、img は親に追従
 // ----------------------------
-.p-partner-hero__decorations {
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .p-partner-hero__deco {
   position: absolute;
+  pointer-events: none;
+  z-index: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .p-partner-hero__deco-1 {
@@ -396,7 +400,30 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 }
 
 .p-partner-hero--bottom {
+  position: relative;
   background-color: #dfe8f1;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // 後ろの濃い半円（パララックスでスクロール時に少しだけ下にズレる）
+  .p-partner-hero__bottom-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: translateY(0);
+    will-change: transform;
+  }
+
+  // 前面の本体（hero色そのまま）
+  .p-partner-hero__bottom-front {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 // ============================================================
@@ -1452,7 +1479,6 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   position: relative;
   background-color: $partner-color-bg-light;
   padding: rem(96) 0;
-  overflow: hidden;
 }
 
 .p-partner-works__deco {
@@ -2669,8 +2695,8 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 .p-partner-philosophy {
   position: relative;
   z-index: 1; // 他セクションより上に重ねる（隣接セクションのbgに沈まないように）
-  background-color: $partner-color-base;
   padding: rem(96) rem(16);
+  background-color: $partner-color-base;
 
   @include mq(pc) {
     padding: rem(96) rem(24);
@@ -2678,41 +2704,45 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
 }
 
 // PC装飾（右上 / 左下）
-.p-partner-philosophy__decorations {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2; // 自身の section bg より上に
-}
-
+// section 直下に配置。各 div が位置とサイズを持ち、img は親に追従
 .p-partner-philosophy__deco {
   position: absolute;
-  height: auto;
+  pointer-events: none;
+  z-index: 1; // ::before の bg より上
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .p-partner-philosophy__deco--hd1 {
-  top: rem(-40);
-  right: rem(-60);
-  max-width: rem(380);
-  width: 100%;
-  z-index: 1;
+  top: rem(-136);
+  right: rem(-268);
+  width: rem(671);
+  height: rem(620);
+  // background-color: red;
 }
 
 .p-partner-philosophy__deco--hd5 {
-  top: rem(60);
-  right: rem(280);
-  width: rem(120);
+  top: rem(-100);
+  right: rem(264);
+  width: rem(159);
+  height: rem(159);
 }
 
 .p-partner-philosophy__deco--cta1 {
   bottom: rem(-40);
   left: rem(-60);
   width: rem(280);
+  height: rem(280);
 }
 
 .p-partner-philosophy__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2; // deco より上、bg(::before) よりさらに上
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2892,4 +2922,119 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   @include mq(pc) {
     font-size: rem(14);
   }
+}
+
+// ============================================================
+// フローティングCTA（PC専用、.p-partner-cta__buttons を clone して body にfixed配置）
+// ============================================================
+.p-partner-floating-cta {
+  display: none;
+
+  @include mq(pc) {
+    position: fixed;
+    bottom: rem(24);
+    right: rem(24);
+    z-index: 100;
+    display: flex;
+    opacity: 0;
+    transform: translateY(rem(20));
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    pointer-events: none;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+}
+
+// ============================================================
+// data-fade（スクロールフェードイン）
+// - data-fade or data-fade="up": 下から上 + バウンド
+// - data-fade="blur"           : その場でボヤーっと
+// オプション: data-fade-delay / data-fade-duration（ms、JS側でinline styleとして付与）
+// ============================================================
+[data-fade] {
+  opacity: 0;
+  transform: translateY(rem(40));
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); // バウンドする ease
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// blur パターン：移動なし、ぼかしだけ
+[data-fade="blur"] {
+  transform: none;
+  filter: blur(rem(12));
+  transition:
+    opacity 0.7s ease-out,
+    filter 0.7s ease-out;
+
+  &.is-visible {
+    filter: blur(0);
+  }
+}
+
+// slide パターン：下からすっとスムーズに（バウンドなし）
+[data-fade="slide"] {
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+// reveal パターン：枠をマスクして中身が下から現れる（要：直下に1つの子要素）
+[data-fade="reveal"] {
+  overflow: hidden;
+  opacity: 1; // 親自体は表示
+  transform: none;
+
+  > * {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &.is-visible > * {
+    transform: translateY(0);
+  }
+}
+
+// reveal-lines パターン：1行ずつ順番に下から現れる
+// 構造： data-fade="reveal-lines" > [line] > [line-inner] > 中身
+[data-fade="reveal-lines"] {
+  opacity: 1;
+  transform: none;
+
+  > * {
+    display: block;
+    overflow: hidden;
+  }
+
+  > * > * {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &.is-visible > * > * {
+    transform: translateY(0);
+  }
+
+  // 行ごとにディレイ（最大8行までスタガー）
+  > *:nth-child(1) > * { transition-delay: 0s; }
+  > *:nth-child(2) > * { transition-delay: 0.12s; }
+  > *:nth-child(3) > * { transition-delay: 0.24s; }
+  > *:nth-child(4) > * { transition-delay: 0.36s; }
+  > *:nth-child(5) > * { transition-delay: 0.48s; }
+  > *:nth-child(6) > * { transition-delay: 0.6s; }
+  > *:nth-child(7) > * { transition-delay: 0.72s; }
+  > *:nth-child(8) > * { transition-delay: 0.84s; }
 }

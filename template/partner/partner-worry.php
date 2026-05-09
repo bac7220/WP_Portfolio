@@ -15,7 +15,7 @@
 
             <!-- 困った男性のイラスト + 吹き出し -->
             <div class="p-partner-worry__illust">
-                <div class="p-partner-worry__bubble">
+                <div data-fade="blur" data-fade-delay="500"class="p-partner-worry__bubble">
                     <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/worry-bubble.svg')); ?>" alt="" class="p-partner-worry__bubble-img">
                     <p class="p-partner-worry__bubble-text">
                         最近話題のAI<br>使ってみたけど…
@@ -55,7 +55,7 @@
         </div>
 
         <!-- メッセージボックス -->
-        <div class="p-partner-worry__message">
+        <div data-fade="up" data-fade-delay="1200" class="p-partner-worry__message">
             <span class="p-partner-worry__message-badge">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/worry-okudaya-icon.svg')); ?>" alt="" class="p-partner-worry__message-icon">
                 おくだ屋にご相談ください！

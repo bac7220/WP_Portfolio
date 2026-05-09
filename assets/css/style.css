@@ -2533,6 +2533,7 @@ p {
   position: relative;
   background-color: #f8fafc;
   padding: 3rem 1rem 1rem;
+  z-index: 5;
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero {
@@ -2570,14 +2571,15 @@ p {
   }
 }
 
-.p-partner-hero__decorations {
-  inset: 0;
+.p-partner-hero__deco {
+  position: absolute;
   pointer-events: none;
   z-index: 0;
 }
-
-.p-partner-hero__deco {
-  position: absolute;
+.p-partner-hero__deco img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .p-partner-hero__deco-1 {
@@ -2916,7 +2918,25 @@ p {
 }
 
 .p-partner-hero--bottom {
+  position: relative;
   background-color: #dfe8f1;
+}
+.p-partner-hero--bottom img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.p-partner-hero--bottom .p-partner-hero__bottom-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: translateY(0);
+  will-change: transform;
+}
+.p-partner-hero--bottom .p-partner-hero__bottom-front {
+  position: relative;
+  z-index: 1;
 }
 
 .p-partner-worry {
@@ -3921,7 +3941,6 @@ p {
   position: relative;
   background-color: #f8fafc;
   padding: 6rem 0;
-  overflow: hidden;
 }
 
 .p-partner-works__deco {
@@ -5040,8 +5059,8 @@ p {
 .p-partner-philosophy {
   position: relative;
   z-index: 1;
-  background-color: #7d987c;
   padding: 6rem 1rem;
+  background-color: #7d987c;
 }
 @media screen and (min-width: 768px) {
   .p-partner-philosophy {
@@ -5049,41 +5068,42 @@ p {
   }
 }
 
-.p-partner-philosophy__decorations {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
 .p-partner-philosophy__deco {
   position: absolute;
-  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+.p-partner-philosophy__deco img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .p-partner-philosophy__deco--hd1 {
-  top: -2.5rem;
-  right: -3.75rem;
-  max-width: 23.75rem;
-  width: 100%;
-  z-index: 1;
+  top: -8.5rem;
+  right: -16.75rem;
+  width: 41.9375rem;
+  height: 38.75rem;
 }
 
 .p-partner-philosophy__deco--hd5 {
-  top: 3.75rem;
-  right: 17.5rem;
-  width: 7.5rem;
+  top: -6.25rem;
+  right: 16.5rem;
+  width: 9.9375rem;
+  height: 9.9375rem;
 }
 
 .p-partner-philosophy__deco--cta1 {
   bottom: -2.5rem;
   left: -3.75rem;
   width: 17.5rem;
+  height: 17.5rem;
 }
 
 .p-partner-philosophy__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5261,6 +5281,106 @@ p {
   .p-partner-philosophy__card-text {
     font-size: 0.875rem;
   }
+}
+
+.p-partner-floating-cta {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .p-partner-floating-cta {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .p-partner-floating-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+[data-fade] {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-fade].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-fade=blur] {
+  transform: none;
+  filter: blur(0.75rem);
+  transition: opacity 0.7s ease-out, filter 0.7s ease-out;
+}
+[data-fade=blur].is-visible {
+  filter: blur(0);
+}
+
+[data-fade=slide] {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+[data-fade=reveal] {
+  overflow: hidden;
+  opacity: 1;
+  transform: none;
+}
+[data-fade=reveal] > * {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-fade=reveal].is-visible > * {
+  transform: translateY(0);
+}
+
+[data-fade=reveal-lines] {
+  opacity: 1;
+  transform: none;
+}
+[data-fade=reveal-lines] > * {
+  display: block;
+  overflow: hidden;
+}
+[data-fade=reveal-lines] > * > * {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-fade=reveal-lines].is-visible > * > * {
+  transform: translateY(0);
+}
+[data-fade=reveal-lines] > *:nth-child(1) > * {
+  transition-delay: 0s;
+}
+[data-fade=reveal-lines] > *:nth-child(2) > * {
+  transition-delay: 0.12s;
+}
+[data-fade=reveal-lines] > *:nth-child(3) > * {
+  transition-delay: 0.24s;
+}
+[data-fade=reveal-lines] > *:nth-child(4) > * {
+  transition-delay: 0.36s;
+}
+[data-fade=reveal-lines] > *:nth-child(5) > * {
+  transition-delay: 0.48s;
+}
+[data-fade=reveal-lines] > *:nth-child(6) > * {
+  transition-delay: 0.6s;
+}
+[data-fade=reveal-lines] > *:nth-child(7) > * {
+  transition-delay: 0.72s;
+}
+[data-fade=reveal-lines] > *:nth-child(8) > * {
+  transition-delay: 0.84s;
 }
 
 .u-bg-light_green {
