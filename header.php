@@ -45,6 +45,11 @@
                 </li>
 
                 <li class="p-header__menu-item u-white-color">
+                    <a class="p-header__menu-link" href="<?php echo esc_url(home_url('/blog')); ?>">Blog
+                    </a>
+                </li>
+
+                <li class="p-header__menu-item u-white-color">
                     <a class="p-header__menu-link
                     <?php
                     if (is_page() && get_post_field('post_name', get_post()) === 'contact') {
@@ -91,12 +96,6 @@
                             <use href="#mail-svg"></use>
                         </svg>
                         <a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a>
-                    </li>
-                    <li class="p-header__nav-item">
-                        <svg width="24" height="24" role="img" aria-label="book-icon">
-                            <use href="#book-svg"></use>
-                        </svg>
-                        <a href="<?php echo esc_url(home_url('/blog')); ?>" target="_blank" rel="noopener noreferrer">Blog</a>
                     </li>
                 </ul>
             </nav>

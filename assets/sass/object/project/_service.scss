@@ -13,6 +13,42 @@
   gap: 48px;
 }
 
+// ----------------------------
+// サービスカード内のリンク（パートナーページ等への導線）
+// ----------------------------
+.c-service__card-link {
+  margin-top: 12px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2e4e2d;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+    border: #2e4e2d 1px solid;
+    border-radius: 4px;
+    padding: 8px 16px;
+
+    &:hover {
+      background-color: #2e4e2d;
+      color: #eef6f5;
+    }
+
+    &::after {
+      display: block;
+      content: "→";
+      transition: transform 0.2s ease;
+    }
+
+    &:hover::after {
+      transform: translateX(6px);
+    }
+  }
+}
 
 .p-work-flow {
   padding: 60px 0;
@@ -56,4 +92,3 @@
 .p-work-flow__text {
   grid-column-start: 2;
 }
-

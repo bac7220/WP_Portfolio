@@ -8,3 +8,38 @@
   text-align: center;
   z-index: 3;
 }
+
+.l-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+// 制作会社・ディレクター向けリンク（控えめ）
+.l-footer__partner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, gap 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    gap: 10px;
+  }
+}
+
+.l-footer__partner-arrow {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.l-footer__copyright {
+  display: block;
+}
