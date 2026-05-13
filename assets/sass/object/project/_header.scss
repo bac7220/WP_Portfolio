@@ -2,7 +2,6 @@
 @use "../../foundation/mixin" as *;
 
 .p-header {
-
   position: sticky;
   top: 0;
   left: 0;
@@ -111,8 +110,12 @@
     height: 0;
   }
 
-  &:hover::before { width: 100%; }
-  &:hover::after  { height: 100%; }
+  &:hover::before {
+    width: 100%;
+  }
+  &:hover::after {
+    height: 100%;
+  }
 }
 
 .p-header__menu-link {
@@ -143,8 +146,12 @@
     height: 0;
   }
 
-  &:hover::before { width: 100%; }
-  &:hover::after  { height: 100%; }
+  &:hover::before {
+    width: 100%;
+  }
+  &:hover::after {
+    height: 100%;
+  }
 }
 
 .p-header__nav-list {
@@ -152,21 +159,20 @@
   gap: 2rem;
   color: $color-white;
   justify-content: center;
+  padding-bottom: 32px;
 }
 
 .p-header__nav-item {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+  gap: 8px;
 }
 
 .p-header__fz {
   font-size: clamp(1rem, 1.19vw + 0.429rem, 1.5rem);
 }
 
-
 .p-header__nav-item + .p-header__nav-item {
-  margin-top: 24px;
 }
 
 .current::before {
@@ -181,8 +187,6 @@
 }
 
 // Drawer
-
-
 
 .p-drawer__contents {
   background-color: $color-main-dark;
@@ -216,6 +220,9 @@
     width: 100%;
     text-align: start;
   }
+  p {
+    color: #fff;
+  }
 
   svg {
     justify-self: end;
@@ -225,4 +232,3 @@
 .p-drawer__footer-left {
   border-right: 2px solid $color-white;
 }
-
