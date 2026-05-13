@@ -121,25 +121,59 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ----- data-fade スクロールフェードイン -----
-  var fadeEls = document.querySelectorAll('[data-fade]');
-  if (fadeEls.length && 'IntersectionObserver' in window) {
-    var fadeObserver = new IntersectionObserver(function (entries) {
+  // 共通発火コールバック
+  function fadeReveal(entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var delay = el.dataset.fadeDelay;
+        var duration = el.dataset.fadeDuration;
+        if (delay) el.style.transitionDelay = delay + 'ms';
+        if (duration) el.style.transitionDuration = duration + 'ms';
+        el.classList.add('is-visible');
+        observer.unobserve(el);
+      }
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    // デフォルト Observer（10% で発火）
+    var defaultObserver = new IntersectionObserver(fadeReveal, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    document.querySelectorAll('[data-fade]').forEach(function (el) {
+      var trigger = el.dataset.fadeTrigger; // 例: "30" → 30%で発火
+      if (trigger) {
+        // 個別 Observer（rootMargin で発火タイミングを変える）
+        var customObserver = new IntersectionObserver(fadeReveal, {
+          threshold: 0,
+          rootMargin: '0px 0px -' + trigger + '% 0px'
+        });
+        customObserver.observe(el);
+      } else {
+        defaultObserver.observe(el);
+      }
+    });
+  }
+
+  // ----- Philosophy cta1 deco の飛行アニメ（2つ目のCTA進入で発火） -----
+  var cta1Deco = document.querySelector('.p-partner-philosophy__deco--cta1');
+  var allCtaSectionsFly = document.querySelectorAll('.p-partner-cta');
+  if (cta1Deco && allCtaSectionsFly.length >= 2 && 'IntersectionObserver' in window) {
+    var cta1FlyObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          var el = entry.target;
-          var delay = el.dataset.fadeDelay;
-          var duration = el.dataset.fadeDuration;
-          if (delay) el.style.transitionDelay = delay + 'ms';
-          if (duration) el.style.transitionDuration = duration + 'ms';
-          el.classList.add('is-visible');
-          fadeObserver.unobserve(el);
+          cta1Deco.classList.add('is-flying');
+          cta1FlyObserver.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.1,
       rootMargin: '0px 0px -10% 0px'
     });
-    fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+    cta1FlyObserver.observe(allCtaSectionsFly[1]);
   }
 
   // ----- フローティングCTA（PC専用）：.p-partner-cta__buttons を clone -----

@@ -1951,6 +1951,40 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   width: rem(77);
   height: rem(77);
   z-index: 2;
+  overflow: hidden;
+  border-radius: 50%; // バッジが円形なら光の帯も円内でクリップ
+
+  // シマー：斜めの光の帯がスライド
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 70%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    animation: p-partner-cap__wp-point-shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@keyframes p-partner-cap__wp-point-shimmer {
+  0% {
+    left: -120%;
+  }
+  60%,
+  100% {
+    left: 220%;
+  }
 }
 
 .p-partner-cap__wp-point-img {
@@ -2738,6 +2772,42 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   left: rem(-60);
   width: rem(280);
   height: rem(280);
+  opacity: 0; // 初期非表示。is-flying のアニメ中だけ表示
+
+  // 2つ目のCTAが画面に入ると、左上→右下に流れるように画面横断
+  &.is-flying {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    z-index: 9999;
+    pointer-events: none;
+    animation: p-partner-cta1-fly 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+  }
+}
+
+@keyframes p-partner-cta1-fly {
+  0% {
+    transform: translate(-100vmax, -100vmax);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vmax, 100vmax);
+    opacity: 0;
+  }
+}
+
+.p-partner-philosophy__deco--kick {
+  bottom: rem(0);
+  right: rem(100);
+  width: rem(263);
+  height: rem(376);
 }
 
 .p-partner-philosophy__inner {
@@ -2962,7 +3032,7 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   transform: translateY(rem(40));
   transition:
     opacity 0.7s ease-out,
-    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); // バウンドする ease
+    transform 0.7s cubic-bezier(0.18, 2.2, 0.4, 1); // 強めにボヨヨン
 
   &.is-visible {
     opacity: 1;
@@ -3029,12 +3099,28 @@ $partner-color-yellow: #f8f540; // アクセント黄（FVマーカー）
   }
 
   // 行ごとにディレイ（最大8行までスタガー）
-  > *:nth-child(1) > * { transition-delay: 0s; }
-  > *:nth-child(2) > * { transition-delay: 0.12s; }
-  > *:nth-child(3) > * { transition-delay: 0.24s; }
-  > *:nth-child(4) > * { transition-delay: 0.36s; }
-  > *:nth-child(5) > * { transition-delay: 0.48s; }
-  > *:nth-child(6) > * { transition-delay: 0.6s; }
-  > *:nth-child(7) > * { transition-delay: 0.72s; }
-  > *:nth-child(8) > * { transition-delay: 0.84s; }
+  > *:nth-child(1) > * {
+    transition-delay: 0s;
+  }
+  > *:nth-child(2) > * {
+    transition-delay: 0.12s;
+  }
+  > *:nth-child(3) > * {
+    transition-delay: 0.24s;
+  }
+  > *:nth-child(4) > * {
+    transition-delay: 0.36s;
+  }
+  > *:nth-child(5) > * {
+    transition-delay: 0.48s;
+  }
+  > *:nth-child(6) > * {
+    transition-delay: 0.6s;
+  }
+  > *:nth-child(7) > * {
+    transition-delay: 0.72s;
+  }
+  > *:nth-child(8) > * {
+    transition-delay: 0.84s;
+  }
 }
