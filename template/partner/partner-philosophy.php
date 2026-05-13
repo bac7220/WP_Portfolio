@@ -13,6 +13,9 @@
     <div class="p-partner-philosophy__deco p-partner-philosophy__deco--cta1 u-hidden-sp" aria-hidden="true">
         <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-1.webp')); ?>" alt="">
     </div>
+    <div data-fade="reveal" data-fade-duration="400" data-fade-trigger="50" class="p-partner-philosophy__deco p-partner-philosophy__deco--kick u-hidden-sp" aria-hidden="true">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/okuda-kick.avif')); ?>" alt="">
+    </div>
 
     <div class="p-partner-philosophy__inner">
 

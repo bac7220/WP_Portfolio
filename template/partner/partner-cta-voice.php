@@ -18,7 +18,7 @@
         <div class="p-partner-cta__buttons">
 
             <!-- Webセッション -->
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="p-partner-cta__btn p-partner-cta__btn--web">
+            <a data-fade="up" data-fade-duration="500" href="<?php echo esc_url(home_url('/contact/')); ?>" class="p-partner-cta__btn p-partner-cta__btn--web">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-illust.svg')); ?>" alt="" class="p-partner-cta__btn-illust">
                 <span class="p-partner-cta__btn-text">
                     \ まずはお気軽に /<br>
@@ -27,7 +27,7 @@
             </a>
 
             <!-- Xから -->
-            <a href="https://x.com/kakamigaharabac" target="_blank" rel="noopener noreferrer" class="p-partner-cta__btn p-partner-cta__btn--x">
+            <a data-fade="up" data-fade-delay="200" data-fade-duration="500" href="https://x.com/kakamigaharabac" target="_blank" rel="noopener noreferrer" class="p-partner-cta__btn p-partner-cta__btn--x">
                 <span class="p-partner-cta__btn-badge">日々の活動を発信中！</span>
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/cta-x-icon.svg')); ?>" alt="" class="p-partner-cta__btn-x-icon">
                 <span class="p-partner-cta__btn-text">XからDMを送る</span>
