@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('partner'); ?>
 
 <main class="p-partner">
 
@@ -26,6 +26,5 @@
 
 </main>
 
-<?php get_template_part('template/footer-item'); ?>
 <?php get_template_part('template/svg'); ?>
-<?php get_footer(); ?>
+<?php get_footer('partner'); ?>

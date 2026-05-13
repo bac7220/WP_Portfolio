@@ -188,6 +188,16 @@ document.addEventListener('DOMContentLoaded', function () {
       var floatingCta = ctaButtons.cloneNode(true);
       floatingCta.classList.add('p-partner-floating-cta');
       floatingCta.setAttribute('aria-hidden', 'true');
+
+      // クローン内の data-fade 属性を全削除（透明のままになるバグ防止）
+      var clonedFadeEls = floatingCta.querySelectorAll('[data-fade]');
+      clonedFadeEls.forEach(function (el) {
+        el.removeAttribute('data-fade');
+        el.removeAttribute('data-fade-delay');
+        el.removeAttribute('data-fade-duration');
+        el.removeAttribute('data-fade-trigger');
+      });
+
       document.body.appendChild(floatingCta);
 
       var SHOW_THRESHOLD = 600;
