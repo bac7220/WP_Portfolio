@@ -59,6 +59,19 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
+// 料金ページ専用：estimate.js を読み込む
+add_action('wp_enqueue_scripts', function () {
+    if (!is_page('price')) return;
+
+    wp_enqueue_script(
+        'estimate-js',
+        get_template_directory_uri() . '/js/estimate.js',
+        array(),
+        filemtime(get_theme_file_path('/js/estimate.js')),
+        true
+    );
+});
+
 
 // テーマのセットアップ関数
 function my_setup()
