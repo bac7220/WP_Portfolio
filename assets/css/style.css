@@ -2594,7 +2594,7 @@ p {
   .p-partner-hero__deco-1 {
     top: 14rem;
     left: auto;
-    right: 5rem;
+    right: calc(50% - 36rem);
     max-width: 28.125rem;
   }
 }
@@ -2623,9 +2623,9 @@ p {
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__deco-3 {
-    max-width: 20.625rem;
-    top: 7rem;
-    left: -5rem;
+    max-width: 26.625rem;
+    top: 8rem;
+    left: -1rem;
   }
 }
 
@@ -2638,9 +2638,9 @@ p {
 }
 @media screen and (min-width: 768px) {
   .p-partner-hero__deco-4 {
-    left: auto;
-    top: -6.25rem;
-    right: 30rem;
+    left: 14.5rem;
+    top: -13.25rem;
+    right: auto;
     max-width: 21.875rem;
   }
 }
@@ -2800,8 +2800,8 @@ p {
 }
 
 .p-partner-hero__photo--kick {
-  top: -1.5rem;
-  left: 0.5rem;
+  top: 2.25rem;
+  left: -1.5rem;
   width: 100%;
   max-width: 11.25rem;
   height: auto;
@@ -2814,18 +2814,18 @@ p {
 }
 @media screen and (min-width: 1000px) {
   .p-partner-hero__photo--kick {
-    top: 3.625rem;
+    top: 17.625rem;
     left: auto;
-    right: -10.5rem;
+    right: 6.5rem;
     max-width: 16rem;
   }
 }
 
 .p-partner-hero__photo--portrait {
-  top: -6.25rem;
-  left: calc(50% - 3.75rem);
+  top: -2.0625rem;
+  left: calc(50% - 0.6875rem);
   width: 100%;
-  max-width: 15.625rem;
+  max-width: 11.625rem;
   height: auto;
   z-index: 2;
 }
@@ -2833,13 +2833,20 @@ p {
   .p-partner-hero__photo--portrait {
     top: -15.625rem;
     left: calc(50% + 10rem);
+    max-width: 22rem;
   }
 }
 @media screen and (min-width: 1000px) {
   .p-partner-hero__photo--portrait {
-    top: -9.25rem;
+    top: -15.625rem;
+    left: calc(50% - 15rem);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-partner-hero__photo--portrait {
+    top: -13.5rem;
     right: auto;
-    left: -7.5rem;
+    left: 13.5rem;
     max-width: 22rem;
   }
 }
