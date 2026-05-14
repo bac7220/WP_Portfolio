@@ -77,7 +77,7 @@
         </div>
 
         <!-- もっと見るリンク -->
-        <a href="#" class="p-partner-price__more">
+        <a href="price" class="p-partner-price__more">
             <span class="p-partner-price__more-text">もっと見る</span>
             <img src="<?php echo esc_url(get_theme_file_uri('assets/img/partner/price-arrow-up.svg')); ?>" alt="" class="p-partner-price__more-icon">
         </a>
