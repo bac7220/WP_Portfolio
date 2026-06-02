@@ -22,12 +22,6 @@ jobs:
           TARGET: /home/xs393017/web-okuda.com/public_html/wp-content/themes/bac-portfolio
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          # --- 一時デバッグ: 認証の詳細をログに出す（原因特定後に削除する） ---
-          echo "key head: $(head -1 private_key)"
-          echo "key tail: $(tail -1 private_key)"
-          echo "USER length check: ${#USER}"
-          ssh -vvv -i private_key -p 10022 -o StrictHostKeyChecking=no -o BatchMode=yes "$USER@$HOST" "echo CONNECTED" || true
-          # --- ここまでデバッグ ---
           # エックスサーバーはSSHポートが 10022。rsyncを使ってファイルを同期（node_modulesなどは除外）
           rsync -avz --delete -e "ssh -i private_key -p 10022 -o StrictHostKeyChecking=no" ./ $USER@$HOST:$TARGET --exclude '.git/' --exclude '.github/' --exclude 'node_modules/' --exclude 'private_key'
           rm -f private_key
