@@ -111,10 +111,9 @@
     flex: 1;
 
     // 動画の時だけPCでstickyにして、縦長な左カラムをスクロール中も追従表示
+    // 右カラムはflexのstretchで左と同じ高さに伸び、その中で画像がstickyする
     &--sticky {
       @media screen and (min-width: $bp-md) {
-        align-self: flex-start;
-
         .p-single__image {
           position: sticky;
           top: 100px;
