@@ -2144,7 +2144,8 @@ p {
 .p-single__image {
   width: 100%;
 }
-.p-single__image img {
+.p-single__image img,
+.p-single__image video {
   width: 100%;
   height: auto;
   object-fit: cover;

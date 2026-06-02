@@ -114,13 +114,21 @@
                             </div>
                         </div>
 
-                        <?php if (get_field('screenshot') || is_single('b_after')): ?>
+                        <?php
+                        $video = get_field('video');
+                        $screenshot = get_field('screenshot');
+                        if ($video || $screenshot || is_single('b_after')):
+                        ?>
                             <div class="p-single__right">
                                 <div class="p-single__image">
-                                    <?php if (get_field('screenshot')): ?>
-                                        <img src="<?php the_field('screenshot'); ?>" alt="">
+                                    <?php if ($video): ?>
+                                        <video src="<?php echo esc_url($video); ?>" controls playsinline preload="metadata">
+                                            お使いのブラウザは動画の再生に対応していません。
+                                        </video>
+                                    <?php elseif ($screenshot): ?>
+                                        <img src="<?php echo esc_url($screenshot); ?>" alt="">
                                     <?php else: ?>
-                                        <img src="<?php echo esc_html(get_theme_file_uri()) ?>/img/B_AFTER.webp" alt="b-after">
+                                        <img src="<?php echo esc_html(get_theme_file_uri()); ?>/img/B_AFTER.webp" alt="b-after">
                                     <?php endif; ?>
                                 </div>
                             </div>
