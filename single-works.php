@@ -104,14 +104,16 @@
                                 </div>
                             <?php endif; ?>
 
-                            <div class="p-single__button-wrapper">
-                                <a href="<?php echo get_field('siteurl'); ?>" target="_blank" class="p-single__button">
-                                    <span class="p-single__button-text">サイトを見る</span>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
+                            <?php if (get_field('siteurl')): ?>
+                                <div class="p-single__button-wrapper">
+                                    <a href="<?php echo esc_url(get_field('siteurl')); ?>" target="_blank" rel="noopener" class="p-single__button">
+                                        <span class="p-single__button-text">サイトを見る</span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                         </div>
 
                         <?php
@@ -119,10 +121,10 @@
                         $screenshot = get_field('screenshot');
                         if ($video || $screenshot || is_single('b_after')):
                         ?>
-                            <div class="p-single__right">
+                            <div class="p-single__right<?php echo $video ? ' p-single__right--sticky' : ''; ?>">
                                 <div class="p-single__image">
                                     <?php if ($video): ?>
-                                        <video src="<?php echo esc_url($video); ?>" controls playsinline preload="metadata">
+                                        <video src="<?php echo esc_url($video); ?>" muted loop playsinline preload="metadata" controls data-pc-autoplay>
                                             お使いのブラウザは動画の再生に対応していません。
                                         </video>
                                     <?php elseif ($screenshot): ?>
@@ -141,5 +143,17 @@
 
     <?php get_template_part('template/footer-item'); ?>
 </div>
+
+<script>
+// PC幅(768px以上)のときだけ動画を自動再生。SPは通信量配慮で自動再生しない
+(function () {
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        document.querySelectorAll('video[data-pc-autoplay]').forEach(function (v) {
+            v.autoplay = true;
+            v.play().catch(function () {});
+        });
+    }
+})();
+</script>
 
 <?php get_footer(); ?>

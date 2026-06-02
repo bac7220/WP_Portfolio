@@ -2141,6 +2141,15 @@ p {
 .p-single__right {
   flex: 1;
 }
+@media screen and (min-width: 768px) {
+  .p-single__right--sticky {
+    align-self: flex-start;
+  }
+  .p-single__right--sticky .p-single__image {
+    position: sticky;
+    top: 100px;
+  }
+}
 .p-single__image {
   width: 100%;
 }

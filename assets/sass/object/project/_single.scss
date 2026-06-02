@@ -109,6 +109,18 @@
 
   &__right {
     flex: 1;
+
+    // 動画の時だけPCでstickyにして、縦長な左カラムをスクロール中も追従表示
+    &--sticky {
+      @media screen and (min-width: $bp-md) {
+        align-self: flex-start;
+
+        .p-single__image {
+          position: sticky;
+          top: 100px;
+        }
+      }
+    }
   }
 
   &__image {
