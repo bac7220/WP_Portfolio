@@ -114,18 +114,17 @@
                             </div>
                         </div>
 
-                        <div class="p-single__right">
-                            <div class="p-single__image">
-                                <?php if (get_field('screenshot')): ?>
-                                    <img src="<?php the_field('screenshot'); ?>" alt="">
-                                <?php elseif (is_single('b_after')): ?>
-                                    <img src="<?php echo esc_html(get_theme_file_uri()) ?>/img/B_AFTER.webp" alt="b-after">
-                                <?php else: ?>
-                                    <img src="<?php echo get_theme_file_uri(); ?>/img/noimg.webp" alt="イメージがありません" />
-                                <?php endif; ?>
+                        <?php if (get_field('screenshot') || is_single('b_after')): ?>
+                            <div class="p-single__right">
+                                <div class="p-single__image">
+                                    <?php if (get_field('screenshot')): ?>
+                                        <img src="<?php the_field('screenshot'); ?>" alt="">
+                                    <?php else: ?>
+                                        <img src="<?php echo esc_html(get_theme_file_uri()) ?>/img/B_AFTER.webp" alt="b-after">
+                                    <?php endif; ?>
+                                </div>
                             </div>
-
-                        </div>
+                        <?php endif; ?>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>
