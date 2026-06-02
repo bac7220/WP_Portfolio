@@ -12,9 +12,9 @@
                     <div class="p-single__container">
                         <div class="p-single__left">
                             <div class="p-single__info-thumbnail">
-                                <?php if (the_post_thumbnail()): ?>
+                                <?php if (has_post_thumbnail()): ?>
                                     <div class="p-single__image">
-                                        <img src="<?php the_post_thumbnail(); ?>" alt="">
+                                        <?php the_post_thumbnail('large', ['alt' => get_the_title()]); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -31,25 +31,22 @@
                                     <h2>クライアント様</h2>
                                 </div>
                                 <div class="p-single__info-text">
-                                    <?php if (get_field('user_name') || get_field('portfolio_url')): ?>
-                                        <?php if (get_field('user_name')): ?>
-                                            <div class="c-card__user-name">
-                                                <p class="c-card__footer-text">
-                                                    <?php the_field('user_name'); ?>
-                                                </p>
-                                            </div>
-                                        <?php endif; ?>
+                                    <?php if (get_field('user_name')): ?>
+                                        <div class="c-card__user-name">
+                                            <p class="c-card__footer-text">
+                                                <?php the_field('user_name'); ?>
+                                            </p>
+                                        </div>
+                                    <?php endif; ?>
 
-                                        <?php if (get_field('portfolio_url')): ?>
-                                            <div class="c-card__pass">
-                                                <a href="<?php the_field('portfolio_url'); ?>" class="c-card__footer-text">
-                                                    <?php the_field('portfolio_url'); ?>
-                                                </a>
-
-                                            </div>
-                                        <?php endif; ?>
+                                    <?php if (get_field('portfolio_url')): ?>
+                                        <div class="c-card__pass">
+                                            <a href="<?php the_field('portfolio_url'); ?>" class="c-card__footer-text">
+                                                <?php the_field('portfolio_url'); ?>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
-                            <?php endif; ?>
                             </div>
 
                             <?php if (get_field('period')): ?>
