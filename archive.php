@@ -43,7 +43,7 @@
               <div class="p-blog__posts-content">
                 <time class="p-blog__posts-date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time>
                 <h3 class="p-blog__posts-title-text"><?php the_title(); ?></h3>
-                <p class="p-blog__posts-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?></p>
+                <p class="p-blog__posts-excerpt"><?php bac_the_excerpt_trimmed(80); ?></p>
               </div>
             </a>
           </li>

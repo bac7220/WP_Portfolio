@@ -1,4 +1,15 @@
 <?php
+/**
+ * 抜粋を文字数で切り詰めて出力する（日本語対応）
+ * wp_trim_words は単語数基準のため、日本語では意図した長さで切れない
+ */
+function bac_the_excerpt_trimmed($length = 80)
+{
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $suffix  = mb_strlen($excerpt) > $length ? '…' : '';
+    echo esc_html(mb_substr($excerpt, 0, $length) . $suffix);
+}
+
 function my_script_init()
 
 {
