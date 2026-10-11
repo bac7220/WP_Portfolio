@@ -5,11 +5,11 @@
         <div class="l-fv__contents">
             <?php if (is_front_page()) : ?>
                 <h2 id="reverse" class="l-fv__heading ">
-                    <p class="p-fv__heading-main u-mb-1 js-text-span">ビジネスを支える<br>Web制作</p>
+                    <p class="p-fv__heading-main u-mb-1 js-text-span">Webと仕組みで<br>現場の「困った」を減らす</p>
                     <p class="p-fv__heading-sub animate__animated animate__fadeInSlideLeft">
-                        ネットで集客したい、ビジネスにネットを活用したい<br>
-                        Web周りの「困った」に寄り添いながら、確実な技術力で<br class="u-hidden-sp">
-                        あなたのビジネスをサポートします。
+                        ホームページ制作から、AIを使った業務の仕組みづくりまで。<br>
+                        岐阜・各務原を拠点に、現場の様子を見ながら<br class="u-hidden-sp">
+                        一緒に整えます。
                     </p>
 
                 <?php elseif (is_404()) : ?>

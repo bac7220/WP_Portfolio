@@ -24,21 +24,31 @@
           <div class="c-service__card-inner">
             <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img2.webp" alt="" /></div>
             <div class="c-service-card__right">
-
-              <h3 class="c-service__card-title">安心の運用・保守サポート</h3>
+              <h3 class="c-service__card-title">運用・保守サポート</h3>
               <p class="c-service__card-text">
-                古くなった情報を整理し、時代に合わせた使いやすさとデザインを両立させます。
+                更新・修正・トラブル対応をまとめてお引き受けします。日々の業務が忙しく、Webサイトまで手が回らないときはご相談ください。
               </p>
             </div>
           </div>
         </li>
         <li class="c-service__card">
           <div class="c-service__card-inner">
-            <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img3.webp" alt="" /></div>
+            <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/icon-consult.svg" alt="" /></div>
             <div class="c-service-card__right">
-              <h3 class="c-service__card-title">Webサイト運用・保守</h3>
+              <h3 class="c-service__card-title">AI・業務の困りごと相談</h3>
               <p class="c-service__card-text">
-                日々の業務が忙しくて、Webサイトにまで手が回らない…。そんなときはご相談ください。
+                「この作業、毎回手間がかかる」「紙とLINEで回していて大変」。そんな悩みを聞いて、AIや身近なツールで解決できるか一緒に考えます。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="c-service__card">
+          <div class="c-service__card-inner">
+            <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/icon-workflow.svg" alt="" /></div>
+            <div class="c-service-card__right">
+              <h3 class="c-service__card-title">社内の仕組みづくり</h3>
+              <p class="c-service__card-text">
+                Googleスプレッドシート・LINEなど、今使っている道具を活かして、記録・連絡・集計の仕組みを作ります。
               </p>
             </div>
           </div>
