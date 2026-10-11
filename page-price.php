@@ -177,6 +177,11 @@
     </section>
 
     <!-- ============================
+        Section: 業務改善・AI活用の料金
+    ============================ -->
+    <?php get_template_part('template/dx-price'); ?>
+
+    <!-- ============================
         Section: かんたん料金見積りウィザード
     ============================ -->
     <section class="p-estimate" id="estimate">
@@ -212,6 +217,7 @@
                         <label class="p-estimate__option"><input type="checkbox" name="category" value="fix"><span>既存サイトの修正・変更</span></label>
                         <label class="p-estimate__option"><input type="checkbox" name="category" value="add"><span>機能・ページの追加</span></label>
                         <label class="p-estimate__option"><input type="checkbox" name="category" value="maintain"><span>月額保守</span></label>
+                        <label class="p-estimate__option"><input type="checkbox" name="category" value="dx"><span>業務改善・AI活用（社内の仕組みづくり）</span></label>
                         <label class="p-estimate__option p-estimate__option--unsure"><input type="checkbox" name="category" value="unsure"><span>わからない・話して決めたい</span></label>
                     </div>
                 </section>
@@ -378,6 +384,30 @@
                     </div>
                 </section>
 
+                <!-- ===== 業務改善・AI活用 ===== -->
+
+                <section class="p-estimate__step" data-step="dx_scale" data-type="radio" data-show-if="dx">
+                    <h3 class="p-estimate__q">どんなことをしたい？</h3>
+                    <div class="p-estimate__options">
+                        <label class="p-estimate__option"><input type="radio" name="dx_scale" value="consult"><span>まずは相談だけしたい（無料）</span></label>
+                        <label class="p-estimate__option"><input type="radio" name="dx_scale" value="small"><span>1つの作業を自動化したい（集計・通知・入力フォームなど）</span></label>
+                        <label class="p-estimate__option"><input type="radio" name="dx_scale" value="system"><span>複数の作業をまとめて仕組みにしたい（送迎・出勤・連絡帳・申請など）</span></label>
+                        <label class="p-estimate__option p-estimate__option--unsure"><input type="radio" name="dx_scale" value="unsure"><span>わからない・話して決めたい</span></label>
+                    </div>
+                </section>
+
+                <section class="p-estimate__step" data-step="dx_support" data-type="radio" data-show-if="dx">
+                    <h3 class="p-estimate__q">作ったあとの月額サポートは？</h3>
+                    <p class="p-estimate__sub">仕組みの保守・修正・改善を続けて任せられるプランです</p>
+                    <div class="p-estimate__options">
+                        <label class="p-estimate__option"><input type="radio" name="dx_support" value="none"><span>不要</span></label>
+                        <label class="p-estimate__option"><input type="radio" name="dx_support" value="light"><span>ライト（22,000円/月）保守・小さな修正</span></label>
+                        <label class="p-estimate__option"><input type="radio" name="dx_support" value="standard"><span>スタンダード（44,000円/月）＋改善作業 月5時間</span></label>
+                        <label class="p-estimate__option"><input type="radio" name="dx_support" value="full"><span>しっかり（88,000円/月）＋改善作業 月12時間・訪問</span></label>
+                        <label class="p-estimate__option p-estimate__option--unsure"><input type="radio" name="dx_support" value="unsure"><span>わからない・話して決めたい</span></label>
+                    </div>
+                </section>
+
                 <!-- ===== 結果 ===== -->
 
                 <section class="p-estimate__step p-estimate__step--result" data-step="result">
@@ -385,12 +415,17 @@
                     <div class="p-estimate__total">
                         <span class="p-estimate__total-label">合計</span>
                         <span class="p-estimate__total-amount" id="js-estimate-total">¥0</span>
-                        <span class="p-estimate__total-suffix">（税別・参考価格）</span>
+                        <span class="p-estimate__total-suffix">（税込・参考価格）</span>
                     </div>
 
                     <div class="p-estimate__monthly" id="js-estimate-monthly" hidden>
                         <span class="p-estimate__total-label">月額保守</span>
                         <span class="p-estimate__total-amount">¥10,000〜 / 月</span>
+                    </div>
+
+                    <div class="p-estimate__monthly js-estimate-dx-monthly" hidden>
+                        <span class="p-estimate__total-label js-estimate-dx-monthly-label">月額サポート</span>
+                        <span class="p-estimate__total-amount js-estimate-dx-monthly-amount"></span>
                     </div>
 
                     <button type="button" class="p-estimate__breakdown-toggle" id="js-estimate-breakdown-toggle" aria-expanded="false" aria-controls="js-estimate-breakdown">

@@ -3,6 +3,7 @@
 // ============================================================
 @use "../../foundation/variables" as *;
 @use "../../foundation/mixin" as *;
+@use "../../foundation/function" as *;
 
 .p-about {
   background-color: $color-bg-light;
@@ -29,32 +30,6 @@
   }
 }
 
-.p-about__contents {
-  background-color: $color-white;
-  padding: 1rem;
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, auto);
-  gap: 1rem;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "p-about-skill  p-about-img"
-    "p-about-web    p-about-web"
-    "p-about-writing p-about-writing"
-    "p-about-time   p-about-time"
-    "p-about-text   p-about-text";
-
-  @include mq(pc) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-      "p-about-img    p-about-skill   p-about-skill"
-      "p-about-img    p-about-web     p-about-writing"
-      "p-about-time   p-about-text    p-about-text";
-  }
-}
-
 .p-about__top {
   margin-top: 10vh;
   margin-bottom: 5vh;
@@ -62,11 +37,6 @@
   @include mq(pc) {
     margin-top: 30vh;
   }
-}
-
-.p-about__top-text {
-  display: flex;
-  gap: 0.5rem;
 }
 
 .p-about__card {
@@ -160,52 +130,6 @@
   }
 }
 
-// About grid areas
-.p-about-img {
-  grid-area: p-about-img;
-  max-width: 120px;
-
-  @include mq(pc) {
-    max-width: 500px;
-  }
-}
-
-.p-about-skill {
-  grid-area: p-about-skill;
-  display: grid;
-  align-items: center;
-}
-
-.p-about-text {
-  grid-area: p-about-text;
-}
-
-.p-about-time {
-  grid-area: p-about-time;
-}
-
-.p-about-web {
-  grid-area: p-about-web;
-}
-
-.p-about-writing {
-  grid-area: p-about-writing;
-}
-
-.p-about-title {
-  font-size: 1.8rem;
-  padding-bottom: 0.5rem;
-}
-
-@include mq(pc) {
-  .p-about-img,
-  .p-about-skill,
-  .p-about-text {
-    background-color: $color-white;
-    padding: 1rem;
-  }
-}
-
 .p-about-text__category {
   display: grid;
   grid-template-rows: auto auto;
@@ -220,4 +144,164 @@
 
 [class*="img-kick"] {
   justify-self: center;
+}
+
+// ============================================================
+// トップページの About（template/about.php）
+// SP: 縦積み / PC: 左プロフィール・右スキル＋作業時間/連絡方法
+// ============================================================
+.p-about-top {
+  padding: rem(24) rem(16);
+  border-radius: 6px;
+  background-color: $color-white;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
+  @include mq(pc) {
+    padding: rem(40);
+  }
+}
+
+.p-about-top__wrapper {
+  display: grid;
+  gap: rem(32);
+
+  @include mq(lg) {
+    grid-template-columns: rem(220) 1fr;
+    grid-template-rows: auto auto;
+    column-gap: rem(40);
+  }
+}
+
+.p-about-top__profile {
+  display: grid;
+  justify-items: center;
+  gap: rem(16);
+  text-align: center;
+
+  @include mq(lg) {
+    grid-row: 1 / 3;
+    align-content: start;
+  }
+}
+
+.p-about-top__img {
+  width: min(100%, rem(200));
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.p-about-top__profile-text {
+  display: grid;
+  gap: rem(6);
+}
+
+.p-about-top__name {
+  color: $color-text-dark;
+  font-size: rem(20);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.p-about-top__role {
+  color: $color-gray;
+  font-size: rem(13);
+  line-height: 1.5;
+}
+
+.p-about-top__intro {
+  margin-top: rem(8);
+  font-size: rem(14);
+  line-height: 1.8;
+  text-align: left;
+}
+
+.p-about-top__heading {
+  margin-bottom: rem(12);
+  padding-bottom: rem(8);
+  border-bottom: 2px solid $color-main-light;
+  color: $color-main-dark;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.p-about-top__skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: rem(12);
+}
+
+.p-about-top__skill {
+  padding: rem(16);
+  border-radius: 6px;
+  background-color: $color-bg-green;
+}
+
+.p-about-top__skill-title {
+  margin-bottom: rem(10);
+  color: $color-main-dark;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.p-about-top__list {
+  display: grid;
+  gap: rem(6);
+  font-size: rem(14);
+  line-height: 1.6;
+
+  li {
+    position: relative;
+    padding-left: rem(14);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: rem(6);
+      height: rem(6);
+      border-radius: 50%;
+      background-color: $color-main;
+    }
+  }
+}
+
+.p-about-top__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: rem(24);
+}
+
+.p-about-top__hours {
+  display: grid;
+  gap: rem(6);
+}
+
+.p-about-top__hours-row {
+  display: grid;
+  grid-template-columns: rem(64) 1fr;
+  font-size: rem(15);
+  line-height: 1.6;
+
+  dt {
+    font-weight: 700;
+  }
+}
+
+.p-about-top__text {
+  font-size: rem(14);
+  line-height: 1.8;
 }

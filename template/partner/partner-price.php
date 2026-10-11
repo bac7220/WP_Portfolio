@@ -16,7 +16,7 @@
             <!-- ヘッダー行（PCのみ表示） -->
             <div class="p-partner-price__row p-partner-price__row--head" role="row">
                 <div class="p-partner-price__cell p-partner-price__cell--name" role="columnheader">サービス名</div>
-                <div class="p-partner-price__cell p-partner-price__cell--price" role="columnheader">参考価格 (税別)</div>
+                <div class="p-partner-price__cell p-partner-price__cell--price" role="columnheader">参考価格 (税込)</div>
                 <div class="p-partner-price__cell p-partner-price__cell--note" role="columnheader">備考・詳細</div>
             </div>
 

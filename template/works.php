@@ -10,7 +10,7 @@
 
      </p>
      <div class="section__contents">
-       <ul class="l-grid">
+       <ul class="l-grid u-mb-1">
          <?php
           $card_query = new WP_Query(
             array(

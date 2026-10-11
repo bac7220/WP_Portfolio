@@ -11,7 +11,7 @@
                 <div class="p-about__card">
                     <div class="p-about__container">
                         <div>
-                            <h3 class="p-about__container-title">名前</h3>
+                            <h3 class="p-about__container-title">プロフィール</h3>
                             <ul class="c-text__category-items">
                                 <li class="c-text__category-item ">
                                     <p class="c-text"><strong>本名</strong></p>
@@ -22,15 +22,27 @@
                                 <li class="c-text__category-item">
                                     <p class="c-text"><strong>ハンドルネーム</strong></p>
                                 </li>
-                                <li class="c-text__category-item">
+                                <li class="c-text__category-item u-mb-0_5">
                                     <p class="c-text">ばく＠朝活×webコーダー</p>
                                 </li>
-							    <li class="c-text__category-item">
-      <p class="c-text"><strong>事業所在地</strong></p>
-    </li>
-    <li class="c-text__category-item">
-      <p class="c-text">岐阜県各務原市</p>
-    </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>屋号</strong></p>
+                                </li>
+                                <li class="c-text__category-item u-mb-0_5">
+                                    <p class="c-text">Web制作 おくだ屋（2024年10月開業）</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>事業所在地</strong></p>
+                                </li>
+                                <li class="c-text__category-item u-mb-0_5">
+                                    <p class="c-text">岐阜県各務原市</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>対応エリア</strong></p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text">岐阜県・愛知県</p>
+                                </li>
                             </ul>
                         </div>
                         <div class="p-about__img">
@@ -87,6 +99,39 @@
                                 </li>
                             </ul>
                         </div>
+                        <div>
+                        <div class="c-text__category-coding u-mb-1">
+                            <h4 class="c-text__category-name">業務改善・AI活用 -</h4>
+                            <ul class="c-text__category-items l-grid-row">
+                                <li class="c-text__category-item">
+                                    <svg width="24" height="24" role="img" aria-label="smile-icon">
+                                        <use href="#smile-svg"></use>
+                                    </svg>
+                                    <p class="c-text">業務の聞き取り・仕組み化</p>
+                                </li>
+                                <li>
+                                    <p class="c-text">現場に足を運び、日々の作業の流れや困りごとを確かめてから、何をどう変えるかを決めます。</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <svg width="24" height="24" role="img" aria-label="laptop-icon">
+                                        <use href="#laptop-svg"></use>
+                                    </svg>
+                                    <p class="c-text">Google Apps Script / LINE連携</p>
+                                </li>
+                                <li>
+                                    <p class="c-text">Googleスプレッドシート・LINE公式アカウント・LINEミニアプリ・Cloudflareを組み合わせ、記録・連絡・集計を自動化します。</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <svg width="24" height="24" role="img" aria-label="edit-icon">
+                                        <use href="#edit-svg"></use>
+                                    </svg>
+                                    <p class="c-text">生成AIの業務活用</p>
+                                </li>
+                                <li>
+                                    <p class="c-text">文章の整形や問い合わせの仕分けなど、AIに任せられる作業を切り出して組み込みます。</p>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="c-text__category-writing">
                             <h4 class="c-text__category-name">ライティング -</h4>
                             <ul class="c-text__category-items l-grid-row">
@@ -110,6 +155,7 @@
                                 </li>
                             </ul>
                         </div>
+                        </div>
 
                     </div>
 
@@ -125,13 +171,13 @@
                                 <p class="c-text"><strong>誠実</strong></p>
                             </li>
                             <li class="c-text__category-item">
-                                <p class="c-text">クライアント様の要望をウェブサイトに忠実に反映します。</p>
+                                <p class="c-text">クライアント様の要望を、ウェブサイトや仕組みに忠実に反映します。</p>
                             </li>
                             <li class="c-text__category-item">
                                 <p class="c-text"><strong>傾聴</strong></p>
                             </li>
                             <li class="c-text__category-item">
-                                <p class="c-text">サイト設計の目的や思いを丁寧に聞き取り、反映できるよう提案いたします。</p>
+                                <p class="c-text">目的や思いを丁寧に聞き取り、必要なときは現場に足を運んで確かめたうえで提案いたします。</p>
                             </li>
                             <li class="c-text__category-item">
                                 <p class="c-text"><strong>正確</strong></p>
@@ -156,16 +202,23 @@
                             </li>
                            
                             <li class="c-text__category-item">
-                                <h4 class="c-text"><strong>全日</strong></h4>
+                                <h4 class="c-text"><strong>月〜土</strong></h4>
                                 <ul class="c-text__category-items">
                                     <li class="c-text__category-item">
-                                        <p class="c-text"><time>5:00</time> ～ <time>22:00</time></p>
+                                        <p class="c-text">朝 <time>5:00</time> ～ <time>8:00</time> ／ 夜 <time>20:00</time> ～ <time>22:00</time></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="c-text__category-item">
+                                <h4 class="c-text"><strong>日曜</strong></h4>
+                                <ul class="c-text__category-items">
+                                    <li class="c-text__category-item">
+                                        <p class="c-text">対応可</p>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <p class="c-text">また、上記以外の時間でもご連絡をいただければ即レスを心がけています。</p>
-
+                                <p class="c-text">いただいたご連絡には、上記の時間内に順番にお返事します。</p>
                             </li>
                         </ul>
                         <div class="p-about__img ">
@@ -192,6 +245,9 @@
                             <li>
                                 <p class="c-text">cofo chairPro 高機能オフィスチェアによる疲労軽減にて、長時間の作業もこなします。丸一日作業していても苦になりません。</p>
                             </li>
+                            <li>
+                                <p class="c-text">AI（Claude）を複数同時に動かし、調べもの・作業・確認を並行して進める体制で作業しています。</p>
+                            </li>
                         </ul>
                         <div class="p-about__img ">
                             <picture class="c-img">
@@ -207,25 +263,34 @@
                     <div class="p-about__container">
                         <ul class="c-text__category-items">
                             <li>
+                                <h4 class="c-text__category-name">Web制作 おくだ屋（2024年10月〜）</h4>
+                            </li>
+                            <li class="c-text__category-item">
+                                <p class="c-text">ホームページ制作のほか、岐阜県内の企業様で、現場に入りながらAIを使った社内の仕組みづくりに携わっています。</p>
+                            </li>
+                            <li class="u-mb-1">
+                                <p class="c-text">保有資格：簿記3級・FP3級</p>
+                            </li>
+                            <li>
                                 <h4 class="c-text__category-name">NCマシニングセンタオペレーター</h4>
                             </li>
                             <li class="c-text__category-item">
-                                <p class="c-text">NC(Numerical Control)数値制御加工を15年以上携わっています。</p>
+                                <p class="c-text">NC(Numerical Control)数値制御加工に15年以上携わってきました。</p>
                             </li>
                             <li class="c-text__category-item">
-                                <p class="c-text">実務として金属の精密加工（< 0.1mm）を行っています。</p>
+                                <p class="c-text">実務として金属の精密加工（&lt; 0.1mm）を行ってきました。</p>
                             </li>
                             <li class="c-text__category-item">
                                 <p class="c-text">CADオペレーターとしての経験があります。</p>
                             </li>
                             <li class="c-text__category-item">
-                                <p class="c-text">実務のマニュアル化、言語化を日々行い、組織の中で属人化を防ぐ活動をしています。</p>
+                                <p class="c-text">実務のマニュアル化、言語化を日々行い、組織の中で属人化を防ぐ活動をしてきました。</p>
                             </li>
                             <li class="c-text__category-item">
                                 <p class="c-text">部下のマネジメントと教育も行ってきました。</p>
                             </li>
                             <li>
-                                <p class="c-text">0.01mm単位の精密な作業、図面からどこが重要か読み取る力、人を管理する目線を学んでいます。</p>
+                                <p class="c-text">0.01mm単位の精密な作業、図面からどこが重要か読み取る力、人を管理する目線を学びました。</p>
                             </li>
                         </ul>
                         <div class="p-about__img ">

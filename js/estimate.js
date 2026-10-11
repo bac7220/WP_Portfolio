@@ -29,7 +29,16 @@
     add_custom_field: 5000,
     add_form: 20000,
     add_anim: 10000,
-    add_anim_gsap: 30000
+    add_anim_gsap: 30000,
+    dx_small: 55000,      // 小さな仕組みづくり
+    dx_system: 330000     // 社内システム開発
+  };
+
+  // 業務改善・AI活用の月額サポート
+  var DX_PLANS = {
+    light: { label: 'ライト', price: 22000 },
+    standard: { label: 'スタンダード', price: 44000 },
+    full: { label: 'しっかり', price: 88000 }
   };
 
   // ステップ一覧
@@ -40,6 +49,9 @@
   var progressBar = root.querySelector('#js-estimate-progress');
   var totalEl = root.querySelector('#js-estimate-total');
   var monthlyEl = root.querySelector('#js-estimate-monthly');
+  var dxMonthlyEl = root.querySelector('.js-estimate-dx-monthly');
+  var dxMonthlyLabelEl = root.querySelector('.js-estimate-dx-monthly-label');
+  var dxMonthlyAmountEl = root.querySelector('.js-estimate-dx-monthly-amount');
   var breakdownList = root.querySelector('#js-estimate-breakdown-list');
   var breakdownToggle = root.querySelector('#js-estimate-breakdown-toggle');
   var breakdownEl = root.querySelector('#js-estimate-breakdown');
@@ -146,6 +158,7 @@
     var total = 0;
     var hasUnsure = false;
     var hasMonthly = false;
+    var dxPlan = null;
 
     var categories = state.category || [];
 
@@ -269,10 +282,31 @@
       hasMonthly = true;
     }
 
+    // --- 業務改善・AI活用 ---
+    if (categories.indexOf('dx') !== -1) {
+      if (state.dx_scale === 'small') {
+        items.push({ label: '小さな仕組みづくり（〜）', price: PRICES.dx_small });
+        total += PRICES.dx_small;
+      } else if (state.dx_scale === 'system') {
+        items.push({ label: '社内システム開発（〜）', price: PRICES.dx_system });
+        total += PRICES.dx_system;
+      } else if (state.dx_scale === 'consult') {
+        items.push({ label: '困りごと相談', price: 0 });
+      } else {
+        hasUnsure = true;
+      }
+
+      if (DX_PLANS[state.dx_support]) {
+        dxPlan = DX_PLANS[state.dx_support];
+      } else if (state.dx_support === 'unsure') {
+        hasUnsure = true;
+      }
+    }
+
     // category 自体に unsure があれば
     if (categories.indexOf('unsure') !== -1) hasUnsure = true;
 
-    return { total: total, items: items, hasUnsure: hasUnsure, hasMonthly: hasMonthly };
+    return { total: total, items: items, hasUnsure: hasUnsure, hasMonthly: hasMonthly, dxPlan: dxPlan };
   }
 
   // 結果画面の描画
@@ -280,6 +314,11 @@
     var r = compute();
     totalEl.textContent = '¥' + r.total.toLocaleString();
     monthlyEl.hidden = !r.hasMonthly;
+    dxMonthlyEl.hidden = !r.dxPlan;
+    if (r.dxPlan) {
+      dxMonthlyLabelEl.textContent = '月額サポート（' + r.dxPlan.label + '）';
+      dxMonthlyAmountEl.textContent = '¥' + r.dxPlan.price.toLocaleString() + ' / 月';
+    }
 
     breakdownList.innerHTML = '';
     if (r.items.length === 0) {
@@ -360,9 +399,12 @@
       }
 
       lines.push('');
-      lines.push('合計（目安）：¥' + r.total.toLocaleString() + '（税別・参考価格）');
+      lines.push('合計（目安）：¥' + r.total.toLocaleString() + '（税込・参考価格）');
       if (r.hasMonthly) {
         lines.push('月額保守：¥10,000〜 / 月');
+      }
+      if (r.dxPlan) {
+        lines.push('月額サポート（' + r.dxPlan.label + '）：¥' + r.dxPlan.price.toLocaleString() + ' / 月');
       }
       if (r.hasUnsure) {
         lines.push('');
@@ -384,22 +426,25 @@
         'new': '新規Webサイト制作の依頼',
         'fix': '既存サイトの改修・修正',
         'add': '既存サイトの改修・修正',
+        'dx': '業務改善・AI活用のご相談',
         'maintain': 'その他'
       };
       var pickedRadio = null;
-      // 優先順位：new > fix/add > maintain > unsure
+      // 優先順位：new > fix/add > dx > maintain > unsure
       if (categories.indexOf('new') !== -1) pickedRadio = radioMap.new;
       else if (categories.indexOf('fix') !== -1 || categories.indexOf('add') !== -1) pickedRadio = radioMap.fix;
+      else if (categories.indexOf('dx') !== -1) pickedRadio = radioMap.dx;
       else if (categories.indexOf('maintain') !== -1) pickedRadio = radioMap.maintain;
       else pickedRadio = 'その他';
 
-      var radios = document.querySelectorAll('#price-contact input[type="radio"][name="radio-buttons"]');
-      radios.forEach(function (rd) {
-        if (rd.value === pickedRadio) {
-          rd.checked = true;
-          rd.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      });
+      var radios = Array.from(document.querySelectorAll('#price-contact input[type="radio"][name="radio-buttons"]'));
+      // フォーム側に該当する選択肢がなければ「その他」を選ぶ
+      var target = radios.find(function (rd) { return rd.value === pickedRadio; })
+        || radios.find(function (rd) { return rd.value === 'その他'; });
+      if (target) {
+        target.checked = true;
+        target.dispatchEvent(new Event('change', { bubbles: true }));
+      }
 
       // フォームへスクロール
       var contactSection = document.querySelector('#price-contact');
