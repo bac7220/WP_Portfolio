@@ -81,6 +81,14 @@ add_action('wp_enqueue_scripts', function () {
         filemtime(get_theme_file_path('/js/estimate.js')),
         true
     );
+
+    wp_enqueue_script(
+        'dx-calc-js',
+        get_template_directory_uri() . '/js/dx-calc.js',
+        array(),
+        filemtime(get_theme_file_path('/js/dx-calc.js')),
+        true
+    );
 });
 
 
