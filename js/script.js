@@ -33,6 +33,7 @@ jQuery(".header__nav").on("click", ".header__link", function (e) {
 // ヘッダーのスクロールイベント
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("js-header");
+  if (!header) return; // partner系ヘッダーのページには #js-header がない
 
   window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
