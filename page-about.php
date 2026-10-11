@@ -11,7 +11,7 @@
                 <div class="p-about__card">
                     <div class="p-about__container">
                         <div>
-                            <h3 class="p-about__container-title">名前</h3>
+                            <h3 class="p-about__container-title">プロフィール</h3>
                             <ul class="c-text__category-items">
                                 <li class="c-text__category-item ">
                                     <p class="c-text"><strong>本名</strong></p>
@@ -22,15 +22,27 @@
                                 <li class="c-text__category-item">
                                     <p class="c-text"><strong>ハンドルネーム</strong></p>
                                 </li>
-                                <li class="c-text__category-item">
+                                <li class="c-text__category-item u-mb-0_5">
                                     <p class="c-text">ばく＠朝活×webコーダー</p>
                                 </li>
-							    <li class="c-text__category-item">
-      <p class="c-text"><strong>事業所在地</strong></p>
-    </li>
-    <li class="c-text__category-item">
-      <p class="c-text">岐阜県各務原市</p>
-    </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>屋号</strong></p>
+                                </li>
+                                <li class="c-text__category-item u-mb-0_5">
+                                    <p class="c-text">Web制作 おくだ屋（2024年10月開業）</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>事業所在地</strong></p>
+                                </li>
+                                <li class="c-text__category-item u-mb-0_5">
+                                    <p class="c-text">岐阜県各務原市</p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text"><strong>対応エリア</strong></p>
+                                </li>
+                                <li class="c-text__category-item">
+                                    <p class="c-text">岐阜県・愛知県</p>
+                                </li>
                             </ul>
                         </div>
                         <div class="p-about__img">
