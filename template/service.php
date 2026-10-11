@@ -13,7 +13,7 @@
           <div class="c-service__card-inner">
             <div class="c-service__card-img"><img src="<?php echo get_theme_file_uri(); ?>/assets/img/service-img1.webp" alt="" /></div>
             <div class="c-service-card__right">
-              <h3 class="c-service__card-title">ホームページ制作（新規・刷新）</h3>
+              <h3 class="c-service__card-title">ホームページ制作<br class="u-hidden-pc">（新規・刷新）</h3>
               <p class="c-service__card-text">
                 ビジネスの名刺に、24時間働くネットの営業マンに。唯一無二のWebサイトを制作します。
               </p>

@@ -5,11 +5,10 @@
         <div class="l-fv__contents">
             <?php if (is_front_page()) : ?>
                 <h2 id="reverse" class="l-fv__heading ">
-                    <p class="p-fv__heading-main u-mb-1 js-text-span">Webと仕組みで<br>現場の「困った」を減らす</p>
+                    <p class="p-fv__heading-main u-mb-1 js-text-span">Webと仕組みで<br>現場の「困った」<br class="u-hidden-pc">を減らす</p>
                     <p class="p-fv__heading-sub animate__animated animate__fadeInSlideLeft">
                         ホームページ制作から、AIを使った業務の仕組みづくりまで。<br>
-                        岐阜・各務原を拠点に、現場の様子を見ながら<br class="u-hidden-sp">
-                        一緒に整えます。
+                        岐阜・各務原を拠点に、現場の様子を見ながら<br class="u-hidden-sp">一緒に整えます。
                     </p>
 
                 <?php elseif (is_404()) : ?>
